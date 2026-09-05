@@ -74,7 +74,7 @@ SHELL = """<!DOCTYPE html>
       <a href="index.html#about">About me</a>
       <a href="project-os.html">SJH Process</a>
       <a href="{portfolio}">Portfolio</a>
-      <a class="navcta" href="mailto:{email}?subject=My%20brief">Send your brief</a>
+      <a class="navcta" href="{project_os}#templates" target="_blank" rel="noopener">Brief me</a>
     </div>
   </div>
 </nav>
@@ -107,7 +107,7 @@ SHELL = """<!DOCTYPE html>
     <p class="lead stand">Tell me what you do and what's driving you mad about it. Two working days,
       an honest answer &mdash; even if that answer is &ldquo;this isn't for you, and here's why&rdquo;.</p>
     <div class="cta-row stand" style="margin-top:32px;">
-      <a class="btn btn-primary" href="{project_os}#templates" target="_blank" rel="noopener">Send your brief &rarr;</a>
+      <a class="btn btn-primary" href="{project_os}#templates" target="_blank" rel="noopener">Brief me &rarr;</a>
       <a class="btn btn-ghost" href="{demo}" target="_blank" rel="noopener">See the process &rarr;</a>
     </div>
    </div>
