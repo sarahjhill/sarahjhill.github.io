@@ -13,8 +13,8 @@ site itself — these are plain files once written.
 
 SITE = "https://sarahjhill.com"
 EMAIL = "sarah@sarahjhill.com"
-DEMO = "https://sarahjhill.github.io/project-os/app.html?guest=1"
-PROJECT_OS = "https://sarahjhill.github.io/project-os/"
+DEMO = "https://sarahjhill.com/project-os/app.html?guest=1"
+PROJECT_OS = "https://sarahjhill.com/project-os/"
 PORTFOLIO = "https://sarahjhill.com/portfolio/"
 
 SHELL = """<!DOCTYPE html>
@@ -327,7 +327,7 @@ PAGES["project-os.html"] = dict(
     "name": "The SJH Process",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any modern browser",
-    "url": "https://sarahjhill.github.io/project-os/",
+    "url": "https://sarahjhill.com/project-os/",
     "author": { "@type": "Person", "name": "Sarah J Hill", "url": "https://sarahjhill.com/" },
     "description": "A twelve-phase project delivery system with 69 guided tasks, 72 templates and a client sign-in.",
     "offers": { "@type": "Offer", "price": "39", "priceCurrency": "GBP" }
