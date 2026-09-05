@@ -74,7 +74,7 @@ SHELL = """<!DOCTYPE html>
       <a href="index.html#about">About me</a>
       <a href="project-os.html">SJH Process</a>
       <a href="{portfolio}">Portfolio</a>
-      <a class="navcta" href="{project_os}#templates" target="_blank" rel="noopener">Brief me</a>
+      <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Brief me</a>
     </div>
   </div>
 </nav>
@@ -107,7 +107,7 @@ SHELL = """<!DOCTYPE html>
     <p class="lead stand">Tell me what you do and what's driving you mad about it. Two working days,
       an honest answer &mdash; even if that answer is &ldquo;this isn't for you, and here's why&rdquo;.</p>
     <div class="cta-row stand" style="margin-top:32px;">
-      <a class="btn btn-primary" href="{project_os}#templates" target="_blank" rel="noopener">Brief me &rarr;</a>
+      <a class="btn btn-primary" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Brief me &rarr;</a>
       <a class="btn btn-ghost" href="{demo}" target="_blank" rel="noopener">See the process &rarr;</a>
     </div>
    </div>
@@ -368,7 +368,7 @@ PAGES["project-os.html"] = dict(
         + f"""    </div>
     <div class="cta-row stand" style="margin-top:30px;">
       <a class="btn btn-primary" href="{DEMO}" target="_blank" rel="noopener">Look round a real project &rarr;</a>
-      <a class="btn btn-ghost" href="{PROJECT_OS}#templates" target="_blank" rel="noopener">Start with my intake questionnaire &rarr;</a>
+      <a class="btn btn-ghost" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Start with my intake questionnaire &rarr;</a>
     </div>
     <p class="cta-note" style="margin-top:10px;">Left one's a working demo, loaded with a made-up client.
       Right one's the actual first template &mdash; nothing to sign up for either way.</p>
