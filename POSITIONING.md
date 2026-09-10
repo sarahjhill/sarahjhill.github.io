@@ -41,15 +41,19 @@ Comedy, passion and strength — while staying professional and serious.
 
 **Rules:**
 
+- **Talk TO her, never ABOUT her.** The site is addressed to one person, so it is
+  second person throughout: *you*, *your*, *you arrive*. Never *she*, *her* or
+  *a woman who*. The only exception is a testimonial, where someone else is
+  quoted speaking about Sarah.
 - Say the thing everyone else softens.
 - Short words. Short lines. Nothing anyone has to read twice.
 - Dry, not zany. The joke is the truth said plainly.
-- Never punch at the customer. Punch at what she's up against.
+- Never punch at the reader. Punch at what's stacked against them.
 - Every claim has to survive being read out loud in front of the person it's about.
 
 **On brand:**
 
-- "Is your husband parking the van?"
+- "You arrive with the tools." / "Is your husband parking the van?"
 - "Not a stock photo of a man in a hard hat looking pleased with a clipboard."
 - "There's no missed-call list for 'looked a bit unconvincing'."
 - "Bullshit 0%."

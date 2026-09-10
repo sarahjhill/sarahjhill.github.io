@@ -36,12 +36,15 @@ SHELL = """<!DOCTYPE html>
   <meta property="og:site_name" content="Sarah J Hill">
   <meta property="og:title" content="{ogtitle}">
   <meta property="og:description" content="{desc}">
-  <meta property="og:image" content="{site}/assets/img/me-sunglasses.webp">
+  <meta property="og:image" content="{site}/assets/img/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Sarah J Hill homepage: &ldquo;That&rsquo;s how long they take to write you off.&rdquo;">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{ogtitle}">
   <meta name="twitter:description" content="{desc}">
-  <meta name="twitter:image" content="{site}/assets/img/me-sunglasses.webp">
+  <meta name="twitter:image" content="{site}/assets/img/og-card.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
