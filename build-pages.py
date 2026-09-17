@@ -382,21 +382,24 @@ PAGES["project-os.html"] = dict(
 <section class="band" id="studio">
   <div class="wrap">
     <div class="studio stand">
-      <p class="split-label" style="margin-top:0;">If you're a studio &mdash; own it yourself</p>
-      <h3 class="studio-h">The whole process, rebranded as yours. <b>&pound;39.</b></h3>
-      <p class="studio-p">Twelve phases, sixty-nine guided tasks and seventy-two templates &mdash; the entire
-        delivery system I run, with your name on it, your colours, and your clients signing in. Buy it once
-        and it is yours. No monthly fee, no per-seat cost, nothing to renew.</p>
+      <p class="split-label" style="margin-top:0;">The part that actually decides it</p>
+      <h3 class="studio-h">I call it the Dragon Fire Process &mdash; the same fire you saw land on this page.</h3>
+      <p class="studio-p">An AI can hand you a process document in ten seconds. It has never once asked why
+        your last three customers actually found you, or noticed you'd buried the best thing about your
+        business in paragraph three. That's the concept gap, and it's exactly where a human earns their
+        keep. I ask the second question, I read the room, and I build your strategy around what you
+        actually know that nobody else does. The goal isn't &ldquo;good enough&rdquo; &mdash; it's 100%
+        satisfaction, every time &mdash; and you get to watch it happen, not take my word for it.</p>
 
       <div class="stats">
 """
         + stat("12", "Phases") + stat("69", "Guided tasks")
-        + stat("72", "Templates") + stat("39", "Pounds, once")
+        + stat("72", "Templates") + stat("100", "% satisfaction, always")
         + f"""      </div>
 
       <div class="cta-row" style="margin-top:26px;">
-        <a class="btn btn-primary" href="{PROJECT_OS}" target="_blank" rel="noopener">See it live &rarr;</a>
-        <a class="btn btn-ghost" href="mailto:{EMAIL}?subject=SJH%20Process%20licence">Licence it for your studio</a>
+        <a class="btn btn-primary" href="{DEMO}" target="_blank" rel="noopener">Watch today's project move &rarr;</a>
+        <a class="btn btn-ghost" href="#hello">Start yours &rarr;</a>
       </div>
     </div>
   </div>
