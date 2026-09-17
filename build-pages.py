@@ -170,7 +170,7 @@ PAGES["website-audit.html"] = dict(
     ogtype="website",
     backhref="index.html", backtext="Back to the start",
     eyebrow="Already got a website? &mdash; free, no catch",
-    h1="You built a website. <span class=\"hit\">Having one isn't the same as it working.</span>",
+    h1="You have a website <span class=\"hit\">but it does nothing for you.</span>",
     lead=("You'll never know how many people quietly left. There's no missed-call list for "
           "&ldquo;looked a bit unconvincing&rdquo;. So I'll go through your site the way your "
           "customers do &mdash; on a phone, in a hurry, hunting for a reason to say no &mdash; "
@@ -383,13 +383,17 @@ PAGES["project-os.html"] = dict(
   <div class="wrap">
     <div class="studio stand">
       <p class="split-label" style="margin-top:0;">The part that actually decides it</p>
-      <h3 class="studio-h">I call it the Dragon Fire Process &mdash; the same fire you saw land on this page.</h3>
-      <p class="studio-p">An AI can hand you a process document in ten seconds. It has never once asked why
-        your last three customers actually found you, or noticed you'd buried the best thing about your
-        business in paragraph three. That's the concept gap, and it's exactly where a human earns their
+      <h3 class="studio-h">My Dragon Fire Process.</h3>
+      <p class="studio-p"><b>An AI can hand you a process document in ten seconds.</b> It has
+        never once asked why your last three customers actually found you, or noticed you'd buried
+        the best thing about your business in paragraph three.</p>
+
+      <p class="studio-p">That's the concept gap &mdash; and it's exactly where a human earns their
         keep. I ask the second question, I read the room, and I build your strategy around what you
-        actually know that nobody else does. The goal isn't &ldquo;good enough&rdquo; &mdash; it's 100%
-        satisfaction, every time &mdash; and you get to watch it happen, not take my word for it.</p>
+        actually know that nobody else does.</p>
+
+      <p class="studio-p">The goal isn't &ldquo;good enough&rdquo;. It's <b>100% satisfaction, every
+        time</b> &mdash; and you get to watch it happen, not take my word for it.</p>
 
       <div class="stats">
 """

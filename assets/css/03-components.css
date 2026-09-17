@@ -21,6 +21,8 @@
 /* ---------------- THE CONCEPT GAP ---------------- */
 .test{background:var(--ink);color:var(--paper);padding:100px 0;}
 
+/* Room to breathe between the intro paragraph and step 1. */
+.test .lead{margin-bottom:46px;}
 .gap-step{max-width:640px;margin:0 0 14px;}
 .gap-step .gap-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;
   border-radius:50%;background:var(--flame);color:#fff;font-size:12px;font-weight:800;margin-right:8px;}
@@ -290,10 +292,14 @@ footer a{color:var(--mute);}
 .studio-h b{ color: var(--flame); }
 .studio-p{
   font-size: 17.5px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #bcbab4;
-  max-width: 62ch;
+  max-width: 60ch;
+  margin: 0;
 }
+/* Split into short paragraphs rather than one block — this is the gap between them. */
+.studio-p + .studio-p{ margin-top: 18px; }
+.studio-p b{ color: var(--paper); font-weight: 700; }
 .studio .stats{ margin: 34px 0 0; }
 .studio .cta-note{ color: #bcbab4; }
 
