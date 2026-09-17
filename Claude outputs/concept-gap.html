@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>The Concept Gap</title>
+<style>
+  html,body{margin:0;background:#0a0a0c;color:#f2f0ea;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:40px 24px 56px;}
+  h1{font-size:1.5rem;margin:0 0 6px;font-weight:700;}
+  p.sub{color:#a9a5a0;margin:0 0 32px;font-size:0.95rem;}
+  svg{width:100%;height:auto;display:block;}
+  .cap{display:flex;justify-content:space-between;gap:24px;margin-top:20px;}
+  .cap div{flex:1;font-size:0.85rem;color:#c9c5c0;line-height:1.5;}
+  .cap b{color:#f2f0ea;display:block;margin-bottom:4px;font-size:0.9rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The concept gap</h1>
+  <p class="sub">The space between what a stranger (or an AI) can guess about your business, and what it actually is.</p>
+
+  <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="fire" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ff6a2b"/>
+        <stop offset="100%" stop-color="#ffb84d"/>
+      </linearGradient>
+      <linearGradient id="chasm" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1a1a1e"/>
+        <stop offset="100%" stop-color="#050505"/>
+      </linearGradient>
+    </defs>
+
+    <!-- left plateau: what AI guesses -->
+    <rect x="30" y="260" width="290" height="160" rx="10" fill="#151517" stroke="#2a2a2e"/>
+    <text x="175" y="230" text-anchor="middle" fill="#a9a5a0" font-size="15" font-weight="600" letter-spacing="0.5">WHAT AI GUESSES</text>
+    <text x="60" y="300" fill="#8b8781" font-size="13">&#8226; &ldquo;Bespoke solutions&rdquo;</text>
+    <text x="60" y="326" fill="#8b8781" font-size="13">&#8226; Stock photo, stock smile</text>
+    <text x="60" y="352" fill="#8b8781" font-size="13">&#8226; Sounds like every</text>
+    <text x="72" y="372" fill="#8b8781" font-size="13">other business in your trade</text>
+
+    <!-- right plateau: what's actually true -->
+    <rect x="580" y="260" width="290" height="160" rx="10" fill="#151517" stroke="#3a2416"/>
+    <text x="725" y="230" text-anchor="middle" fill="#ffb84d" font-size="15" font-weight="600" letter-spacing="0.5">WHAT'S ACTUALLY TRUE</text>
+    <text x="610" y="300" fill="#d8c9b8" font-size="13">&#8226; Why people really</text>
+    <text x="622" y="320" fill="#d8c9b8" font-size="13">come back to you</text>
+    <text x="610" y="346" fill="#d8c9b8" font-size="13">&#8226; The thing you're</text>
+    <text x="622" y="366" fill="#d8c9b8" font-size="13">quietly proudest of</text>
+    <text x="610" y="392" fill="#d8c9b8" font-size="13">&#8226; What makes you, you</text>
+
+    <!-- chasm -->
+    <path d="M320 260 L580 260 L560 420 L340 420 Z" fill="url(#chasm)"/>
+    <text x="450" y="450" text-anchor="middle" fill="#5c5854" font-size="13" font-style="italic">the concept gap</text>
+
+    <!-- bridge -->
+    <g>
+      <rect x="345" y="270" width="18" height="10" rx="2" fill="url(#fire)"/>
+      <rect x="378" y="266" width="18" height="10" rx="2" fill="url(#fire)"/>
+      <rect x="411" y="262" width="18" height="10" rx="2" fill="url(#fire)"/>
+      <rect x="444" y="260" width="18" height="10" rx="2" fill="url(#fire)"/>
+      <rect x="477" y="262" width="18" height="10" rx="2" fill="url(#fire)"/>
+      <rect x="510" y="266" width="18" height="10" rx="2" fill="url(#fire)"/>
+      <rect x="543" y="270" width="18" height="10" rx="2" fill="url(#fire)"/>
+    </g>
+
+    <!-- figure on the bridge -->
+    <circle cx="450" cy="235" r="11" fill="#f2f0ea"/>
+    <path d="M450 246 L450 275 M450 255 L436 268 M450 255 L464 268 M450 275 L438 298 M450 275 L462 298"
+          stroke="#f2f0ea" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <text x="450" y="190" text-anchor="middle" fill="#f2f0ea" font-size="14" font-weight="600">A REAL CONVERSATION</text>
+    <text x="450" y="209" text-anchor="middle" fill="#8b8781" font-size="12">is the only thing that crosses it</text>
+
+    <!-- baseline -->
+    <line x1="30" y1="420" x2="870" y2="420" stroke="#2a2a2e" stroke-width="1"/>
+  </svg>
+
+  <div class="cap">
+    <div><b>Left side</b>AI can only work from patterns it's already seen. Ask it about your business and it fills in the blank with what's normal for your trade &mdash; not what's actually true about you.</div>
+    <div><b>The gap</b>That's the distance between a generic-sounding site and one that sounds like you. Nothing closes it on its own.</div>
+    <div><b>Right side</b>The stuff only you know &mdash; why customers stick around, what you're proud of, what's different about how you work. It only gets onto the site if someone actually asks you.</div>
+  </div>
+</div>
+</body>
+</html>

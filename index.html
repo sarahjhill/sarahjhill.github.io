@@ -104,7 +104,7 @@
     </button>
     <div class="navlinks" id="navlinks">
       <a href="#you">Who it's for</a>
-      <a href="#test">The 3-second test</a>
+      <a href="#test">The concept gap</a>
       <a href="#about">About me</a>
       <a href="#process">SJH Process</a>
       <a href="https://sarahjhill.com/portfolio/">Portfolio</a>
@@ -126,7 +126,7 @@
     <p class="sub ember-line">Content is king.
       <b>Yours should be breathing fire.</b></p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#test">Try it on yourself &rarr;</a>
+      <a class="btn btn-primary" href="#test">Watch the gap close &rarr;</a>
       <a class="btn btn-ghost" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Brief me &rarr;</a>
     </div>
   </div>
@@ -160,47 +160,98 @@
         decisions made before anybody looked.</p>
       <p class="who-note"><strong>That is the gap your website has to close</strong> &mdash; and it has
         about three seconds to do it.</p>
-      <a class="btn btn-ghost" href="#test" style="margin-top:6px;">See it happen &rarr;</a>
+      <a class="btn btn-ghost" href="#test" style="margin-top:6px;">Ask it something real &rarr;</a>
     </aside>
    </div>
   </div>
 </section>
 
-<!-- ============ THE 3-SECOND TEST ============ -->
+<!-- ============ THE CONCEPT GAP ============ -->
 <section class="test" id="test">
   <div class="wrap">
     <p class="eyebrow stand">Try it yourself</p>
-    <h2 class="stand">Three seconds. Who do you ring?</h2>
-    <p class="lead stand" style="color:#bcbab4">Your kitchen sockets have stopped working. Two electricians.
-      Clock's running. Go.</p>
+    <h2 class="stand">The concept gap. Ask it something real.</h2>
+    <p class="lead stand" style="color:#bcbab4">Type an actual question about your business. Watch what AI does
+      with it, next to what I'd actually do with it. Then &mdash; the important bit &mdash; tell it the real
+      answer, and watch what happens even then.</p>
 
-    <div class="testbar" id="testbar" aria-hidden="true"><i></i></div>
+    <div class="gap-step">
+      <span class="gap-num">1</span><h3>Ask a real question</h3>
+      <p>The kind a customer might quietly wonder before they ring.</p>
+    </div>
+    <div class="gap-askbar">
+      <input type="text" id="qInput" placeholder="e.g. What makes my bakery different from the one down the road?" maxlength="120">
+      <button class="btn btn-primary" id="askBtn" type="button">Ask it &rarr;</button>
+    </div>
 
-    <div class="cards">
-      <button class="card" id="cardA" type="button">
-        <div class="body">
-          <div class="who">A. S. Hill Electrical</div>
-          <div class="trade">Electrician</div>
-          <p class="thin">Electrical services. All work considered. Contact for a quote.</p>
+    <div class="gap-row">
+      <div class="gap-card">
+        <div class="gap-tag">What AI says back</div>
+        <p class="gap-qecho" id="qechoL"></p>
+        <p class="gap-placeholder" id="placeholderL">Ask the question to find out&hellip;</p>
+        <div class="gap-answer" id="answerL"></div>
+      </div>
+
+      <div class="gap-chasm">
+        <div class="gap-chasmlabel" id="chasmlabel">the concept gap</div>
+        <div class="gap-bridge" id="bridge">
+          <div class="gap-plank"></div><div class="gap-plank"></div><div class="gap-plank"></div>
+          <div class="gap-plank"></div><div class="gap-plank"></div>
+          <div class="gap-ember" style="left:10%"></div>
+          <div class="gap-ember" style="left:35%;animation-delay:.2s"></div>
+          <div class="gap-ember" style="left:60%;animation-delay:.4s"></div>
+          <div class="gap-ember" style="left:85%;animation-delay:.6s"></div>
         </div>
-        <div class="pick">Ring this one &rarr;</div>
-      </button>
+      </div>
 
-      <button class="card" id="cardB" type="button">
-        <div class="body">
-          <img class="face" src="assets/img/me-sunglasses.webp" alt="" width="60" height="60" loading="lazy">
-          <div class="who">B. Sarah Hill Electrical</div>
-          <div class="trade">Electrician &middot; Cardiff</div>
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 &middot; 47 reviews</div>
-          <div class="badges"><span>18 yrs qualified</span><span>NICEIC registered</span><span>&pound;2m insured</span></div>
-        </div>
-        <div class="pick">Ring this one &rarr;</div>
-      </button>
+      <div class="gap-card">
+        <div class="gap-tag amber">What I'd actually ask you</div>
+        <p class="gap-placeholder" id="placeholderR">Ask the question to find out&hellip;</p>
+        <div class="gap-answer" id="answerR"></div>
+      </div>
     </div>
 
     <div class="verdict" id="verdict" role="status" aria-live="polite">
-      <strong id="vtitle"></strong>
-      <p id="vbody"></p>
+      <strong>That's the gap.</strong>
+      <p>AI answers instantly and says nothing. A human asks back &mdash; understands you, and remembers your
+        real true value.</p>
+    </div>
+
+    <div class="gap-stage2" id="stage2wrap">
+      <div class="gap-step" style="margin-top:44px;">
+        <span class="gap-num amber">2</span><h3>Now tell it the truth</h3>
+        <p>Answer the follow-up on the right, honestly. Then watch what each side does with the exact same
+          information.</p>
+      </div>
+      <div class="gap-askbar">
+        <input type="text" id="qInput2" placeholder="e.g. My nan taught me the recipe in 1974, I still use her tin" maxlength="140">
+        <button class="btn btn-primary amber" id="askBtn2" type="button">Tell it &rarr;</button>
+      </div>
+
+      <div class="gap-row gap-row2">
+        <div class="gap-card">
+          <div class="gap-tag">AI, told exactly that</div>
+          <p class="gap-placeholder" id="placeholderL2">Waiting to hear it&hellip;</p>
+          <div class="gap-answer" id="answerL2"></div>
+        </div>
+        <div class="gap-divider"><span></span><span></span><span></span></div>
+        <div class="gap-card">
+          <div class="gap-tag amber">Me, told exactly that</div>
+          <p class="gap-placeholder" id="placeholderR2">Waiting to hear it&hellip;</p>
+          <div class="gap-answer" id="answerR2"></div>
+        </div>
+      </div>
+
+      <div class="verdict stage2" id="verdict2" role="status" aria-live="polite">
+        <strong>Same fact. Different fate.</strong>
+        <p>Even handed the real answer, AI smooths it into the same three adjectives it uses for everyone. It
+          can't tell a good detail from a boring one &mdash; a human can, and knows to leave it exactly as you
+          said it.</p>
+      </div>
+    </div>
+
+    <div class="gap-btnrow">
+      <button class="btn btn-ghost" id="resetBtn" type="button">Start over &#8635;</button>
     </div>
   </div>
 </section>

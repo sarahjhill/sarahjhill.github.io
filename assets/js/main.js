@@ -7,7 +7,7 @@
      2. Scroll handling       — sticky nav, progress bar, active link
      3. Cursor glow           — pointer-follow light in the hero
      4. Mobile menu           — burger toggle
-     5. The 3-second test     — the interactive choice + verdict
+     5. The concept gap        — ask-a-real-question interactive
      6. Counters & reveals    — IntersectionObserver
    Everything degrades safely when "reduce motion" is on.
    ============================================================ */
@@ -83,40 +83,106 @@
     a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
   });
 
-  /* ---- the 3-second test ---- */
-  var A=document.getElementById('cardA'), B=document.getElementById('cardB'),
-      bar=document.getElementById('testbar'), verdict=document.getElementById('verdict'),
-      vt=document.getElementById('vtitle'), vb=document.getElementById('vbody'),
-      testRun=false, testTimer=null;
+  /* ---- the concept gap ---- */
+  var DEFAULT_Q='What makes my business different?',
+      DEFAULT_A='My nan taught me the recipe in 1974, I still use her tin.';
 
-  function answer(choice){
-    if(!A || !B || A.disabled) return;
-    clearTimeout(testTimer);
-    A.disabled=true; B.disabled=true;
-    (choice==='B'?B:choice==='A'?A:null)&&(choice==='B'?B:A).classList.add('chosen');
-    if(choice==='B'){
-      vt.textContent='Same electrician. Both of them.';
-      vb.textContent='Nothing about her skill changed between those two cards. B just put the proof where the doubt was — the face, the years, the registration, the reviews. That is the entire job of your website, and it takes about three seconds to do or to fail.';
-    } else if(choice==='A'){
-      vt.textContent='Brave. Almost nobody does.';
-      vb.textContent='They are the same electrician. A gave you nothing to go on, so choosing her was a gamble — and most people will not gamble with their kitchen wiring. That is not unfair. It is just what happens when the proof is missing.';
-    } else {
-      vt.textContent='Time is up. You did not ring anyone.';
-      vb.textContent='Which is what most of them do. They do not pick the wrong one — they go back to Google and you never hear about it. Both cards were the same electrician; only one gave you a reason to believe her.';
-    }
+  var aiTemplates=[
+    "Great question! We pride ourselves on quality, professionalism, and outstanding customer service. Get in touch today to find out more.",
+    "As a trusted local business, we are committed to excellence and customer satisfaction in everything we do. Contact us for a free quote.",
+    "Thank you for your enquiry. We offer a wide range of services tailored to meet your needs, delivered to the highest standard. Reach out any time.",
+    "We understand how important this is to you. That's why we go above and beyond to deliver results you can rely on. Speak to our team today."
+  ];
+  var humanTemplates=[
+    "Before I answer that — what's the one thing your regulars say about you that you'd never think to put on a website?",
+    "Good question. Can I ask why you actually started this? That's usually where the real answer is hiding.",
+    "Tell me about the customer who came back a second time. What actually brought them back?",
+    "Here's my real question: what do you do that the place down the road doesn't?",
+    "Let's find out together — what's the story behind your last really good review?",
+    "Can I ask you something first? What's the bit of the job you're quietly proudest of?"
+  ];
+  var aiFlatten=[
+    "Got it — key takeaway: years of experience and a personal touch customers love.",
+    "Thanks for sharing! In summary: a strong heritage and genuine passion for quality.",
+    "To summarise: family tradition, decades of expertise, and real care in every detail.",
+    "Noted — headline: proud history, trusted by generations, built on quality."
+  ];
+
+  var qInput=document.getElementById('qInput'), askBtn=document.getElementById('askBtn'),
+      qInput2=document.getElementById('qInput2'), askBtn2=document.getElementById('askBtn2'),
+      resetBtn=document.getElementById('resetBtn'),
+      placeholderL=document.getElementById('placeholderL'), placeholderR=document.getElementById('placeholderR'),
+      placeholderL2=document.getElementById('placeholderL2'), placeholderR2=document.getElementById('placeholderR2'),
+      answerL=document.getElementById('answerL'), answerR=document.getElementById('answerR'),
+      answerL2=document.getElementById('answerL2'), answerR2=document.getElementById('answerR2'),
+      qechoL=document.getElementById('qechoL'),
+      planks=document.querySelectorAll('.gap-plank'), embers=document.querySelectorAll('.gap-ember'),
+      verdict=document.getElementById('verdict'), verdict2=document.getElementById('verdict2'),
+      chasmlabel=document.getElementById('chasmlabel'), stage2wrap=document.getElementById('stage2wrap'),
+      gapAsked1=false, gapAsked2=false;
+
+  function gapPick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  function gapEscape(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function gapAsk1(){
+    if(!askBtn || gapAsked1) return;
+    var q=(qInput.value||'').trim()||DEFAULT_Q;
+    gapAsked1=true;
+    askBtn.disabled=true; qInput.disabled=true;
+
+    qechoL.innerHTML='You asked: <b>&ldquo;'+gapEscape(q)+'&rdquo;</b>';
+    placeholderL.style.display='none'; placeholderR.style.display='none';
+
+    answerL.textContent=gapPick(aiTemplates);
+    answerR.innerHTML=gapPick(humanTemplates);
+
+    planks.forEach(function(p){ p.classList.add('on'); });
+    embers.forEach(function(e){ e.classList.add('on'); });
+    answerL.classList.add('on'); answerR.classList.add('on');
+    chasmlabel.textContent='closed'; chasmlabel.classList.add('closed');
     verdict.classList.add('show');
+    stage2wrap.classList.add('open');
   }
 
-  if(A && B){
-    A.addEventListener('click', function(){ answer('A'); });
-    B.addEventListener('click', function(){ answer('B'); });
+  function gapAsk2(){
+    if(!askBtn2 || !gapAsked1 || gapAsked2) return;
+    var a=(qInput2.value||'').trim()||DEFAULT_A;
+    gapAsked2=true;
+    askBtn2.disabled=true; qInput2.disabled=true;
+
+    placeholderL2.style.display='none'; placeholderR2.style.display='none';
+    answerL2.textContent=gapPick(aiFlatten);
+    answerR2.innerHTML='&ldquo;'+gapEscape(a)+'&rdquo; — that\'s not a summary. That\'s the line. It goes on the site exactly like that.';
+
+    answerL2.classList.add('on'); answerR2.classList.add('on');
+    verdict2.classList.add('show');
+    resetBtn.classList.add('show');
   }
 
-  function startTest(){
-    if(!bar || testRun) return; testRun=true;
-    if(reduce) return;
-    bar.classList.add('go');
-    testTimer=setTimeout(function(){ answer('none'); }, 3100);
+  function gapReset(){
+    gapAsked1=false; gapAsked2=false;
+    askBtn.disabled=false; qInput.disabled=false; qInput.value='';
+    askBtn2.disabled=false; qInput2.disabled=false; qInput2.value='';
+    placeholderL.style.display=''; placeholderR.style.display='';
+    placeholderL2.style.display=''; placeholderR2.style.display='';
+    qechoL.innerHTML='';
+    answerL.classList.remove('on'); answerL.textContent='';
+    answerR.classList.remove('on'); answerR.textContent='';
+    answerL2.classList.remove('on'); answerL2.textContent='';
+    answerR2.classList.remove('on'); answerR2.textContent='';
+    planks.forEach(function(p){ p.classList.remove('on'); });
+    embers.forEach(function(e){ e.classList.remove('on'); });
+    chasmlabel.textContent='the concept gap'; chasmlabel.classList.remove('closed');
+    verdict.classList.remove('show'); verdict2.classList.remove('show');
+    stage2wrap.classList.remove('open'); resetBtn.classList.remove('show');
+  }
+
+  if(askBtn){
+    askBtn.addEventListener('click', gapAsk1);
+    qInput.addEventListener('keydown', function(e){ if(e.key==='Enter') gapAsk1(); });
+    askBtn2.addEventListener('click', gapAsk2);
+    qInput2.addEventListener('keydown', function(e){ if(e.key==='Enter') gapAsk2(); });
+    resetBtn.addEventListener('click', gapReset);
   }
 
   /* ---- counters + reveals ---- */
@@ -141,14 +207,6 @@
   document.querySelectorAll('.stand').forEach(function(el,i){
     el.style.transitionDelay=((i%4)*70)+'ms'; io.observe(el);
   });
-
-  var testSection=document.getElementById('test');
-  if(testSection){
-    var testIO=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ startTest(); testIO.disconnect(); } });
-    },{threshold:.45});
-    testIO.observe(testSection);
-  }
 
   var replay=document.getElementById('replay');
   if(replay) replay.addEventListener('click', runCountdown);
