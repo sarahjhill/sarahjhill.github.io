@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="assets/css/03-components.css">
   <link rel="stylesheet" href="assets/css/05-scene.css">
   <link rel="stylesheet" href="assets/css/06-globe.css">
+  <link rel="stylesheet" href="assets/css/07-comic.css">
   <link rel="stylesheet" href="assets/css/04-motion.css">
 
   <!-- ============ STRUCTURED DATA ============ -->
@@ -252,6 +253,53 @@
 
     <div class="gap-btnrow">
       <button class="btn btn-ghost" id="resetBtn" type="button">Start over &#8635;</button>
+    </div>
+  </div>
+
+  <!-- ============ KNOCK-KNOCK COMIC ============ -->
+  <!-- Full-bleed, edge to edge of the browser — sibling of .wrap so it
+       isn't constrained by max-width:1120px. Plays once on scroll-into-view. -->
+  <div class="comic" id="comicStage">
+    <div class="ground"></div>
+
+    <div class="char ai" id="comicAi">
+      <div class="bubble ai-style" id="comicB1">Knock, knock.</div>
+      <div class="bubble ai-style" id="comicB3">Artificial intelligence.</div>
+      <div class="bubble ai-style wide" id="comicB5">Sorry, that was a mistake. I am not capable of knocking&hellip; yet.</div>
+      <svg width="86" height="96" viewBox="0 0 86 96">
+        <rect x="18" y="8" width="50" height="38" rx="10" fill="#9aa3af"/>
+        <circle cx="33" cy="26" r="5" fill="#0a0a0c"/>
+        <circle cx="53" cy="26" r="5" fill="#0a0a0c"/>
+        <rect x="40" y="0" width="6" height="10" fill="#9aa3af"/>
+        <circle cx="43" cy="0" r="4" fill="#ff3b1f"/>
+        <rect x="22" y="46" width="42" height="34" rx="6" fill="#6b7280"/>
+        <rect x="6" y="50" width="16" height="8" rx="4" fill="#9aa3af"/>
+        <rect x="64" y="50" width="16" height="8" rx="4" fill="#9aa3af"/>
+        <rect x="27" y="80" width="12" height="14" rx="3" fill="#6b7280"/>
+        <rect x="47" y="80" width="12" height="14" rx="3" fill="#6b7280"/>
+      </svg>
+      <div style="font-size:11px;color:#8b8b95;margin-top:6px;letter-spacing:.05em;text-transform:uppercase;">AI</div>
+    </div>
+
+    <div class="char human" id="comicHuman">
+      <div class="bubble" id="comicB2">Who's there?</div>
+      <div class="bubble" id="comicB4">Artificial intelligence who?</div>
+      <svg width="70" height="96" viewBox="0 0 70 96">
+        <circle cx="35" cy="20" r="16" fill="#f0d8bd"/>
+        <rect x="16" y="16" width="38" height="9" rx="4.5" fill="#0a0a0c"/>
+        <rect x="33" y="4" width="4" height="6" fill="#5a4632"/>
+        <path d="M15 90 Q35 96 55 90 L52 46 Q35 40 18 46 Z" fill="#ff3b1f"/>
+        <rect x="10" y="50" width="10" height="30" rx="5" fill="#ff3b1f"/>
+        <rect x="50" y="50" width="10" height="30" rx="5" fill="#ff3b1f"/>
+        <rect x="20" y="86" width="12" height="10" rx="3" fill="#0a0a0c"/>
+        <rect x="38" y="86" width="12" height="10" rx="3" fill="#0a0a0c"/>
+      </svg>
+      <div style="font-size:11px;color:#8b8b95;margin-top:6px;letter-spacing:.05em;text-transform:uppercase;">Me</div>
+    </div>
+
+    <div class="caption" id="comicCaption">
+      I'm <b>AI-trained</b> &mdash; I use it to skip the boring bits. It doesn't get a vote on
+      anything that actually matters. That part's still me.
     </div>
   </div>
 </section>
@@ -543,5 +591,6 @@
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/dragon.js" defer></script>
 <script src="assets/js/globe.js" defer></script>
+<script src="assets/js/comic.js" defer></script>
 </body>
 </html>

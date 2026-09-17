@@ -1,0 +1,109 @@
+/* ============================================================
+   07 · KNOCK-KNOCK COMIC
+   Sits at the bottom of #test (the concept gap section), full
+   bleed edge to edge of the browser — no frame, no side margin.
+   Two characters walk in from off-page, act out a joke, walk
+   off-page the other side. Plays once when scrolled into view.
+
+   Drawn with plain SVG + the Web Animations API — no libraries.
+   Respects prefers-reduced-motion: shows the final caption with
+   no movement.
+   ------------------------------------------------------------
+   Index:  stage · characters · bubbles · caption · reduced motion
+   ============================================================ */
+
+.comic{
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  margin-top: 56px;
+}
+
+.comic .ground{
+  position: absolute;
+  left: 0; right: 0; bottom: 66px;
+  height: 1px;
+  background: rgba(246,243,237,.14);
+}
+
+.comic .char{
+  position: absolute;
+  bottom: 66px;
+  left: -160px;
+  width: 120px;
+  text-align: center;
+  will-change: transform;
+}
+.comic .char svg{ display:block; margin:0 auto; overflow:visible; }
+.comic .char.walking svg{ animation: comicBob .46s ease-in-out infinite alternate; }
+.comic .char.looking svg{ animation: comicLook 2.1s ease-in-out; }
+
+@keyframes comicBob{
+  0%{ transform: translateY(0) rotate(-1.5deg); }
+  100%{ transform: translateY(-5px) rotate(1.5deg); }
+}
+@keyframes comicLook{
+  0%{ transform: rotate(0deg); }
+  18%{ transform: rotate(-13deg); }
+  38%{ transform: rotate(11deg); }
+  58%{ transform: rotate(-9deg); }
+  76%{ transform: rotate(6deg); }
+  100%{ transform: rotate(0deg); }
+}
+
+.comic .bubble{
+  position: absolute;
+  left: 50%; bottom: 100%;
+  transform: translateX(-50%) translateY(8px) scale(.85);
+  margin-bottom: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  padding: 10px 13px;
+  border-radius: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+.comic .bubble.wide{ white-space: normal; width: 220px; }
+.comic .bubble:after{
+  content: '';
+  position: absolute;
+  left: 50%; top: 100%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--paper);
+}
+.comic .bubble.show{ opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+.comic .bubble.ai-style{ background: #9aa3af; }
+.comic .bubble.ai-style:after{ border-top-color: #9aa3af; }
+
+.comic .caption{
+  position: absolute;
+  left: 0; right: 0; bottom: 14px;
+  text-align: center;
+  padding: 0 24px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-size: 15px;
+  color: #dedad3;
+}
+.comic .caption.show{ opacity: 1; }
+.comic .caption b{ color: var(--paper); }
+
+@media (prefers-reduced-motion: reduce){
+  .comic .char.walking svg,
+  .comic .char.looking svg{ animation: none; }
+}
+
+@media (max-width: 640px){
+  .comic{ height: 260px; }
+  .comic .char{ width: 92px; }
+  .comic .bubble{ font-size: 12px; padding: 8px 11px; }
+  .comic .bubble.wide{ width: 170px; }
+}
