@@ -1,7 +1,6 @@
 /* ============================================================
-   Knock-knock comic — plays once when scrolled into view.
-   Two characters walk in from off-page, act out the joke, walk
-   off-page the other side. See assets/css/07-comic.css.
+   Knock-knock comic — loops while scrolled into view, pausing
+   automatically once it scrolls off. See assets/css/07-comic.css.
    ============================================================ */
 (function(){
   var stage = document.getElementById('comicStage');
@@ -18,7 +17,9 @@
     b4: document.getElementById('comicB4'),
     b5: document.getElementById('comicB5')
   };
-  var played = false;
+  var inView = false;
+  var running = false;
+  var shownOnceForReduce = false;
 
   function wait(ms){ return new Promise(function(res){ setTimeout(res, ms); }); }
 
@@ -31,22 +32,21 @@
     return el.animate([{ left: from }, { left: to }], { duration: duration, easing: 'linear', fill: 'forwards' }).finished;
   }
 
-  async function play(){
-    if(played) return;
-    played = true;
+  function resetScene(){
+    Object.keys(bubbles).forEach(function(k){ bubbles[k].classList.remove('show'); });
+    caption.classList.remove('show');
+    ai.classList.remove('walking', 'looking');
+    human.classList.remove('walking', 'looking');
+  }
 
+  async function playOnce(){
     var w = stage.clientWidth;
     var pauseAI = Math.round(w*0.15 + 50) + 'px';
     var pauseHuman = Math.round(w*0.15 - 110) + 'px';
     var endAI = (w + 160) + 'px';
     var endHuman = (w + 20) + 'px';
 
-    if(reduce){
-      ai.style.left = pauseAI; human.style.left = pauseHuman;
-      caption.classList.add('show');
-      return;
-    }
-
+    resetScene();
     ai.style.left = '-160px'; human.style.left = '-320px';
 
     /* walk in from fully off-page */
@@ -77,17 +77,41 @@
     ai.classList.remove('walking'); human.classList.remove('walking');
   }
 
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          play();
-          io.disconnect();
+  async function runLoop(){
+    if(running) return;
+    running = true;
+    while(inView){
+      await playOnce();
+      if(!inView) break;
+      await wait(1400);
+    }
+    running = false;
+  }
+
+  function handleIntersect(entries){
+    entries.forEach(function(entry){
+      inView = entry.isIntersecting;
+      if(reduce){
+        if(inView && !shownOnceForReduce){
+          shownOnceForReduce = true;
+          var w = stage.clientWidth;
+          ai.style.left = Math.round(w*0.15 + 50) + 'px';
+          human.style.left = Math.round(w*0.15 - 110) + 'px';
+          caption.classList.add('show');
         }
-      });
-    }, { threshold: 0.35 });
+        return;
+      }
+      if(inView) runLoop();
+    });
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(handleIntersect, { threshold: 0.35 });
     io.observe(stage);
+  } else if(!reduce){
+    inView = true;
+    runLoop();
   } else {
-    play();
+    caption.classList.add('show');
   }
 })();
