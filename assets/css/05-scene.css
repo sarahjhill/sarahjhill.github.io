@@ -20,7 +20,24 @@
   line-height: 0;
 }
 
-.sjh-dragon-canvas{ display: block; width: 100%; height: 100%; }
+.sjh-dragon-canvas{
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* the 3D model sits above the flame canvas — the fire is meant to
+   read as coming from in front of/around the dragon, not the other
+   way round */
+.sjh-dragon-3d{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 /* --- the line that explains the dragon --- */
 .ember-line{
