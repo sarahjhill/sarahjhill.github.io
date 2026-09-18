@@ -34,14 +34,20 @@
   width: 120px;
   text-align: center;
   will-change: transform;
+  z-index: 2;
 }
 .comic .char svg{ display:block; margin:0 auto; overflow:visible; }
 .comic .char.walking svg{ animation: comicBob .46s ease-in-out infinite alternate; }
 .comic .char.looking svg{ animation: comicLook 2.1s ease-in-out; }
+.comic .char.running svg{ animation: comicRun .22s ease-in-out infinite alternate; }
 
 @keyframes comicBob{
   0%{ transform: translateY(0) rotate(-1.5deg); }
   100%{ transform: translateY(-5px) rotate(1.5deg); }
+}
+@keyframes comicRun{
+  0%{ transform: translateY(0) rotate(-4deg) scaleX(1.04); }
+  100%{ transform: translateY(-9px) rotate(4deg) scaleX(0.96); }
 }
 @keyframes comicLook{
   0%{ transform: rotate(0deg); }
@@ -50,6 +56,20 @@
   58%{ transform: rotate(-9deg); }
   76%{ transform: rotate(6deg); }
   100%{ transform: rotate(0deg); }
+}
+
+/* --- the AI, torched --------------------------------------------- */
+.comic .char.melt{ z-index: 1; }
+.comic .char.melt svg{
+  animation: charMelt 900ms ease-in forwards;
+  transform-origin: 50% 100%;
+}
+.comic .char.melt > div{ transition: opacity .3s ease; opacity: 0; }
+@keyframes charMelt{
+  0%{ transform: scaleY(1) scaleX(1) skewX(0deg); filter: brightness(1) blur(0px); opacity: 1; }
+  30%{ transform: scaleY(0.85) scaleX(1.08) skewX(-3deg); filter: brightness(1.5) blur(.5px); }
+  70%{ transform: scaleY(0.35) scaleX(1.28) skewX(4deg) translateY(10%); filter: brightness(1.7) blur(1.5px); opacity: .85; }
+  100%{ transform: scaleY(0.04) scaleX(1.4) skewX(0deg) translateY(28%); filter: brightness(.6) blur(2px); opacity: 0; }
 }
 
 .comic .bubble{
@@ -92,13 +112,98 @@
   transition: opacity 1s ease;
   font-size: 15px;
   color: #dedad3;
+  z-index: 5;
 }
 .comic .caption.show{ opacity: 1; }
 .comic .caption b{ color: var(--paper); }
 
+/* --- the dragon's cameo: its own 3D canvas + its own fire canvas,
+   layered above the ground/characters and below the caption/spray --- */
+.comic-dragon-3d{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 3;
+}
+.comic-fire-canvas{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* --- "Content is King" spray, where the AI used to stand --- */
+.comic-spray{
+  position: absolute;
+  left: 0; right: 0; bottom: 66px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 6;
+}
+.comic-spray.show{ opacity: 1; }
+.spray-embers{
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 340px; height: 100%;
+  transform: translateX(-50%);
+}
+.spray-embers span{
+  position: absolute;
+  bottom: 0; width: 6px; height: 6px; border-radius: 50%;
+  background: radial-gradient(circle, #ffe7a6, #ff7a1a 60%, transparent 75%);
+  opacity: 0;
+}
+.comic-spray.show .spray-embers span{ animation: emberSpray 1100ms ease-out forwards; }
+.spray-embers span:nth-child(1){ left: 6%;  animation-delay: .02s; }
+.spray-embers span:nth-child(2){ left: 18%; animation-delay: .10s; }
+.spray-embers span:nth-child(3){ left: 30%; animation-delay: .03s; }
+.spray-embers span:nth-child(4){ left: 44%; animation-delay: .14s; }
+.spray-embers span:nth-child(5){ left: 58%; animation-delay: .06s; }
+.spray-embers span:nth-child(6){ left: 70%; animation-delay: .16s; }
+.spray-embers span:nth-child(7){ left: 83%; animation-delay: .08s; }
+.spray-embers span:nth-child(8){ left: 94%; animation-delay: .12s; }
+@keyframes emberSpray{
+  0%{ transform: translateY(0) scale(.6); opacity: 0; }
+  15%{ opacity: 1; }
+  100%{ transform: translateY(-160px) scale(1.1); opacity: 0; }
+}
+.spray-text{
+  position: relative;
+  z-index: 2;
+  font-weight: 800;
+  font-size: clamp(26px, 5vw, 44px);
+  letter-spacing: -.02em;
+  color: var(--paper);
+  text-shadow: 0 0 18px rgba(255,122,26,.55), 0 0 40px rgba(255,59,31,.35);
+  transform: translateY(40px);
+  opacity: 0;
+}
+.comic-spray.show .spray-text{
+  animation: spraySettle 900ms cubic-bezier(.2,1.4,.4,1) forwards .15s;
+}
+@keyframes spraySettle{
+  0%{ transform: translateY(70px) scale(.85); opacity: 0; }
+  60%{ transform: translateY(-8px) scale(1.04); opacity: 1; }
+  100%{ transform: translateY(0) scale(1); opacity: 1; }
+}
+.spray-dot{ color: var(--flame); }
+
 @media (prefers-reduced-motion: reduce){
   .comic .char.walking svg,
-  .comic .char.looking svg{ animation: none; }
+  .comic .char.looking svg,
+  .comic .char.running svg,
+  .comic .char.melt svg{ animation: none; }
+  .spray-embers span,
+  .spray-text{ animation: none; }
 }
 
 @media (max-width: 640px){
@@ -106,4 +211,5 @@
   .comic .char{ width: 92px; }
   .comic .bubble{ font-size: 12px; padding: 8px 11px; }
   .comic .bubble.wide{ width: 170px; }
+  .spray-embers{ width: 240px; }
 }
