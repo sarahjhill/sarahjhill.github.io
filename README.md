@@ -46,7 +46,7 @@ If a change disagrees with that file, one of the two is wrong.
 ```
 index.html                   Home
 website-audit.html           The Doubt Audit — the free offer
-project-os.html              The SJH Process — client view + £39 studio licence
+project-os.html              The Dragon Fire Process — client view + £39 studio licence
 cardiff-community-meals.html Case study
 emails-media.html            Case study
 portfolio-project.html       Case study (Muslim Bookers)
@@ -107,7 +107,7 @@ rather than a gradient built per particle per frame, and the whole thing paints
 at 30fps. Drawing every dot every frame at 60fps cost 320ms of blocking time.
 Particles are capped at 130.
 
-**The SJH Process speaks to two people.** The first half is what a *client*
+**The Dragon Fire Process speaks to two people.** The first half is what a *client*
 sees — the live project page, everything in one place, one step at a time, no
 chasing — and links to the guest demo on the Project OS site. The second half is
 a dark panel selling the process to *other studios* for £39, rebranded as
@@ -168,7 +168,7 @@ numbers drift apart.
 
 - Title, meta description, canonical, Open Graph and Twitter cards all set.
 - **JSON-LD structured data** in `index.html` — `ProfessionalService` with
-  founder, areas served, and both offers (Doubt Audit, SJH Process). This is
+  founder, areas served, and both offers (Doubt Audit, Dragon Fire Process). This is
   what gets you a rich result rather than a plain blue link.
 - `sitemap.xml` and `robots.txt` are wired up.
 - One `<h1>`, then `<h2>`s in order. Search engines and screen readers both

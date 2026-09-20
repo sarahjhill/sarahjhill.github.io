@@ -124,7 +124,7 @@ payoff so nothing is a feature — it is all consequence.
 **Work · dark**
 
 **On screen.** Four tiles: Cardiff Community Meals, Many Voices, Muslimah Web
-Design, the SJH Process. Images scale 6% on hover.
+Design, the Dragon Fire Process. Images scale 6% on hover.
 
 **The job.** She has just been told to lead with proof. This is the site doing
 what it sells. Real, live, clickable.
@@ -132,7 +132,7 @@ what it sells. Real, live, clickable.
 ---
 
 ## Scene 08 · The Product
-**SJH Process · sand**
+**Dragon Fire Process · sand**
 
 **On screen.** Four counters — 12 / 69 / 72 / 5 — animating from zero on entry.
 Then rows split *for the client* and *for the studio*, chips, two buttons.

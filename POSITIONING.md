@@ -98,7 +98,7 @@ also a local news story that isn't about web design at all.
 
 ## The product
 
-**The SJH Process** — 12 phases, 69 guided tasks, 72 templates, 5 client forms.
+**The Dragon Fire Process** — 12 phases, 69 guided tasks, 72 templates, 5 client forms.
 
 Sold on one promise: *nobody should have to type "any update?"*.
 The industry standard is three weeks of silence and a hopeful email. This is
@@ -111,7 +111,7 @@ Two markets: clients (reassurance) and other studios (licence it).
 ## Open decisions
 
 - **Name.** "Make It Pop" sells the paint; this business sells the foundations.
-  This redesign runs under **Sarah J Hill**, with the SJH Process as the named
+  This redesign runs under **Sarah J Hill**, with the Dragon Fire Process as the named
   product. Alternatives considered: Level, Underestimated, Plumb.
 - **Location.** The site currently says Cardiff & South Wales; the CV says
   Birmingham. Pick one or claim both deliberately.

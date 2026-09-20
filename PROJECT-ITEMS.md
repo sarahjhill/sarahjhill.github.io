@@ -53,7 +53,7 @@ Four live project tiles. JOB: the site doing what scene 06 just promised — lea
 DONE WHEN: every tile links somewhere live and loads a real screenshot.
 
 
-### SB-08 · The Product (SJH Process)
+### SB-08 · The Product (Dragon Fire Process)
 
 Counters 12/69/72/5, split for-the-client and for-the-studio, licence CTA.
 JOB: the second revenue stream.
@@ -106,7 +106,7 @@ Its structure is already the model for the new homepage. Bring it into the new d
 
 ### Redesign project-os.html to match
 
-The SJH Process product page. Needs the licence offer made explicit, not just a demo link.
+The Dragon Fire Process product page. Needs the licence offer made explicit, not just a demo link.
 
 
 ## Content
@@ -129,7 +129,7 @@ One tradeswoman, one Muslim-woman-owned business. Problem, what changed, what ha
 
 ### Decide the name
 
-Make It Pop sells the paint; this business sells the foundations. Currently running as Sarah J Hill with SJH Process as the product. Alternatives: Level, Underestimated, Plumb. See POSITIONING.md.
+Make It Pop sells the paint; this business sells the foundations. Currently running as Sarah J Hill with Dragon Fire Process as the product. Alternatives: Level, Underestimated, Plumb. See POSITIONING.md.
 
 
 ### Decide Cardiff, Birmingham, or both

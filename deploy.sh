@@ -30,8 +30,10 @@ echo "→ Pushing to GitHub"
 git push
 
 REMOTE=$(git remote get-url origin 2>/dev/null || echo "")
-USER=$(echo "$REMOTE" | sed -E 's#.*[:/]([^/]+)/[^/]+(\.git)?$#\1#')
-REPO=$(echo "$REMOTE" | sed -E 's#.*/([^/]+?)(\.git)?$#\1#')
+# Plain shell rather than sed: macOS ships BSD sed, which has no lazy
+# quantifier, so the old `([^/]+?)` pattern errored on every deploy.
+REPO=${REMOTE##*/}; REPO=${REPO%.git}
+_OWNER_PATH=${REMOTE%/*}; USER=${_OWNER_PATH##*[:/]}
 
 echo
 echo "Done. GitHub Pages usually rebuilds within a minute."

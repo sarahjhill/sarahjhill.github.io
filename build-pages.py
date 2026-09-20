@@ -77,7 +77,7 @@ SHELL = """<!DOCTYPE html>
       <a href="index.html#you">Who it's for</a>
       <a href="index.html#test">The 3-second test</a>
       <a href="index.html#about">About me</a>
-      <a href="project-os.html">SJH Process</a>
+      <a href="project-os.html">Dragon Fire Process</a>
       <a href="{portfolio}">Portfolio</a>
       <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Brief me</a>
     </div>
@@ -305,13 +305,13 @@ PAGES["website-audit.html"] = dict(
 
 # ------------------------------------------------------------- sjh process
 PAGES["project-os.html"] = dict(
-    title="The SJH Process — client portal and studio licence | Sarah J Hill",
+    title="The Dragon Fire Process — client portal and studio licence | Sarah J Hill",
     desc=("Twelve phases, 69 guided tasks and 72 templates. Clients watch the build happen "
           "instead of chasing it, and other studios can licence the whole process for £39."),
     ogtitle="Nobody should have to type &ldquo;any update?&rdquo;",
     ogtype="website",
     backhref="index.html", backtext="Back to the start",
-    eyebrow="The SJH Process &mdash; my custom client process",
+    eyebrow="The Dragon Fire Process &mdash; my custom client process",
     h1="Nobody should have to type <span class=\"hit\">&ldquo;any update?&rdquo;</span>",
     lead=("The industry standard is three weeks of silence and a hopeful email. I built my own "
           "custom client process instead &mdash; streamlined, transparent, and clean enough that "
@@ -328,7 +328,7 @@ PAGES["project-os.html"] = dict(
     jsonld="""  {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "The SJH Process",
+    "name": "The Dragon Fire Process",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any modern browser",
     "url": "https://sarahjhill.com/project-os/",
