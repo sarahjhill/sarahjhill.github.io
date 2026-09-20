@@ -1,5 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#0a0a0c"/>
-  <text x="32" y="46" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="42"
-        font-weight="800" fill="#ff3b1f" text-anchor="middle">3</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"
+     role="img" aria-label="Sarah J Hill — Dragon Fire Design">
+  <title>Sarah J Hill — Dragon Fire Design</title>
+
+  <defs>
+    <linearGradient id="scale" x1=".15" y1="0" x2=".85" y2="1">
+      <stop offset="0"  stop-color="#ffb020"/>
+      <stop offset=".5" stop-color="#ff6a1f"/>
+      <stop offset="1"  stop-color="#ff3b1f"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="0" y1=".7" x2="1" y2=".1">
+      <stop offset="0"   stop-color="#ff3b1f"/>
+      <stop offset=".45" stop-color="#ffb020"/>
+      <stop offset="1"   stop-color="#fff2c8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="#0a0a0c"/>
+
+  <!-- ================= FIRE ================= -->
+  <g fill="url(#fire)">
+    <path d="M344 232
+             C382 224 408 214 436 192
+             C430 222 412 242 388 254
+             C412 252 432 244 452 230
+             C442 268 412 292 372 298
+             C348 302 328 292 320 278
+             C314 266 332 240 344 232 Z"/>
+    <path d="M356 214 C376 198 390 178 398 152
+             C410 180 406 208 388 228
+             C378 238 364 238 356 230 Z" opacity=".95"/>
+    <path d="M330 288 C356 296 384 294 410 284
+             C396 310 368 322 340 316
+             C328 313 324 300 324 292 Z" opacity=".9"/>
+  </g>
+
+  <!-- ================= THE DRAGON — angular, heraldic ================= -->
+  <g fill="url(#scale)">
+
+    <!-- neck -->
+    <path d="M118 418 L150 318 L204 262 L250 306 L206 340 L184 418 Z"/>
+    <!-- ridge spines up the back of the neck -->
+    <path d="M152 312 L118 274 L176 286 Z"/>
+    <path d="M190 268 L166 226 L216 250 Z"/>
+
+    <!-- skull: brow ridge over the eye, straight nose bridge to a sharp snout -->
+    <path d="M204 262
+             L212 206
+             L242 174
+             L286 166
+             L318 182
+             L352 212
+             L296 234
+             L242 230
+             L214 248 Z"/>
+
+    <!-- lower jaw: a clean wedge, hinged under the eye -->
+    <path d="M222 268
+             L262 252
+             L306 256
+             L342 268
+             L288 284
+             L246 292 Z"/>
+
+    <!-- brow horn, swept back hard -->
+    <path d="M254 172 L236 124 L186 92 L242 100 L282 140 L288 170 Z"/>
+    <!-- second horn, shorter, behind -->
+    <path d="M228 186 L208 148 L166 122 L214 130 L246 162 L248 184 Z" opacity=".7"/>
+    <!-- jaw barbel, the small spike under the cheek -->
+    <path d="M226 272 L196 300 L216 258 Z" opacity=".85"/>
+  </g>
+
+  <!-- eye -->
+  <circle cx="262" cy="206" r="15" fill="#0a0a0c"/>
+  <circle cx="264" cy="204" r="7" fill="#ffb020"/>
 </svg>

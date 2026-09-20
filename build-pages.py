@@ -47,6 +47,8 @@ SHELL = """<!DOCTYPE html>
   <meta name="twitter:image" content="{site}/assets/img/og-card.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Sarah J Hill">
 
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="assets/css/01-tokens.css">
@@ -67,7 +69,7 @@ SHELL = """<!DOCTYPE html>
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="index.html">Sarah J <span>Hill</span><em>Dragon Fire Design</em></a>
+    <a class="brand" href="index.html"><img class="brand-mark" src="assets/img/logo-mark-160.png" alt="" width="38" height="38"><b>Sarah J <span>Hill</span><em>Dragon Fire Design</em></b></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
@@ -162,11 +164,10 @@ PAGES = {}
 
 # ---------------------------------------------------------------- audit
 PAGES["website-audit.html"] = dict(
-    title="The Doubt Audit — Free Website Review | Sarah J Hill, Cardiff",
-    desc=("A free website review judged the way a doubtful customer judges it — on a phone, "
-          "in a hurry, hunting for a reason to say no. Plain English, two working days, "
-          "no invented numbers."),
-    ogtitle="You've already got a website. Is it actually working?",
+    title="The Doubt Audit — how many customers doubt you? | Sarah J Hill",
+    desc=("A free website review that answers one question: how many customers doubt you before "
+          "they ever ring? Two working days, nothing to pay, and no catch."),
+    ogtitle="How many customers doubt you before they ring?",
     ogtype="website",
     backhref="index.html", backtext="Back to the start",
     eyebrow="Already got a website? &mdash; free, no catch",
@@ -304,9 +305,9 @@ PAGES["website-audit.html"] = dict(
 
 # ------------------------------------------------------------- sjh process
 PAGES["project-os.html"] = dict(
-    title="The SJH Process — Client Portal &amp; Studio Licence | Sarah J Hill",
-    desc=("The project system I run every build on. Clients watch every phase as it happens. "
-          "Other studios can licence the whole process, rebranded as theirs, for £39."),
+    title="The SJH Process — client portal and studio licence | Sarah J Hill",
+    desc=("Twelve phases, 69 guided tasks and 72 templates. Clients watch the build happen "
+          "instead of chasing it, and other studios can licence the whole process for £39."),
     ogtitle="Nobody should have to type &ldquo;any update?&rdquo;",
     ogtype="website",
     backhref="index.html", backtext="Back to the start",
@@ -438,9 +439,9 @@ PAGES["project-os.html"] = dict(
 
 # --------------------------------------------------------------- CCM
 PAGES["cardiff-community-meals.html"] = dict(
-    title="Cardiff Community Meals — Community Platform | Sarah J Hill",
-    desc=("Neighbours fund a meal, a Cardiff kitchen cooks it, someone who needs it eats it — and every "
-          "step is tracked to the door. A working not-for-profit prototype looking for partners."),
+    title="Cardiff Community Meals — case study | Sarah J Hill",
+    desc=("Neighbours fund a meal, a Cardiff kitchen cooks it, and someone who needs it eats it "
+          "— every step tracked to the penny. A community platform built by hand."),
     ogtitle="Cardiff Community Meals — a cwtch, delivered with dinner",
     ogtype="article",
     backhref="index.html#work", backtext="Back to the work",
@@ -539,9 +540,9 @@ PAGES["cardiff-community-meals.html"] = dict(
 
 # ------------------------------------------------------------ emails/media
 PAGES["emails-media.html"] = dict(
-    title="Emails, Posters &amp; Campaign Media | Sarah J Hill, Cardiff",
-    desc=("Campaign emails that survive Outlook, posters readable from three metres, flyers and promo "
-          "video for community organisations, schools and small charities."),
+    title="Emails, posters and campaign media | Sarah J Hill, Cardiff",
+    desc=("Campaign emails that survive Outlook, posters readable from three metres, and flyers "
+          "and promo video for community organisations. One organisation, one look."),
     ogtitle="Emails, posters and media that look like one organisation",
     ogtype="article",
     backhref="index.html#work", backtext="Back to the work",
@@ -636,9 +637,9 @@ PAGES["emails-media.html"] = dict(
 
 # --------------------------------------------------------- muslim bookers
 PAGES["portfolio-project.html"] = dict(
-    title="Muslim Bookers — Halal Travel Booking | Sarah J Hill",
-    desc=("Halal hotels and holidays in one place, with real reviews and honest prices — so nobody has "
-          "to open six tabs to check they are not overpaying."),
+    title="Muslim Bookers — halal travel booking | Sarah J Hill",
+    desc=("Halal hotels and holidays in one place, with real reviews and honest prices, so nobody "
+          "has to open six tabs to check whether somewhere is suitable."),
     ogtitle="Muslim Bookers — halal travel without six tabs open",
     ogtype="article",
     backhref="index.html#work", backtext="Back to the work",
