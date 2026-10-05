@@ -16,6 +16,9 @@ EMAIL = "sarah@sarahjhill.com"
 DEMO = "https://sarahjhill.com/project-os/app.html?guest=1"
 PROJECT_OS = "https://sarahjhill.com/project-os/"
 PORTFOLIO = "https://sarahjhill.com/portfolio/"
+# The ember-store Cloudflare Worker (see ember-themes/delivery-worker). Paste the URL
+# `npx wrangler deploy` prints, or a custom domain like https://store.sarahjhill.com
+STORE_API = "https://ember-store.REPLACE-ME.workers.dev"
 
 SHELL = """<!DOCTYPE html>
 <html lang="en-GB">
@@ -28,7 +31,7 @@ SHELL = """<!DOCTYPE html>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{site}/{slug}">
   <meta name="author" content="Sarah J Hill">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="robots" content="{robots}">
   <meta name="theme-color" content="#0a0a0c">
 
   <meta property="og:type" content="{ogtype}">
@@ -708,6 +711,286 @@ PAGES["portfolio-project.html"] = dict(
 )
 
 
+# --------------------------------------------------------------- THEMES
+STORE_DIV = (f'<div id="store" data-store-api="{STORE_API}" '
+             f'data-fallback="mailto:{EMAIL}?subject=Ember%20theme"></div>\n'
+             '<script src="assets/js/store.js" defer></script>\n')
+
+
+def plan(name, price, items, product, best=False, tag=""):
+    li = "".join(f"<li>{i}</li>" for i in items)
+    t = f'<span class="tag">{tag}</span>' if tag else ""
+    return f"""      <div class="plan stand{' best' if best else ''}">
+        {t}<h3>{name}</h3>
+        <div class="price">&pound;{price}<small>one-off</small></div>
+        <ul>{li}</ul>
+        <a class="btn btn-primary" href="#buy" data-buy="{product}">Buy {name} &rarr;</a>
+        <p class="buy-msg" aria-live="polite"></p>
+      </div>
+"""
+
+
+IMG = "assets/img/ember/"
+
+
+def feat(img, w, h, where, title, text, alt):
+    return f"""      <div class="feat stand">
+        <div class="shot{' shot--wide' if w / h > 2 else ''}"><img src="{IMG}{img}.webp" width="{w}" height="{h}" alt="{alt}" loading="lazy"></div>
+        <span class="where">{where}</span>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
+"""
+
+
+def page_btn(label, img, w, h, alt, pressed=False):
+    return (f'<button type="button" data-target="desk-view" data-show-page="{IMG}{img}.webp" data-w="{w}" data-h="{h}" '
+            f'data-alt="{alt}" aria-pressed="{"true" if pressed else "false"}">{label}</button>')
+
+
+PAGES["themes.html"] = dict(
+    title="Ember — a marketplace theme for Shopify &amp; WooCommerce | Sarah J Hill",
+    desc=("Ember is a soft, British marketplace theme for Shopify and WooCommerce. Category bubbles, "
+          "lightning deals, shop-by-budget and a mobile app bar. Edit everything visually. £59."),
+    ogtitle="Ember: a marketplace theme with manners",
+    ogtype="product",
+    backhref="index.html", backtext="Back to the start",
+    eyebrow="Ember &mdash; marketplace theme for Shopify &amp; WooCommerce",
+    h1="All the buzz of a marketplace. <span class=\"hit\">None of the tat.</span>",
+    lead=("Category bubbles, lightning deals, shop-by-budget and an app-style bar on phones. "
+          "Wrapped in soft colours, a proper serif and a bit of British cheek. Install it tonight, "
+          "then edit every word yourself."),
+    herocta="""    <div class="cta-row">
+      <a class="btn btn-primary" href="#buy">Get Ember &mdash; from &pound;59 &rarr;</a>
+      <a class="btn btn-ghost" href="#look">Have a proper look</a>
+    </div>
+    <div class="platform-tag"><b>Shopify</b><b>WooCommerce</b><b>Instant download</b><b>No code</b></div>""",
+    jsonld="""  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Ember marketplace theme",
+    "image": "https://sarahjhill.com/assets/img/ember/desktop-home.webp",
+    "brand": { "@type": "Brand", "name": "Sarah J Hill" },
+    "description": "A soft, British marketplace theme for Shopify and WooCommerce, edited visually.",
+    "offers": [
+      { "@type": "Offer", "name": "Shopify", "price": "59", "priceCurrency": "GBP", "availability": "https://schema.org/InStock", "url": "https://sarahjhill.com/themes.html#buy" },
+      { "@type": "Offer", "name": "WooCommerce", "price": "59", "priceCurrency": "GBP", "availability": "https://schema.org/InStock", "url": "https://sarahjhill.com/themes.html#buy" },
+      { "@type": "Offer", "name": "Bundle", "price": "89", "priceCurrency": "GBP", "availability": "https://schema.org/InStock", "url": "https://sarahjhill.com/themes.html#buy" }
+    ]
+  }""",
+    body=(
+        f"""<!-- ============ HERO MOCK ============ -->
+<section class="dark showcase" aria-label="Ember on a laptop and a phone">
+  <div class="wrap">
+    <div class="mock stand">
+      <div class="browser">
+        <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>buntingandco.co.uk</span></div>
+        <img src="{IMG}desktop-home.webp" width="1600" height="1000" alt="Ember home page: a pink welcome card reading Proper lovely things, sensible prices, beside lightning deals and new-in tiles" fetchpriority="high">
+      </div>
+      <div class="phone"><img src="{IMG}phone-home.webp" width="540" height="1168" alt="Ember on a phone, with a big search bar and an app-style bar along the bottom"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESPONSIVE ============ -->
+<section class="band" id="look">
+  <div class="wrap">
+    <p class="eyebrow stand">Every screen</p>
+    <h2 class="stand">Built for phones first. Lovely everywhere else.</h2>
+    <p class="lead stand">Most of your customers will meet you on a phone, mid-scroll, thumb hovering.
+      So the search bar is huge, the basket is one tap away and the bottom bar feels like an app.</p>
+
+    <div class="devices">
+      <div class="device-tabs" role="tablist" aria-label="Choose a screen size">
+        <button type="button" role="tab" id="tab-desk" aria-controls="panel-desk" aria-selected="true">Desktop</button>
+        <button type="button" role="tab" id="tab-tab" aria-controls="panel-tab" aria-selected="false" tabindex="-1">Tablet</button>
+        <button type="button" role="tab" id="tab-phone" aria-controls="panel-phone" aria-selected="false" tabindex="-1">Phone</button>
+      </div>
+
+      <div class="device-panel" id="panel-desk" role="tabpanel" aria-labelledby="tab-desk">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>buntingandco.co.uk</span></div>
+          <div class="scroller-view" id="desk-view" tabindex="0" aria-label="Scrollable screenshot">
+            <img src="{IMG}desktop-home-full.webp" width="1200" height="3750" alt="The whole Ember home page, from welcome card to reviews" loading="lazy">
+          </div>
+        </div>
+        <div class="page-thumbs">
+          {page_btn("Home", "desktop-home-full", 1200, 3750, "The whole Ember home page, from welcome card to reviews", True)}
+          {page_btn("Shop + filters", "desktop-shop", 1400, 875, "Shop page with price, category, rating and stock filters")}
+          {page_btn("Product", "desktop-product", 1400, 875, "Product page with sale price, reviews and a delivery promise")}
+          {page_btn("Deals page", "desktop-deals", 1400, 875, "Today’s deals page with a countdown to midnight")}
+        </div>
+        <p class="scroll-hint">Scroll inside the window to see the whole page.</p>
+      </div>
+
+      <div class="device-panel" id="panel-tab" role="tabpanel" aria-labelledby="tab-tab" hidden>
+        <div class="tablet"><img src="{IMG}tablet-home.webp" width="820" height="1180" alt="Ember on a tablet, with the welcome card above two offer tiles" loading="lazy"></div>
+      </div>
+
+      <div class="device-panel" id="panel-phone" role="tabpanel" aria-labelledby="tab-phone" hidden>
+        <div class="phones">
+          <figure><div class="phone"><img src="{IMG}phone-home.webp" width="540" height="1168" alt="Home page on a phone" loading="lazy"></div><figcaption>Home</figcaption></figure>
+          <figure><div class="phone"><img src="{IMG}phone-product.webp" width="540" height="1168" alt="Product page on a phone" loading="lazy"></div><figcaption>Product</figcaption></figure>
+          <figure><div class="phone"><img src="{IMG}phone-cart.webp" width="540" height="1168" alt="Basket on a phone with a free delivery progress bar" loading="lazy"></div><figcaption>Basket</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="dark" id="features">
+  <div class="wrap">
+    <p class="eyebrow stand">What makes it a marketplace</p>
+    <h2 class="stand">The bits that make people buy one more thing.</h2>
+    <div class="feat-grid">
+"""
+        + feat("f-rail", 760, 235, "Home page", "Category bubbles",
+               "A swipeable row of round pictures, like the apps people already use. One tap to an aisle.",
+               "Round category pictures: kitchen, tea time, rainy days, garden and more")
+        + feat("f-deals", 760, 126, "Home + deals page", "Lightning deals",
+               "Sale items with a live countdown that resets at midnight. Urgency, without the shouting.",
+               "Lightning deals heading with a countdown timer")
+        + feat("f-card", 400, 737, "Every product grid", "Cards that do the selling",
+               "Stars, the saving, the sale badge and a one-tap Add to basket. On Shopify: “Sold by” and “Only 3 left” too.",
+               "A product card for a breakfast bowl with a sale badge, stars and a basket button")
+        + feat("f-budget", 760, 117, "Home page", "Shop by budget",
+               "Under £5, £10, £20. Straight into a filtered shop. Bargain hunters, sorted.",
+               "Price chips: under five, ten, twenty and fifty pounds")
+        + feat("f-delivery", 800, 270, "Product page", "Delivery promise",
+               "“Order within 2h 30m and it ships today.” Counts down to your own dispatch cut-off.",
+               "Delivery box: order now and it ships next working day, free UK delivery, 30-day returns")
+        + feat("f-shipping", 700, 174, "Basket", "Free delivery nudge",
+               "A progress bar that tells them how close they are, and updates as they add.",
+               "Progress bar reading Free delivery, sorted")
+        + feat("f-bottom-nav", 700, 114, "Phones", "App-style bottom bar",
+               "Home, Shop, Deals, Account, Basket. Always under their thumb.",
+               "Bottom bar with home, shop, deals, account and basket icons")
+        + feat("f-filters", 360, 893, "Shop pages", "Proper filters",
+               "Price slider, categories, ratings and stock. People find it, then they buy it.",
+               "Filter panel with a price slider, categories, ratings and availability")
+        + feat("f-header", 760, 121, "Every page", "Search front and centre",
+               "A big, friendly search bar with live suggestions. The most-used box in any marketplace.",
+               "Header with a large search bar, the menu and a Today’s deals link")
+        + """    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORMS ============ -->
+<section class="band alt" id="platforms">
+  <div class="wrap">
+    <p class="eyebrow stand">Which one's for you</p>
+    <h2 class="stand">Same look. Your platform.</h2>
+    <p class="lead stand">Both versions share the design you can see above. Pick the one your shop
+      runs on, or get both if you build for clients.</p>
+    <div class="platforms">
+      <div class="platform stand">
+        <h3>Shopify</h3>
+        <p class="for">For shops that want hosting, payments and security handled.</p>
+        <dl>
+          <dt>You edit in</dt><dd>Online Store &rarr; Customize. Drag, drop, click, type.</dd>
+          <dt>Included</dt><dd>25 drag-in sections, 8 colour schemes, signature fonts or any Shopify font</dd>
+          <dt>Marketplace</dt><dd>&ldquo;Sold by&rdquo; seller names, &ldquo;Only 3 left&rdquo;, deals countdown, budget chips, bottom bar</dd>
+          <dt>Selling</dt><dd>Variants and swatches, subscriptions, gift cards, Shop Pay, Apple Pay, Markets</dd>
+          <dt>You need</dt><dd>Any Shopify plan</dd>
+        </dl>
+        <a class="btn btn-primary" href="#buy" data-buy="ember-shopify">Buy for Shopify &mdash; &pound;59 &rarr;</a>
+      </div>
+      <div class="platform stand">
+        <h3>WordPress + WooCommerce</h3>
+        <p class="for">For shops that want to own everything, with no monthly theme fees.</p>
+        <dl>
+          <dt>You edit in</dt><dd>Appearance &rarr; Editor. Every page, header and footer, visually.</dd>
+          <dt>Included</dt><dd>16 drag-in patterns, 5 one-click styles, a Deals page template</dd>
+          <dt>Marketplace</dt><dd>Category bubbles, deals countdown, budget chips, delivery promise, bottom bar</dd>
+          <dt>Selling</dt><dd>Everything WooCommerce does: Stripe, PayPal, Klarna, any shipping and tax rules</dd>
+          <dt>You need</dt><dd>WordPress 6.5+, WooCommerce 8.5+</dd>
+        </dl>
+        <a class="btn btn-primary" href="#buy" data-buy="ember-woocommerce">Buy for WooCommerce &mdash; &pound;59 &rarr;</a>
+      </div>
+    </div>
+    <p class="cta-note stand" style="margin-top:18px;">Screenshots are from the WooCommerce version with
+      demo products. Your shop shows your own photos.</p>
+  </div>
+</section>
+
+<!-- ============ BUY ============ -->
+<section class="band" id="buy">
+  <div class="wrap">
+    <p class="eyebrow stand">Pay once</p>
+    <h2 class="stand">Pick your platform.</h2>
+    <p class="lead stand">One payment, instant download, free v1 updates. Secure checkout by Stripe.</p>
+    <div class="plans">
+"""
+        + plan("Shopify", 59, ["Online Store 2.0 theme", "25 drag-in sections", "One store",
+                               "Free v1 updates", "Email support"], "ember-shopify")
+        + plan("Bundle", 89, ["Shopify <b>and</b> WooCommerce", "One store + one WordPress site",
+                              "Free v1 updates", "Email support", "Save &pound;29"],
+               "ember-bundle", best=True, tag="Best value")
+        + plan("WooCommerce", 59, ["WordPress block theme", "16 patterns, 5 styles", "One site",
+                                   "Free v1 updates", "Email support"], "ember-woocommerce")
+        + """    </div>
+  </div>
+</section>
+
+<!-- ============ DOCS / LICENCE ============ -->
+<section class="band alt" id="docs">
+  <div class="wrap">
+    <p class="eyebrow stand">Before you buy</p>
+    <h2 class="stand">The small print, in large print.</h2>
+    <div class="rows">
+"""
+        + row("Installing",
+              "<b>Shopify:</b> Online Store &rarr; Themes &rarr; Add theme &rarr; Upload zip file. "
+              "<b>WooCommerce:</b> Appearance &rarr; Themes &rarr; Add New &rarr; Upload Theme. "
+              "Upload the zip as it is. Don't unzip it.",
+              "Takes", "About two minutes.")
+        + row("The licence",
+              "One store or site per licence. Build it for a client? Buy a licence for each client. "
+              "The WooCommerce code is GPL like WordPress. The Shopify theme is licensed, not sold.",
+              "In short", "One licence, one shop.")
+        + row("Refunds",
+              "It's a download, so once you've downloaded it the 14-day cooling-off period no longer "
+              "applies. Checkout asks you to agree to that. But if it won't install and I can't fix it, "
+              "you get your money back.",
+              "Promise", "It works, or you're refunded.")
+        + f"""    </div>
+    <p class="cta-note stand" id="support" style="margin-top:22px;">Stuck? Email <a href="mailto:{EMAIL}">{EMAIL}</a>
+      with your licence key. You'll get a human, usually the same day.</p>
+  </div>
+</section>
+"""
+        + STORE_DIV
+    ),
+)
+
+PAGES["themes-thanks.html"] = dict(
+    title="Your download — Ember | Sarah J Hill",
+    desc="Download your Ember theme.",
+    ogtitle="Your Ember download",
+    ogtype="website",
+    robots="noindex, nofollow",
+    backhref="themes.html", backtext="Back to Ember",
+    eyebrow="Your order",
+    h1="Done. <span class=\"hit\">Go and build something.</span>",
+    lead="Your download is below. It's also in your inbox, so you can come back to it any time.",
+    herocta="",
+    jsonld='  { "@context": "https://schema.org", "@type": "WebPage", "name": "Ember order" }',
+    body=(
+        """<section class="dark">
+  <div class="wrap">
+    <div class="order" id="order" aria-live="polite">
+      <h2>Finding your order&hellip;</h2>
+      <p>This takes a couple of seconds after payment.</p>
+    </div>
+  </div>
+</section>
+"""
+        + STORE_DIV
+    ),
+)
+
+
 # =====================================================================
 def build():
     for slug, p in PAGES.items():
@@ -717,6 +1000,7 @@ def build():
             backhref=p["backhref"], backtext=p["backtext"],
             eyebrow=p["eyebrow"], h1=p["h1"], lead=p["lead"],
             herocta=p["herocta"], jsonld=p["jsonld"], body=p["body"],
+            robots=p.get("robots", "index, follow, max-image-preview:large"),
         )
         with open(slug, "w") as f:
             f.write(html)

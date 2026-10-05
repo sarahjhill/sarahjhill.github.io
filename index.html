@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="assets/css/05-scene.css">
   <link rel="stylesheet" href="assets/css/06-globe.css">
   <link rel="stylesheet" href="assets/css/07-comic.css">
+  <link rel="stylesheet" href="assets/css/08-quest.css">
   <link rel="stylesheet" href="assets/css/04-motion.css">
 
   <!-- ============ STRUCTURED DATA ============ -->
@@ -369,77 +370,6 @@
   </div>
 </section>
 
-<!-- ============ WHAT YOU GET ============ -->
-<section class="band alt" id="get">
-  <div class="wrap">
-    <p class="eyebrow stand">What you get</p>
-    <h2 class="stand">Built to kill the doubt.</h2>
-    <p class="lead stand">Six things. Every one is there to stop somebody talking themselves out of ringing you.</p>
-    <div class="rows">
-      <div class="row stand">
-        <div><h3>Proof at the top</h3>
-          <p>Certificates, insurance, reviews and real photographs of you holding the tools &mdash;
-            not a stock photo of a man in a hard hat looking pleased with a clipboard.</p></div>
-        <div class="payoff"><em>You get</em><b>Believed before you've said a word.</b></div>
-      </div>
-      <div class="row stand">
-        <div><h3>Words that run hot</h3>
-          <p>Copy that says what you do in the first line, in your voice, with the heat left in.
-            Not &ldquo;bespoke solutions tailored to your needs&rdquo; &mdash; nobody has ever rung
-            anybody because of a sentence like that.</p></div>
-        <div class="payoff"><em>You get</em><b>A site that sounds like you on a good day.</b></div>
-      </div>
-
-      <div class="row stand">
-        <div><h3>Fast on one bar</h3>
-          <p>Old phone, half a signal, stood in a car park in the rain. It still opens before
-            they lose interest and go back to Google.</p></div>
-        <div class="payoff"><em>You get</em><b>The customers who currently give up.</b></div>
-      </div>
-      <div class="row stand">
-        <div><h3>Yours outright</h3>
-          <p>You own the lot &mdash; the files, the domain, the words. No monthly rent, and no
-            platform holding your business hostage because you missed a payment.</p></div>
-        <div class="payoff"><em>You get</em><b>A site nobody can switch off but you.</b></div>
-      </div>
-      <div class="row stand">
-        <div><h3>Nobody locked out</h3>
-          <p>Screen readers, big text, shaky hands, one thumb, bright sunshine. Built so the person
-            who needs you most can actually use it.</p></div>
-        <div class="payoff"><em>You get</em><b>Every customer. Not just the young ones with good eyes.</b></div>
-      </div>
-      <div class="row stand">
-        <div><h3>Straight about money</h3>
-          <p>Tell me the budget and I'll tell you what it buys, including when the answer is
-            &ldquo;less than you hoped&rdquo;. No padded invoices, no mystery line items.</p></div>
-        <div class="payoff"><em>You get</em><b>A number you can actually plan around.</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WORK ============ -->
-<section class="dark" id="work">
-  <div class="wrap">
-    <p class="eyebrow stand">Built and live</p>
-    <h2 class="stand">Real people. Real deadlines. Still warm.</h2>
-    <div class="work">
-      <a class="tile stand" href="https://sarahjhill.com/cardiff-community-meals/" target="_blank" rel="noopener">
-        <img src="assets/img/cardiff-live.webp" alt="Cardiff Community Meals website" loading="lazy">
-        <div class="cap"><b>Cardiff Community Meals</b><span>Neighbours fund a meal. A kitchen cooks it.</span></div></a>
-      <a class="tile stand" href="https://sarahjhill.com/many-voices/" target="_blank" rel="noopener">
-        <img src="assets/img/many-voices-live.webp" alt="Many Voices website" loading="lazy">
-        <div class="cap"><b>Many Voices</b><span>Students, run by students. Nobody talked over.</span></div></a>
-      <a class="tile stand" href="https://sarahjhill.com/muslimah-web-design/" target="_blank" rel="noopener">
-        <img src="assets/img/muslimah-live.webp" alt="Muslimah Web Design website" loading="lazy">
-        <div class="cap"><b>Muslimah Web Design</b><span>Client work and reviews, up front.</span></div></a>
-      <a class="tile stand" href="https://sarahjhill.com/project-os/" target="_blank" rel="noopener">
-        <img src="assets/img/projectos-dashboard.webp" alt="The Dragon Fire Process dashboard" loading="lazy">
-        <div class="cap"><b>The Dragon Fire Process</b><span>My custom client process &mdash; streamlined and clean.</span></div></a>
-    </div>
-  </div>
-</section>
-
 <!-- ============ DRAGON FIRE PROCESS ============ -->
 <section class="band alt" id="process">
   <div class="wrap">
@@ -525,6 +455,290 @@
     </div>
   </div>
 </section>
+
+<!-- ============ WORK — DRAGON QUEST ============
+     The plain list below (.q-log) IS the content: it is what shows with
+     no JavaScript, with reduced motion, and in "list view". quest.js
+     builds the flight around it and clones each article into the pop-up
+     window as the dragon reaches it. Screenshots: assets/img/work/. -->
+<section class="quest" id="work" aria-labelledby="quest-h">
+  <div class="wrap quest-intro">
+    <p class="eyebrow stand">Built and live &middot; the work</p>
+    <h2 class="stand" id="quest-h">Real people. Real deadlines. Still warm.</h2>
+    <p class="lead stand">Scroll and my dragon flies you through the lot &mdash; four worlds, 11 quests.
+      Every stop opens a window on the real site, top to bottom. Scroll inside it.</p>
+    <div class="cta-row stand quest-start">
+      <a class="btn btn-primary" href="#q-flight" data-quest="start">&#9654; Start the flight</a>
+      <button class="btn btn-ghost" type="button" data-quest="list" aria-pressed="false">Skip it &mdash; show me the list</button>
+    </div>
+  </div>
+
+  <div class="q-track" id="q-flight">
+    <div class="q-stage"></div>
+  </div>
+
+  <div class="wrap q-log" id="q-log">
+    <section class="q-lvl" data-lvl="1" data-name="Charity &amp; community" data-place="The Valleys" aria-labelledby="q-lvl-1">
+      <h3 class="q-lvl-h" id="q-lvl-1"><span>World 1 &middot; The Valleys</span> Charity &amp; community</h3>
+      <article class="qi" id="q-cardiff" data-num="01">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>sarahjhill.com/cardiff-community-meals</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Cardiff Community Meals page, scrollable">
+              <img src="assets/img/work/cardiff-desk.webp" width="1000" height="2760" loading="lazy" decoding="async" alt="Full-length screenshot of the Cardiff Community Meals website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/cardiff-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Cardiff Community Meals on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 01/11</span> Charity &amp; community</p>
+          <h4 class="qi-title">Cardiff Community Meals</h4>
+          <p class="qi-quest"><b>The quest</b> Neighbours fund a meal, a local kitchen cooks it, and someone having a hard time gets fed &mdash; without being made to feel like a charity case.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Bilingual from the first line, Cymraeg first and English one tap away, because it&rsquo;s Cardiff&rsquo;s. Plain HTML, CSS and JavaScript on Bootstrap 5 with no build step, so it opens on any phone and any volunteer can look after it. Every message on the community wall is checked by a human before it goes up &mdash; safeguarding by design.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap 5</li><li>English / Cymraeg</li><li>GitHub Pages</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.com/cardiff-community-meals/" target="_blank" rel="noopener">Visit the live site &rarr;</a></p>
+        </div>
+      </article>
+      <article class="qi" id="q-manyvoices" data-num="02">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>sarahjhill.github.io/many-voices</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Many Voices page, scrollable">
+              <img src="assets/img/work/manyvoices-desk.webp" width="1000" height="3027" loading="lazy" decoding="async" alt="Full-length screenshot of the Many Voices website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/manyvoices-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Many Voices on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 02/11</span> Charity &amp; community</p>
+          <h4 class="qi-title">Many Voices</h4>
+          <p class="qi-quest"><b>The quest</b> A diversity and inclusion club run by students, for students &mdash; so belonging is the design, not an afterthought.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Fraunces for warmth, Work Sans for easy reading, IBM Plex Mono for dates and labels. The palette deliberately dodges both &lsquo;corporate blue&rsquo; and the stock rainbow. Bootstrap 5 so it holds up on every screen a student owns.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>HTML5</li><li>CSS3</li><li>Bootstrap 5</li><li>Google Fonts</li><li>Balsamiq wireframes</li><li>GitHub Pages</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.github.io/many-voices/" target="_blank" rel="noopener">Visit the live site &rarr;</a><a class="qi-btn" href="https://github.com/sarahjhill/many-voices" target="_blank" rel="noopener">See the code</a></p>
+        </div>
+      </article>
+      <article class="qi" id="q-rota" data-num="03">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>community-cooking-rota.herokuapp.com</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Community Cooking Rota page, scrollable">
+              <img src="assets/img/work/rota-desk.webp" width="1000" height="842" loading="lazy" decoding="async" alt="Full-length screenshot of the Community Cooking Rota website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/rota-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Community Cooking Rota on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 03/11</span> Code Institute capstone</p>
+          <h4 class="qi-title">Community Cooking Rota</h4>
+          <p class="qi-quest"><b>The quest</b> Someone needs feeding for a while &mdash; a new baby, an operation, a loss. One organiser sets the dates, and the people who want to help claim the ones they can cook.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Django, because it&rsquo;s a real permissions problem: organisers own their rotas, cooks can only claim and cancel, and phone numbers only show between the two people involved in a claim. PostgreSQL on Heroku, hand-written CSS Grid with no framework, and 35 automated tests guarding the rules.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>Python</li><li>Django 5</li><li>PostgreSQL</li><li>CSS Grid</li><li>Heroku</li><li>35 tests</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://community-cooking-rota-a0e405aa09f1.herokuapp.com/" target="_blank" rel="noopener">Visit the live site &rarr;</a><a class="qi-btn" href="https://github.com/sarahjhill/cooking-rota" target="_blank" rel="noopener">See the code</a></p>
+        </div>
+      </article>
+      <article class="qi qi--locked" id="q-chatshack" data-num="04">
+        <div class="qi-screens qi-egg" aria-hidden="true">
+          <div class="egg"><i></i><i></i><i></i></div>
+          <p class="egg-note">Hatching soon &middot; no screens yet</p>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 04/11</span> In the forge &middot; currently building</p>
+          <h4 class="qi-title">The Chat Shack C.I.C. <small class="qi-status">In the forge</small></h4>
+          <p class="qi-quest"><b>The quest</b> A safe, confidential and non-judgemental place to talk, for a peer-led mental health community in Cardiff.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>React, Vite and TypeScript for a fast static build, with Decap CMS added so the charity&rsquo;s own team can sign in and edit every page themselves &mdash; no developer on call, no monthly platform fee.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>React</li><li>Vite</li><li>TypeScript</li><li>Decap CMS</li><li>GitHub Pages</li></ul>
+        </div>
+      </article>
+    </section>
+    <section class="q-lvl" data-lvl="2" data-name="Tools &amp; project management" data-place="The Forge" aria-labelledby="q-lvl-2">
+      <h3 class="q-lvl-h" id="q-lvl-2"><span>World 2 &middot; The Forge</span> Tools &amp; project management</h3>
+      <article class="qi" id="q-projectos" data-num="05">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>sarahjhill.com/project-os</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole The Dragon Fire Process page, scrollable">
+              <img src="assets/img/work/projectos-desk.webp" width="1000" height="1479" loading="lazy" decoding="async" alt="Full-length screenshot of the The Dragon Fire Process website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/projectos-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="The Dragon Fire Process on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 05/11</span> Tools &amp; project management</p>
+          <h4 class="qi-title">The Dragon Fire Process</h4>
+          <p class="qi-quest"><b>The quest</b> Nobody should have to type &ldquo;any update?&rdquo; Twelve phases, 69 guided tasks, 72 templates and a live page every client can sign in to.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>I&rsquo;m a studio of one, so nobody else notices what I skip &mdash; this does. Plain HTML, CSS and JavaScript with no server to babysit: it saves in the browser by default, with Supabase sign-in and Formspree client forms when they&rsquo;re wanted. Light and dark themes run on design tokens.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li><li>Formspree</li><li>Design tokens</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.com/project-os/app.html?guest=1" target="_blank" rel="noopener">Play the demo &rarr;</a><a class="qi-btn" href="https://github.com/sarahjhill/project-os" target="_blank" rel="noopener">See the code</a></p>
+        </div>
+      </article>
+      <article class="qi qi--locked" id="q-carbmate" data-num="06">
+        <div class="qi-screens qi-egg" aria-hidden="true">
+          <div class="egg"><i></i><i></i><i></i></div>
+          <p class="egg-note">Screens coming soon</p>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 06/11</span> Tools &middot; personal project</p>
+          <h4 class="qi-title">CarbMate <small class="qi-status">In the forge</small></h4>
+          <p class="qi-quest"><b>The quest</b> A carb-counting and insulin bolus calculator, built because I&rsquo;m a type 1 diabetic who found every existing app either too fiddly or paywalled.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>FastAPI and PostgreSQL behind a safety-first design. Free to use and built to learn from as you go &mdash; a personal-use prototype, not a validated medical device.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+        </div>
+      </article>
+    </section>
+    <section class="q-lvl" data-lvl="3" data-name="Business &amp; ecommerce" data-place="Market Town" aria-labelledby="q-lvl-3">
+      <h3 class="q-lvl-h" id="q-lvl-3"><span>World 3 &middot; Market Town</span> Business &amp; ecommerce</h3>
+      <article class="qi" id="q-dfd" data-num="07">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>sarahjhill.com</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Dragon Fire Design page, scrollable">
+              <img src="assets/img/work/dfd-desk.webp" width="1000" height="8795" loading="lazy" decoding="async" alt="Full-length screenshot of the Dragon Fire Design website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/dfd-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Dragon Fire Design on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 07/11</span> My studio &middot; this site</p>
+          <h4 class="qi-title">Dragon Fire Design</h4>
+          <p class="qi-quest"><b>The quest</b> Websites for tradeswomen and women in business who keep getting pre-judged &mdash; proof first, so nobody writes them off in three seconds.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Hand-written HTML, CSS and JavaScript &mdash; no framework, no build step, nothing to rot &mdash; and Lighthouse 100 across the board. The dragon is a real 3D model in Three.js, breathing a hand-tuned canvas particle flame.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Three.js</li><li>Canvas</li><li>Lighthouse 100</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.com/" target="_blank" rel="noopener">You&rsquo;re on it &rarr;</a></p>
+        </div>
+      </article>
+      <article class="qi" id="q-muslimah" data-num="08">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>sarahjhill.com/muslimah-web-design</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Muslimah Web Design page, scrollable">
+              <img src="assets/img/work/muslimah-desk.webp" width="1000" height="3591" loading="lazy" decoding="async" alt="Full-length screenshot of the Muslimah Web Design website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/muslimah-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Muslimah Web Design on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 08/11</span> Business site</p>
+          <h4 class="qi-title">Muslimah Web Design</h4>
+          <p class="qi-quest"><b>The quest</b> Web design and WordPress consulting for Muslim women, by a Muslim woman &mdash; halal guidance and the best result for the budget in hand.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Real client work and reviews up front, because trust is the sale. Fraunces for warmth and Inter for clarity, on light hand-built pages that stay quick on any phone.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Google Fonts</li><li>Responsive</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.com/muslimah-web-design/" target="_blank" rel="noopener">Visit the live site &rarr;</a></p>
+        </div>
+      </article>
+      <article class="qi qi--wip" id="q-ember" data-num="09">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>buntingandco.co.uk &middot; demo shop</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Ember page, scrollable">
+              <img src="assets/img/ember/desktop-home-full.webp" width="1200" height="3750" loading="lazy" decoding="async" alt="Full-length screenshot of the Ember website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/ember/phone-home.webp" width="540" height="1168" loading="lazy" decoding="async" alt="Ember on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 09/11</span> In the forge &middot; ecommerce theme</p>
+          <h4 class="qi-title">Ember <small class="qi-status">In the forge</small></h4>
+          <p class="qi-quest"><b>The quest</b> A marketplace theme for Shopify and WooCommerce &mdash; all the buzz of a marketplace, none of the tat.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Phone-first, with an app-style bottom bar, category bubbles, lightning deals and shop-by-budget. Built twice &mdash; as a Shopify Online Store 2.0 theme and a WordPress block theme &mdash; so shop owners edit every word visually, no code.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>Shopify OS 2.0</li><li>Liquid</li><li>WordPress block theme</li><li>WooCommerce</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="themes.html">See Ember &rarr;</a></p>
+        </div>
+      </article>
+    </section>
+    <section class="q-lvl" data-lvl="4" data-name="Hackathons &amp; team builds" data-place="The Arena" aria-labelledby="q-lvl-4">
+      <h3 class="q-lvl-h" id="q-lvl-4"><span>World 4 &middot; The Arena</span> Hackathons &amp; team builds</h3>
+      <article class="qi" id="q-recipy" data-num="10">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>reci-py.herokuapp.com</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole reci.py page, scrollable">
+              <img src="assets/img/work/recipy-desk.webp" width="1000" height="1481" loading="lazy" decoding="async" alt="Full-length screenshot of the reci.py website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/recipy-phone.webp" width="480" height="675" loading="lazy" decoding="async" alt="reci.py on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 10/11</span> Code Institute hackathon &middot; team of 5</p>
+          <h4 class="qi-title">reci.py</h4>
+          <p class="qi-quest"><b>The quest</b> A community cookbook for people who write code &mdash; and need feeding. Simple recipes, healthy meals, for coders.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Django with allauth sign-in, a moderation queue so every recipe is reviewed before it&rsquo;s published, comments and a notification inbox. Built as a team with Kieron, Corrine, Charles and Qasim &mdash; my part was the paginated &lsquo;browse recipes&rsquo; home page.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>Python</li><li>Django</li><li>PostgreSQL</li><li>Bootstrap 5</li><li>allauth</li><li>Heroku</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://reci-py-93c536d719a2.herokuapp.com/" target="_blank" rel="noopener">Visit the live site &rarr;</a><a class="qi-btn" href="https://github.com/lion695/reci.py" target="_blank" rel="noopener">See the code</a></p>
+        </div>
+      </article>
+      <article class="qi" id="q-mission" data-num="11">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>azizr96.github.io/mission-control</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Mission Control page, scrollable">
+              <img src="assets/img/work/mission-desk.webp" width="1000" height="870" loading="lazy" decoding="async" alt="Full-length screenshot of the Mission Control website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/mission-phone.webp" width="480" height="1039" loading="lazy" decoding="async" alt="Mission Control on a phone">
+            </div>
+          </div>
+        </div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Quest 11/11</span> Bootcamp hackathon &middot; team of 4</p>
+          <h4 class="qi-title">Mission Control</h4>
+          <p class="qi-quest"><b>The quest</b> A Pomodoro focus timer with a mission list, so the clock and the to-do list finally live on one screen.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>Tomato red on near-black &mdash; a nod to &lsquo;Pomodoro&rsquo; &mdash; with every colour pair checked against WCAG. Vanilla JavaScript, keyboard and screen-reader friendly, and your missions survive a refresh. Built with Rauhan, Amir and Davy.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Bootstrap 5</li><li>localStorage</li><li>WCAG AA</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://azizr96.github.io/mission-control/" target="_blank" rel="noopener">Visit the live site &rarr;</a><a class="qi-btn" href="https://github.com/azizr96/mission-control" target="_blank" rel="noopener">See the code</a></p>
+        </div>
+      </article>
+    </section>
+    <section class="q-lvl q-lvl--end" data-lvl="5" data-name="Your quest" data-place="The Castle" aria-labelledby="q-lvl-5">
+      <h3 class="q-lvl-h" id="q-lvl-5"><span>Final world &middot; The Castle</span> Your quest</h3>
+      <article class="qi qi--finale" id="q-yours" data-num="&#9733;">
+        <div class="qi-screens qi-castle" aria-hidden="true"><div class="castle-flag">YOU</div></div>
+        <div class="qi-body">
+          <p class="qi-kicker"><span class="qi-num">Next quest</span> yours</p>
+          <h4 class="qi-title">Your business, breathing fire.</h4>
+          <p class="qi-quest">That&rsquo;s the map so far. The next world on it could be yours &mdash; tell me what you&rsquo;re building and I&rsquo;ll tell you, straight, what it takes.</p>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Brief me &rarr;</a><a class="qi-btn" href="#hello">Say hello</a></p>
+        </div>
+      </article>
+    </section>
+    <p class="q-log-flight"><button class="btn btn-ghost" type="button" data-quest="fly">&#9654; Fly through it instead</button></p>
+  </div>
+</section>
+
 
 <!-- ============ PROOF ============ -->
 <section class="band">
@@ -617,5 +831,7 @@
 <script type="module" src="assets/js/comic-dragon.js"></script>
 <script src="assets/js/globe.js" defer></script>
 <script src="assets/js/comic.js" defer></script>
+<script src="assets/js/quest.js" defer></script>
+<script type="module" src="assets/js/quest-dragon.js"></script>
 </body>
 </html>
