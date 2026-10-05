@@ -110,7 +110,18 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 		if (!b) { return; }
 		var what = b.getAttribute('data-quest');
 		if (what === 'list') { e.preventDefault(); setFlying(false, { remember: true, scrollTo: true }); }
-		if (what === 'fly' || what === 'start') {
+		if (what === 'exit') {
+			/* jump straight past the flight — 'instant', or a smooth scroll
+			   would replay the whole journey on the way down */
+			e.preventDefault();
+			closeWindow(true);
+			var after = root.nextElementSibling;
+			var top = after ? after.getBoundingClientRect().top + window.pageYOffset : root.getBoundingClientRect().bottom + window.pageYOffset;
+			window.scrollTo({ top: top - 60, behavior: 'instant' });
+			if (after) { after.setAttribute('tabindex', '-1'); after.focus({ preventScroll: true }); }
+			return;
+		}
+				if (what === 'fly' || what === 'start') {
 			e.preventDefault();
 			if (!flying) { setFlying(true, { remember: true }); }
 			window.scrollTo({ top: track.getBoundingClientRect().top + window.pageYOffset + 2, behavior: 'smooth' });
@@ -187,6 +198,10 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 		el.listBtn.type = 'button';
 		el.listBtn.setAttribute('data-quest', 'list');
 		el.listBtn.setAttribute('aria-label', 'Switch to the plain list of projects');
+		el.exitBtn = mk('button', 'q-exit', el.hud, 'Exit<span class="lt"> flight</span> &darr;');
+		el.exitBtn.type = 'button';
+		el.exitBtn.setAttribute('data-quest', 'exit');
+		el.exitBtn.setAttribute('aria-label', 'Leave the flight and carry on down the page');
 
 		el.help = mk('div', 'q-help', stage, 'Scroll to fly &#9660; &nbsp;&middot;&nbsp; &larr; &rarr; to hop');
 		el.help.setAttribute('aria-hidden', 'true');
@@ -371,14 +386,102 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 		return d + ' L' + (width + step) + ' ' + H + ' Z';
 	}
 
+	/* ---- real Cardiff landmarks, drawn as silhouettes -------------------
+	   Coordinates are in "landmark units" (about a pixel on a 760px-tall
+	   screen), y measured UP from the ground line, then scaled by s. */
+	function P(cx, gy, s, pts) {     /* polygon from [x,y] pairs */
+		return pts.map(function (p, i) { return (i ? 'L' : 'M') + (cx + p[0] * s).toFixed(1) + ' ' + (gy - p[1] * s).toFixed(1); }).join(' ') + 'Z';
+	}
+
+	/* Castell Coch: the red castle on the wooded hill above Tongwynlais —
+	   three round towers with tall conical "witch's hat" roofs (the
+	   Keep, Kitchen and Well towers), joined by curtain walls, sitting
+	   in the beech woods. */
+	function castellCoch(cx, gy, s) {
+		var o = '';
+		/* wooded hillside: a dome of tree crowns */
+		var hill = [[-260, 0]];
+		for (var x = -250; x <= 250; x += 18) {
+			var h = 70 * Math.cos((x / 260) * Math.PI / 2) + (Math.sin(x * 0.37) + Math.sin(x * 0.11)) * 5;
+			hill.push([x, Math.max(0, h)]);
+		}
+		hill.push([260, 0]);
+		o += '<path class="lm" d="' + P(cx, gy, s, hill) + '"/>';
+		var base = 62;
+		/* curtain walls + gatehouse */
+		o += '<path class="lm" d="' + P(cx, gy, s, [[-78, base], [-78, base + 52], [-28, base + 58], [-28, base], [30, base], [30, base + 56], [70, base + 50], [70, base]]) + '"/>';
+		o += '<path class="lm" d="' + P(cx, gy, s, [[-28, base], [-28, base + 62], [30, base + 62], [30, base]]) + '"/>';
+		/* towers: [centre x, radius, wall height, roof height] */
+		[[-92, 22, 92, 74], [2, 30, 118, 92], [84, 19, 80, 62]].forEach(function (t, i) {
+			var x0 = t[0] - t[1], x1 = t[0] + t[1], top = base + t[2];
+			o += '<path class="lm" d="' + P(cx, gy, s, [[x0, base], [x0, top], [x1, top], [x1, base]]) + '"/>';
+			/* the conical roof, slightly flared at the eaves */
+			o += '<path class="lm roof" d="M' + (cx + (x0 - 5) * s).toFixed(1) + ' ' + (gy - top * s).toFixed(1) +
+				' Q' + (cx + (t[0] - t[1] * 0.35) * s).toFixed(1) + ' ' + (gy - (top + t[3] * 0.45) * s).toFixed(1) +
+				' ' + (cx + t[0] * s).toFixed(1) + ' ' + (gy - (top + t[3]) * s).toFixed(1) +
+				' Q' + (cx + (t[0] + t[1] * 0.35) * s).toFixed(1) + ' ' + (gy - (top + t[3] * 0.45) * s).toFixed(1) +
+				' ' + (cx + (x1 + 5) * s).toFixed(1) + ' ' + (gy - top * s).toFixed(1) + 'Z"/>';
+			/* finial spike on top */
+			o += '<path class="lm" d="' + P(cx, gy, s, [[t[0] - 1.5, top + t[3] - 2], [t[0], top + t[3] + 14], [t[0] + 1.5, top + t[3] - 2]]) + '"/>';
+			/* lit windows */
+			o += '<rect class="win-glow" x="' + (cx + (t[0] - 3) * s).toFixed(1) + '" y="' + (gy - (base + t[2] * 0.62) * s).toFixed(1) + '" width="' + (6 * s).toFixed(1) + '" height="' + (11 * s).toFixed(1) + '"/>';
+			if (i === 1) { o += '<rect class="win-glow" x="' + (cx - 9 * s).toFixed(1) + '" y="' + (gy - (base + 40) * s).toFixed(1) + '" width="' + (5 * s).toFixed(1) + '" height="' + (9 * s).toFixed(1) + '"/><rect class="win-glow" x="' + (cx + 6 * s).toFixed(1) + '" y="' + (gy - (base + 40) * s).toFixed(1) + '" width="' + (5 * s).toFixed(1) + '" height="' + (9 * s).toFixed(1) + '"/>'; }
+		});
+		/* Keep tower's chimney stack */
+		o += '<path class="lm" d="' + P(cx, gy, s, [[18, base + 160], [18, base + 186], [25, base + 186], [25, base + 150]]) + '"/>';
+		/* a red banner, because it's the red castle */
+		o += '<path class="lm" d="' + P(cx, gy, s, [[1, base + 222], [1, base + 250], [3, base + 250], [3, base + 222]]) + '"/>';
+		o += '<path class="flag" d="' + P(cx, gy, s, [[3, base + 250], [24, base + 244], [3, base + 238]]) + '"/>';
+		return o;
+	}
+
+	/* The Principality Stadium: the big oval bowl on the Taff with a
+	   gently arched roof and four tall white masts at the corners, each
+	   holding the roof up on cable stays. */
+	function principality(cx, gy, s) {
+		var o = '';
+		var mast = function (x, top, lean, cls) {
+			return '<line class="' + cls + '" x1="' + (cx + x * s).toFixed(1) + '" y1="' + gy.toFixed(1) + '" x2="' + (cx + (x + lean) * s).toFixed(1) + '" y2="' + (gy - top * s).toFixed(1) + '" stroke-width="' + (5 * s).toFixed(1) + '"/>';
+		};
+		var cable = function (x1, y1, x2, y2) {
+			return '<line class="cable" x1="' + (cx + x1 * s).toFixed(1) + '" y1="' + (gy - y1 * s).toFixed(1) + '" x2="' + (cx + x2 * s).toFixed(1) + '" y2="' + (gy - y2 * s).toFixed(1) + '" stroke-width="' + (1.4 * s).toFixed(1) + '"/>';
+		};
+		/* back pair of masts first, so the bowl overlaps their feet */
+		o += mast(-104, 196, -8, 'mast mast--back') + mast(104, 196, 8, 'mast mast--back');
+		/* the bowl + arched roof */
+		o += '<path class="lm stadium" d="M' + (cx - 190 * s).toFixed(1) + ' ' + gy.toFixed(1) +
+			' L' + (cx - 172 * s).toFixed(1) + ' ' + (gy - 66 * s).toFixed(1) +
+			' Q' + cx.toFixed(1) + ' ' + (gy - 122 * s).toFixed(1) + ' ' + (cx + 172 * s).toFixed(1) + ' ' + (gy - 66 * s).toFixed(1) +
+			' L' + (cx + 190 * s).toFixed(1) + ' ' + gy.toFixed(1) + 'Z"/>';
+		/* roof edge catching the floodlights */
+		o += '<path class="rim" stroke-width="' + (2.5 * s).toFixed(1) + '" d="M' + (cx - 172 * s).toFixed(1) + ' ' + (gy - 66 * s).toFixed(1) +
+			' Q' + cx.toFixed(1) + ' ' + (gy - 122 * s).toFixed(1) + ' ' + (cx + 172 * s).toFixed(1) + ' ' + (gy - 66 * s).toFixed(1) + '"/>';
+		/* ribbed facade: the stadium's vertical ribs, plus two rows of lit
+		   concourse windows */
+		for (var k = -7; k <= 7; k++) {
+			var rx = k * 23, rTop = 66 + (122 - 66) * 0.5 * (1 - Math.pow(rx / 172, 2));
+			o += '<line class="rib" x1="' + (cx + rx * s).toFixed(1) + '" y1="' + (gy - 6 * s).toFixed(1) + '" x2="' + (cx + rx * 0.97 * s).toFixed(1) + '" y2="' + (gy - rTop * s).toFixed(1) + '" stroke-width="' + (1.6 * s).toFixed(1) + '"/>';
+			if (k < 7) {
+				o += '<rect class="win-glow" x="' + (cx + (rx + 6) * s).toFixed(1) + '" y="' + (gy - 58 * s).toFixed(1) + '" width="' + (11 * s).toFixed(1) + '" height="' + (6 * s).toFixed(1) + '"/>';
+				o += '<rect class="win-glow dim" x="' + (cx + (rx + 6) * s).toFixed(1) + '" y="' + (gy - 36 * s).toFixed(1) + '" width="' + (11 * s).toFixed(1) + '" height="' + (6 * s).toFixed(1) + '"/>';
+			}
+		}
+		/* front masts + cable stays down to the roof */
+		o += mast(-150, 210, -14, 'mast') + mast(150, 210, 14, 'mast');
+		[-1, 1].forEach(function (d) {
+			var tx = d * 164, ty = 210;
+			[[d * 120, 94], [d * 80, 106], [d * 40, 114]].forEach(function (pt) { o += cable(tx, ty, pt[0], pt[1]); });
+		});
+		/* floodlight bloom above the pitch */
+		o += '<ellipse class="bloom" cx="' + cx.toFixed(1) + '" cy="' + (gy - 120 * s).toFixed(1) + '" rx="' + (150 * s).toFixed(1) + '" ry="' + (40 * s).toFixed(1) + '"/>';
+		return o;
+	}
+
 	function landmark(kind, cx, groundY, s) {
 		var o = '';
 		var r = function (x, y, w, h, cls) { return '<rect class="' + (cls || 'lm') + '" x="' + (cx + x * s).toFixed(1) + '" y="' + (groundY - y * s).toFixed(1) + '" width="' + (w * s).toFixed(1) + '" height="' + (h * s).toFixed(1) + '"/>'; };
-		if (kind === 1) {           /* valley castle */
-			o += r(-60, 70, 120, 70) + r(-80, 110, 34, 110) + r(46, 110, 34, 110) + r(-14, 130, 28, 60);
-			for (var i = 0; i < 4; i++) { o += r(-80 + i * 9.5, 120, 6, 10) + r(46 + i * 9.5, 120, 6, 10); }
-			o += r(-1, 160, 2, 30) + '<path class="flag" d="M' + (cx + s) + ' ' + (groundY - 160 * s) + ' l' + 22 * s + ' ' + 7 * s + ' l' + (-22 * s) + ' ' + 7 * s + 'Z"/>';
-			o += r(-66, 88, 6, 10, 'win-glow') + r(60, 88, 6, 10, 'win-glow');
+		if (kind === 1) {           /* the valleys: Castell Coch on its wooded hill */
+			return castellCoch(cx, groundY, s * 0.85);
 		} else if (kind === 2) {    /* forge */
 			o += r(-90, 60, 180, 60) + r(-70, 140, 22, 140) + r(30, 170, 26, 170) + r(-20, 100, 18, 100);
 			o += r(-50, 30, 16, 14, 'win-glow') + r(10, 30, 16, 14, 'win-glow') + r(50, 30, 16, 14, 'win-glow');
@@ -390,12 +493,8 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 				o += r(x0, h, 44, h) + '<path class="lm" d="M' + (cx + (x0 - 4) * s) + ' ' + (groundY - h * s) + ' L' + (cx + (x0 + 22) * s) + ' ' + (groundY - (h + 26) * s) + ' L' + (cx + (x0 + 48) * s) + ' ' + (groundY - h * s) + 'Z"/>';
 				o += r(x0 + 14, h - 14, 14, 12, 'win-glow');
 			}
-		} else if (kind === 4) {    /* arena */
-			o += '<path class="lm" d="M' + (cx - 130 * s) + ' ' + groundY + ' L' + (cx - 120 * s) + ' ' + (groundY - 90 * s) + ' Q' + cx + ' ' + (groundY - 120 * s) + ' ' + (cx + 120 * s) + ' ' + (groundY - 90 * s) + ' L' + (cx + 130 * s) + ' ' + groundY + ' Z"/>';
-			for (var a = 0; a < 7; a++) { o += r(-105 + a * 32, 70, 14, 26, 'win-glow'); }
-			o += r(-121, 140, 3, 50) + r(118, 140, 3, 50);
-			o += '<path class="flag" d="M' + (cx - 118 * s) + ' ' + (groundY - 140 * s) + ' l' + 20 * s + ' ' + 6 * s + ' l' + (-20 * s) + ' ' + 6 * s + 'Z"/>';
-			o += '<path class="flag" d="M' + (cx + 121 * s) + ' ' + (groundY - 140 * s) + ' l' + 20 * s + ' ' + 6 * s + ' l' + (-20 * s) + ' ' + 6 * s + 'Z"/>';
+		} else if (kind === 4) {    /* the arena: the Principality Stadium */
+			return principality(cx, groundY - 8 * s, s * 1.2);
 		}
 		return o;
 	}
@@ -408,7 +507,14 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 		var mid = '<path d="' + ridge(midW, groundMid, H * 0.06, 60, 2) + '"/>';
 		var s = Math.max(0.6, Math.min(1.25, H / 760)) * (mobile ? 0.7 : 1);
 		levels.forEach(function (lv, i) {
-			if (lv.finale) { return; }
+			if (lv.finale) {
+				/* the final world: Castell Coch, big, on its hill behind
+				   the dragon and the last chest, clear of the open window */
+				var fin = stops[stops.length - 1];
+				var atF = fin.worldAt * MID_F + (mobile ? W * 0.5 : W * 0.2);
+				mid += castellCoch(atF, groundMid - H * 0.01, s * (mobile ? 1.15 : 1.45));
+				return;
+			}
 			var at = (lv.signX - nodeScreenX + W * 0.75) * MID_F + W * 0.25;
 			mid += landmark(i + 1, at, groundMid - H * 0.03, s);
 		});

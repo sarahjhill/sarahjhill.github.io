@@ -71,6 +71,15 @@
 .q-mid .smoke{fill:rgba(255,255,255,.08);animation:q-smoke 6s ease-in-out infinite;}
 .q-mid .win-glow{fill:#ffcf4a;opacity:.75;}
 .q-mid .flag{fill:var(--flame);}
+.q-mid .roof{fill:var(--mid);}
+.q-mid .mast{stroke:rgba(236,240,250,.62);stroke-linecap:round;}
+.q-mid .mast--back{stroke:rgba(236,240,250,.3);}
+.q-mid .cable{stroke:rgba(236,240,250,.28);}
+.q-mid .rib{stroke:rgba(236,240,250,.16);}
+.q-mid .win-glow.dim{opacity:.4;}
+.q-mid .stadium{fill:var(--mid);filter:brightness(1.25);}
+.q-mid .rim{fill:none;stroke:rgba(255,214,120,.55);}
+.q-mid .bloom{fill:rgba(255,236,190,.07);}
 @keyframes q-smoke{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-14px);opacity:1}}
 
 .q-embers{inset:0;pointer-events:none;}
@@ -153,6 +162,8 @@
   padding:9px 12px;background:rgba(10,10,12,.62);border:2px solid rgba(255,176,32,.55);
 }
 .q-hud button:hover,.q-hud button:focus-visible{background:var(--q-gold-2);color:#1a1000;outline:none;}
+.q-hud .q-exit{background:var(--flame);color:#1a0500;border-color:#000;box-shadow:3px 3px 0 #000;}
+.q-hud .q-exit:hover,.q-hud .q-exit:focus-visible{background:#fff;color:#1a0500;}
 
 .q-help{
   z-index:6;left:3vw;bottom:22px;font:700 11px/1.3 var(--q-mono);letter-spacing:.14em;text-transform:uppercase;
