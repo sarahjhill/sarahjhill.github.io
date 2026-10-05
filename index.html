@@ -35,15 +35,16 @@
   <meta name="apple-mobile-web-app-title" content="Sarah J Hill">
 
   <!-- ============ STYLES ============ -->
-  <link rel="stylesheet" href="assets/css/01-tokens.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/03-components.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/05-scene.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/06-globe.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/07-comic.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/08-quest.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/09-about.css?v=20261005c">
-  <link rel="stylesheet" href="assets/css/04-motion.css?v=20261005c">
+  <link rel="stylesheet" href="assets/css/01-tokens.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/03-components.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/05-scene.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/06-globe.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/07-comic.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/08-quest.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/09-about.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/10-theme.css?v=20261006a">
+  <link rel="stylesheet" href="assets/css/04-motion.css?v=20261006a">
 
   <!-- ============ STRUCTURED DATA ============ -->
   <script type="application/ld+json">
@@ -118,7 +119,7 @@
       <a href="#test">The concept gap</a>
       <a href="#about">About me</a>
       <a href="#process">Dragon Fire Process</a>
-      <a href="https://sarahjhill.com/portfolio/">Portfolio</a>
+      <a href="#theme">DIY theme</a>
       <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Brief me</a>
     </div>
   </div>
@@ -645,17 +646,27 @@
           <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://sarahjhill.com/project-os/app.html?guest=1" target="_blank" rel="noopener">Play the demo &rarr;</a><a class="qi-btn" href="https://github.com/sarahjhill/project-os" target="_blank" rel="noopener">See the code</a></p>
         </div>
       </article>
-      <article class="qi qi--locked" id="q-carbmate" data-num="06">
-        <div class="qi-screens qi-egg" aria-hidden="true">
-          <div class="egg"><i></i><i></i><i></i></div>
-          <p class="egg-note">Screens coming soon</p>
+      <article class="qi" id="q-carbmate" data-num="06">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>carbmate.herokuapp.com</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole CarbMate page, scrollable">
+              <img src="assets/img/work/carbmate-desk.webp" width="1000" height="2172" loading="lazy" decoding="async" alt="Full-length screenshot of CarbMate working out the carbs and a suggested dose for toast, a banana and a flat white">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/carbmate-phone.webp" width="480" height="1041" loading="lazy" decoding="async" alt="CarbMate on a phone">
+            </div>
+          </div>
         </div>
         <div class="qi-body">
           <p class="qi-kicker"><span class="qi-num">Quest 06/11</span> Tools &middot; personal project</p>
-          <h4 class="qi-title">CarbMate <small class="qi-status">In the forge</small></h4>
-          <p class="qi-quest"><b>The quest</b> A carb-counting and insulin bolus calculator, built because I&rsquo;m a type 1 diabetic who found every existing app either too fiddly or paywalled.</p>
-          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>FastAPI and PostgreSQL behind a safety-first design. Free to use and built to learn from as you go &mdash; a personal-use prototype, not a validated medical device.</p></details>
-          <ul class="qi-loot" aria-label="Built with"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+          <h4 class="qi-title">CarbMate <small class="qi-status">Prototype</small></h4>
+          <p class="qi-quest"><b>The quest</b> A carb-counting and insulin bolus calculator, built because I&rsquo;m a type 1 diabetic who found every existing app either too fiddly or paywalled. Type your meal in plain English, check the carbs it finds, add your blood glucose &mdash; and see the suggested dose with every step of the maths shown.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>A Python FastAPI back end with a rules engine that reads ordinary sentences (&ldquo;two slices of toast and a banana&rdquo;) and turns them into weighed portions. Safety first: every assumption is shown, every number can be changed, and it says loudly that it&rsquo;s a prototype &mdash; not a validated medical device.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Rules engine</li><li>Heroku</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://carbmate-sarahhill-12830-3f599e1fab1c.herokuapp.com/" target="_blank" rel="noopener">Try the prototype &rarr;</a></p>
         </div>
       </article>
     </section>
@@ -813,35 +824,94 @@
   </div>
 </section>
 
-<!-- ============ DOUBT AUDIT ============ -->
-<section class="dark" id="audit">
+<!-- ============ EMBER — THE DIY THEME ============
+     Replaces the old free website audit section. Ember is Sarah's own
+     ecommerce theme: one design, two versions (Shopify on the left,
+     WordPress + WooCommerce on the right). Buying happens on themes.html. -->
+<section class="dark kit" id="theme" aria-labelledby="kit-h">
   <div class="wrap">
-    <p class="eyebrow stand">Already got a website? &mdash; free, no catch</p>
-    <h2 class="stand">You have a website but it does nothing for you.</h2>
-    <p class="lead stand">You'll never know how many people quietly left. There's no missed-call
-      list for &ldquo;looked a bit unconvincing&rdquo;. So I'll go through your site the way your
-      customers do &mdash; on a phone, in a hurry, hunting for a reason to say no &mdash; and tell you
-      which bits have gone cold and which bits are still hot.</p>
-    <div class="rows">
-      <div class="row stand">
-        <div><h3>What I won't do</h3>
-          <p>You've had the email. &ldquo;Your website is losing you &pound;47,000 a year.&rdquo;
-            Nobody who has never seen your books can possibly know that. Bin it.</p></div>
-        <div class="payoff"><em>Instead</em><b>Your figures, your sums, an honest range.</b></div>
+    <p class="eyebrow stand">DIY ecommerce theme &middot; designed and built by me</p>
+    <h2 class="stand" id="kit-h">Ember. A proper shop, boxed and ready to go.</h2>
+    <p class="lead stand">Not ready for a full custom build? Ember is the ecommerce theme I made myself &mdash;
+      the same care and quality as my client work, packed into a download. Install it in about two minutes,
+      then make it yours: your logo, your colours, your words, your products. No code, no developer.</p>
+
+    <!-- one design, every screen -->
+    <div class="kit-devices stand" aria-label="Ember on a laptop, a tablet and a phone">
+      <div class="kit-laptop">
+        <div class="kit-bar" aria-hidden="true"><i></i><i></i><i></i><span>buntingandco.co.uk &middot; demo shop</span></div>
+        <div class="kit-scroll" tabindex="0" role="region" aria-label="The whole Ember home page, scrollable">
+          <img src="assets/img/ember/desktop-home-full.webp" width="1200" height="3750" loading="lazy" decoding="async" alt="The whole Ember home page on a laptop, from the welcome card down to the reviews">
+        </div>
       </div>
-      <div class="row stand">
-        <div><h3>And if it's fine?</h3>
-          <p>If your website is doing its job and the problem is somewhere else entirely,
-            I'll tell you that and we're done.</p></div>
-        <div class="payoff"><em>You lose</em><b>The time it took to send me the address.</b></div>
-      </div>
+      <div class="kit-tablet"><img src="assets/img/ember/tablet-home.webp" width="820" height="1180" loading="lazy" decoding="async" alt="Ember on a tablet"></div>
+      <div class="kit-phone"><img src="assets/img/ember/phone-home.webp" width="540" height="1168" loading="lazy" decoding="async" alt="Ember on a phone, with the app-style bar along the bottom"></div>
+      <p class="kit-dlabel" aria-hidden="true"><span>Tablet</span><span>Laptop</span><span>Phone</span></p>
     </div>
-    <div class="cta-row stand" style="margin-top:32px;">
-      <a class="btn btn-primary" href="website-audit.html">Get my free website review &rarr;</a>
+    <p class="kit-hint">Scroll inside the laptop to see the whole home page.</p>
+
+    <!-- what's in the box -->
+    <h3 class="kit-sub stand">Everything in the box</h3>
+    <ul class="kit-box">
+      <li class="stand"><b>Category bubbles</b>A swipeable row of round pictures &mdash; one tap to an aisle.</li>
+      <li class="stand"><b>Lightning deals</b>Sale items with a live countdown that resets at midnight.</li>
+      <li class="stand"><b>Cards that sell</b>Stars, savings, sale badges and one-tap Add to basket.</li>
+      <li class="stand"><b>Shop by budget</b>Under &pound;5, &pound;10, &pound;20 &mdash; straight into a filtered shop.</li>
+      <li class="stand"><b>Delivery promise</b>&ldquo;Order within 2h 30m and it ships today.&rdquo;</li>
+      <li class="stand"><b>Free delivery nudge</b>A progress bar in the basket that fills as they add.</li>
+      <li class="stand"><b>App-style bottom bar</b>Home, Shop, Deals, Account, Basket &mdash; under their thumb.</li>
+      <li class="stand"><b>Proper filters</b>Price, categories, ratings and stock, so people find it.</li>
+      <li class="stand"><b>Search front and centre</b>A big, friendly search bar with live suggestions.</li>
+    </ul>
+
+    <!-- the two versions: Shopify left, WordPress right -->
+    <h3 class="kit-sub stand">Same look. Pick your platform.</h3>
+    <div class="kit-plats">
+      <article class="kit-plat stand">
+        <p class="kit-plat-tag">Shopify</p>
+        <h4>Choose Shopify if you want it all handled.</h4>
+        <p class="kit-why">Hosting, payments, security and updates are done for you. You just sell.</p>
+        <ul class="kit-ticks">
+          <li>Takes Shop Pay, Apple Pay and cards out of the box</li>
+          <li>25 drag-in sections and 8 colour schemes</li>
+          <li>Marketplace extras: &ldquo;Sold by&rdquo;, &ldquo;Only 3 left&rdquo; and a deals countdown</li>
+          <li>Variants, swatches, subscriptions and gift cards</li>
+          <li>Works on any Shopify plan</li>
+        </ul>
+        <p class="kit-how"><b>Make it yours in</b> Online Store &rarr; Customize. Drag, drop, click, type.</p>
+        <p class="kit-price"><span>&pound;59</span> one-off &middot; Online Store 2.0 theme</p>
+        <a class="btn btn-primary" href="themes.html#buy">Get Ember for Shopify &rarr;</a>
+      </article>
+      <article class="kit-plat stand">
+        <p class="kit-plat-tag kit-plat-tag--wp">WordPress + WooCommerce</p>
+        <h4>Choose WooCommerce if you want to own everything.</h4>
+        <p class="kit-why">Your site, your server, your data &mdash; and no monthly theme fees, ever.</p>
+        <ul class="kit-ticks">
+          <li>Takes Stripe, PayPal and Klarna, with any shipping and tax rules</li>
+          <li>16 drag-in patterns and 5 one-click styles</li>
+          <li>A ready-made Deals page, budget chips and delivery promise</li>
+          <li>Every page, header and footer edited visually</li>
+          <li>Needs WordPress 6.5+ and WooCommerce 8.5+</li>
+        </ul>
+        <p class="kit-how"><b>Make it yours in</b> Appearance &rarr; Editor. Every page, visually.</p>
+        <p class="kit-price"><span>&pound;59</span> one-off &middot; WordPress block theme</p>
+        <a class="btn btn-primary" href="themes.html#buy">Get Ember for WooCommerce &rarr;</a>
+      </article>
     </div>
-    <div class="chips stand">
-      <span class="chip">3 minutes to ask</span><span class="chip">Report in 2 working days</span>
-      <span class="chip">Nothing to pay</span>
+    <p class="kit-bundle stand">Building shops for clients, or can&rsquo;t decide? <b>Get both for &pound;89.</b></p>
+
+    <!-- how they make it their own -->
+    <h3 class="kit-sub stand">Out of the box and into your business</h3>
+    <ol class="kit-steps">
+      <li class="stand"><span>1</span><b>Upload the zip</b>About two minutes. Don&rsquo;t unzip it &mdash; your platform does the rest.</li>
+      <li class="stand"><span>2</span><b>Make it look like you</b>Pick a style, set your colours and fonts, drop in your logo.</li>
+      <li class="stand"><span>3</span><b>Fill it with your shop</b>Drag sections around, change every word, add your products.</li>
+      <li class="stand"><span>4</span><b>Stuck? Ask a human</b>Email me with your licence key &mdash; usually answered the same day.</li>
+    </ol>
+
+    <div class="cta-row stand kit-cta">
+      <a class="btn btn-primary" href="themes.html">Have a proper look at Ember &rarr;</a>
+      <a class="btn btn-ghost" href="themes.html#buy">Prices &amp; licences</a>
     </div>
   </div>
 </section>
@@ -878,16 +948,16 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261005c" defer></script>
-<script src="assets/js/dragon.js?v=20261005c" defer></script>
+<script src="assets/js/main.js?v=20261006a" defer></script>
+<script src="assets/js/dragon.js?v=20261006a" defer></script>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
 </script>
-<script type="module" src="assets/js/dragon3d.js?v=20261005c"></script>
-<script type="module" src="assets/js/comic-dragon.js?v=20261005c"></script>
-<script src="assets/js/globe.js?v=20261005c" defer></script>
-<script src="assets/js/comic.js?v=20261005c" defer></script>
-<script src="assets/js/quest.js?v=20261005c" defer></script>
-<script type="module" src="assets/js/quest-dragon.js?v=20261005c"></script>
+<script type="module" src="assets/js/dragon3d.js?v=20261006a"></script>
+<script type="module" src="assets/js/comic-dragon.js?v=20261006a"></script>
+<script src="assets/js/globe.js?v=20261006a" defer></script>
+<script src="assets/js/comic.js?v=20261006a" defer></script>
+<script src="assets/js/quest.js?v=20261006a" defer></script>
+<script type="module" src="assets/js/quest-dragon.js?v=20261006a"></script>
 </body>
 </html>

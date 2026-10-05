@@ -1,0 +1,88 @@
+/* ============================================================
+   10 · EMBER — THE DIY THEME
+   The boxed, ready-to-go ecommerce theme. One device scene
+   (laptop you can scroll, tablet, phone), what's in the box,
+   Shopify on the left vs WordPress + WooCommerce on the right,
+   then four steps to make it your own.
+   ============================================================ */
+
+.kit .lead{max-width:60ch;}
+
+/* ---- every device in one scene ---- */
+.kit-devices{position:relative;max-width:1060px;margin:54px auto 0;padding:0 150px 70px 170px;}
+.kit-laptop{position:relative;z-index:1;background:#fff;border-radius:12px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(246,243,237,.1);}
+.kit-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#ece8e1;}
+.kit-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57;}
+.kit-bar i:nth-child(2){background:#febc2e;}.kit-bar i:nth-child(3){background:#28c840;}
+.kit-bar span{flex:1;margin-left:10px;max-width:340px;padding:4px 10px;border-radius:6px;background:#fff;color:#77736b;font-size:12px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.kit-scroll{height:min(46vw,470px);overflow-y:auto;overscroll-behavior:contain;background:#faf7f2;}
+.kit-scroll img{display:block;width:100%;height:auto;}
+.kit-scroll:focus-visible{outline:3px solid var(--amber);outline-offset:-3px;}
+.kit-tablet,.kit-phone{position:absolute;z-index:2;background:#0c0c0e;box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);}
+.kit-tablet{left:0;bottom:0;width:250px;padding:10px;border-radius:24px;}
+.kit-phone{right:0;bottom:-10px;width:170px;padding:8px;border-radius:28px;}
+.kit-tablet img{display:block;width:100%;height:auto;border-radius:14px;}
+.kit-phone img{display:block;width:100%;height:auto;border-radius:21px;}
+.kit-dlabel{position:absolute;left:0;right:0;bottom:-44px;display:flex;justify-content:space-between;margin:0;padding:0 40px 0 70px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--mute);}
+.kit-hint{text-align:center;margin:56px 0 0;font-size:14px;color:var(--mute);}
+
+/* ---- what's in the box ---- */
+.kit-sub{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;margin:76px 0 20px;}
+.kit-box{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;
+  background:rgba(246,243,237,.12);border:1px solid rgba(246,243,237,.12);}
+.kit-box li{background:var(--ink-2);padding:20px 22px;font-size:15px;line-height:1.5;color:#bcbab4;}
+.kit-box b{display:block;color:var(--paper);font-size:16.5px;margin-bottom:4px;}
+.kit-box b::before{content:"\25C6  ";color:var(--flame);font-size:12px;vertical-align:1px;}
+
+/* ---- Shopify left / WordPress right ---- */
+.kit-plats{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.kit-plat{display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border-radius:4px;padding:30px 28px;
+  border-top:6px solid #5e8e3e;}
+.kit-plat:nth-child(2){border-top-color:#7f54b3;}
+.kit-plat-tag{align-self:flex-start;margin:0 0 14px;padding:6px 11px;border-radius:2px;font-size:12px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;background:#5e8e3e;color:#fff;}
+.kit-plat-tag--wp{background:#7f54b3;}
+.kit-plat h4{font-size:clamp(20px,2vw,24px);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:0 0 8px;}
+.kit-why{font-size:16.5px;line-height:1.5;color:var(--ink);font-weight:600;margin:0 0 16px;}
+.kit-ticks{list-style:none;padding:0;margin:0 0 18px;}
+.kit-ticks li{position:relative;padding:7px 0 7px 28px;font-size:15.5px;line-height:1.45;color:var(--mute-dark);border-top:1px solid rgba(10,10,12,.08);}
+.kit-ticks li::before{content:"\2713";position:absolute;left:2px;top:7px;font-weight:800;color:var(--flame);}
+.kit-how{font-size:15px;color:var(--mute-dark);margin:0 0 6px;}
+.kit-how b{color:var(--ink);}
+.kit-price{margin:auto 0 18px;padding-top:12px;font-size:14px;color:var(--mute-dark);}
+.kit-price span{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-right:4px;}
+.kit-plat .btn{align-self:flex-start;}
+.kit-bundle{margin:22px 0 0;text-align:center;font-size:16.5px;color:#bcbab4;}
+.kit-bundle b{color:var(--amber);}
+
+/* ---- make it yours ---- */
+.kit-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:none;}
+.kit-steps li{font-size:15px;line-height:1.5;color:#bcbab4;padding-top:16px;border-top:2px solid rgba(255,59,31,.55);}
+.kit-steps span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;margin-bottom:10px;
+  background:var(--flame);color:var(--ink);font-weight:800;}
+.kit-steps b{display:block;color:var(--paper);font-size:17px;margin-bottom:4px;}
+.kit-cta{margin-top:48px;}
+
+/* ---- smaller screens ---- */
+@media (max-width:980px){
+  .kit-devices{padding:0 90px 60px 120px;}
+  .kit-tablet{width:180px;}
+  .kit-phone{width:120px;}
+  .kit-box{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .kit-steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:760px){
+  .kit-devices{padding:0 0 150px;}
+  .kit-scroll{height:62vw;}
+  .kit-tablet{width:46%;left:2%;bottom:0;padding:7px;border-radius:16px;}
+  .kit-tablet img{border-radius:10px;}
+  .kit-phone{width:28%;right:4%;bottom:-6px;padding:5px;border-radius:18px;}
+  .kit-phone img{border-radius:14px;}
+  .kit-dlabel{display:none;}
+  .kit-hint{margin-top:22px;}
+  .kit-box,.kit-plats,.kit-steps{grid-template-columns:minmax(0,1fr);}
+  .kit-plat{padding:24px 20px;}
+}
