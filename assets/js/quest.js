@@ -110,6 +110,17 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 		if (!b) { return; }
 		var what = b.getAttribute('data-quest');
 		if (what === 'list') { e.preventDefault(); setFlying(false, { remember: true, scrollTo: true }); }
+		if (what === 'up') {
+			/* back up above the flight, to the section before it */
+			e.preventDefault();
+			closeWindow(true);
+			var before = root.previousElementSibling;
+			while (before && before.tagName !== 'SECTION') { before = before.previousElementSibling; }
+			var upTop = before ? before.getBoundingClientRect().top + window.pageYOffset : root.getBoundingClientRect().top + window.pageYOffset - window.innerHeight;
+			window.scrollTo({ top: Math.max(0, upTop - 60), behavior: 'instant' });
+			if (before) { before.setAttribute('tabindex', '-1'); before.focus({ preventScroll: true }); }
+			return;
+		}
 		if (what === 'exit') {
 			/* jump straight past the flight — 'instant', or a smooth scroll
 			   would replay the whole journey on the way down */
@@ -198,12 +209,20 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 		el.listBtn.type = 'button';
 		el.listBtn.setAttribute('data-quest', 'list');
 		el.listBtn.setAttribute('aria-label', 'Switch to the plain list of projects');
-		el.exitBtn = mk('button', 'q-exit', el.hud, 'Exit<span class="lt"> flight</span> &darr;');
-		el.exitBtn.type = 'button';
-		el.exitBtn.setAttribute('data-quest', 'exit');
-		el.exitBtn.setAttribute('aria-label', 'Leave the flight and carry on down the page');
 
-		el.help = mk('div', 'q-help', stage, 'Scroll to fly &#9660; &nbsp;&middot;&nbsp; &larr; &rarr; to hop');
+		el.rail = mk('div', 'q-rail', stage);
+		el.rail.setAttribute('role', 'navigation');
+		el.rail.setAttribute('aria-label', 'Leave the flight');
+		el.upBtn = mk('button', 'q-rail-up', el.rail, '<span aria-hidden="true">&#9650;</span> Go back up');
+		el.upBtn.type = 'button';
+		el.upBtn.setAttribute('data-quest', 'up');
+		el.upBtn.setAttribute('aria-label', 'Go back up the page, above the flight');
+		el.downBtn = mk('button', 'q-rail-down', el.rail, 'Go down <span aria-hidden="true">&#9660;</span>');
+		el.downBtn.type = 'button';
+		el.downBtn.setAttribute('data-quest', 'exit');
+		el.downBtn.setAttribute('aria-label', 'Go down the page, past the flight');
+
+		el.help = mk('div', 'q-help', stage, 'Scroll to fly through my work &#9660;');
 		el.help.setAttribute('aria-hidden', 'true');
 
 		el.map = mk('div', 'q-map', stage);
