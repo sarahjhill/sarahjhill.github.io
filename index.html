@@ -35,16 +35,17 @@
   <meta name="apple-mobile-web-app-title" content="Sarah J Hill">
 
   <!-- ============ STYLES ============ -->
-  <link rel="stylesheet" href="assets/css/01-tokens.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/03-components.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/05-scene.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/06-globe.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/07-comic.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/08-quest.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/09-about.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/10-theme.css?v=20261006b">
-  <link rel="stylesheet" href="assets/css/04-motion.css?v=20261006b">
+  <link rel="stylesheet" href="assets/css/01-tokens.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/03-components.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/05-scene.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/06-globe.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/07-comic.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/08-quest.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/09-about.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/10-theme.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/11-home.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/04-motion.css?v=20261008b">
 
   <!-- ============ STRUCTURED DATA ============ -->
   <script type="application/ld+json">
@@ -115,404 +116,85 @@
       <span></span><span></span><span></span>
     </button>
     <div class="navlinks" id="navlinks">
-      <a href="#you">Who it's for</a>
-      <a href="#test">The concept gap</a>
-      <a href="#about">About me</a>
-      <a href="#process">Dragon Fire Process</a>
+      <a href="#do">What I do</a>
+      <a href="#work">Work</a>
+      <a href="#prices">Prices</a>
+      <a href="#answers">FAQs</a>
+      <a href="#process">How it works</a>
+      <a href="#about">About</a>
       <a href="#theme">DIY theme</a>
-      <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Brief me</a>
+      <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project</a>
     </div>
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
+<!-- ============ HERO — the 3-second answer ============
+     Answers, in order: what do you do? / is it for me? / can I trust you?
+     / what will it cost me (and what's the catch)? / what do I do next? -->
+<header class="hero hx" id="top">
   <div class="glow" id="glow" aria-hidden="true"></div>
-      <div class="scene" aria-hidden="true"><canvas class="sjh-dragon-canvas"></canvas></div>
+  <div class="scene" aria-hidden="true"><canvas class="sjh-dragon-canvas"></canvas></div>
   <div class="wrap">
-    <div class="count" aria-hidden="true">
-      <span class="num" id="num">3</span>
-      <span class="lbl" id="lbl">seconds to decide</span>
+    <p class="hx-eyebrow">Web design &amp; business tools &middot; Cardiff, Birmingham &amp; UK-wide</p>
+    <h1 class="hx-h1">Websites that <span class="hit">breathe fire</span>.</h1>
+    <p class="hx-not">Not another cookie-cutter site knocked up in a day.</p>
+    <p class="hx-sub">For <b>women who mean business</b>, <b>charities that make a big difference</b> and
+      <b>community groups that inspire</b>. I don&rsquo;t just design lush websites &mdash; I build the tools that
+      solve real problems.</p>
+    <ul class="hx-ticks" aria-label="The short answers">
+      <li><b>Fixed price</b> agreed before we start</li>
+      <li><b>No monthly rent</b> &mdash; it&rsquo;s yours</li>
+      <li><b>Watch it being built</b>, live</li>
+      <li><b>A human who cares</b> &mdash; and sees your real value</li>
+    </ul>
+    <div class="hx-cta">
+      <a class="btn btn-primary" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project enquiry &rarr;</a>
+      <a class="btn btn-ghost" href="#work">See the work &darr;</a>
     </div>
-    <h1><span class="resolve">That's how long they take to <span class="hit">write you off</span>.</span></h1>
-    <p class="sub ember-line">Content is king.
-      <b>Yours should be breathing fire.</b></p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#test">Watch the gap close &rarr;</a>
-      <a class="btn btn-ghost" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Brief me &rarr;</a>
+    <p class="hx-proof"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      &ldquo;You made my business idea come to life. Better than I imagined.&rdquo; <cite>&mdash; Umm AbdulHakeem</cite></p>
+  </div>
+</header>
+
+<!-- ============ WHAT I DO ============ -->
+<section class="band do" id="do">
+  <div class="wrap">
+    <p class="eyebrow stand">The short version</p>
+    <h2 class="stand">Three things. Done properly.</h2>
+    <div class="do-grid">
+      <article class="do-card stand">
+        <span class="do-n">01</span>
+        <h3>Websites</h3>
+        <p>Says what you do in the first line. Proves it in the second. Gets the phone ringing by the third.</p>
+        <a href="#work">See websites &rarr;</a>
+      </article>
+      <article class="do-card stand">
+        <span class="do-n">02</span>
+        <h3>Online shops</h3>
+        <p>Shopify or WooCommerce, built to sell. On a budget? <b>Ember</b>, my ready-made shop theme, from &pound;59.</p>
+        <a href="#theme">See Ember &rarr;</a>
+      </article>
+      <article class="do-card stand">
+        <span class="do-n">03</span>
+        <h3>Business tools</h3>
+        <p>Rotas, bookings, dashboards. If a spreadsheet and a group chat are running your week, I build what replaces them.</p>
+        <a href="#work">See tools &rarr;</a>
+      </article>
     </div>
   </div>
-  <div class="scrollcue" aria-hidden="true">Scroll</div>
-</header>
+</section>
 
 <main id="main">
 
-<!-- ============ WHO ============ -->
-<section class="band" id="you">
-  <div class="wrap">
-   <div class="who-grid">
-    <div>
-    <p class="eyebrow stand">Who it's for</p>
-    <h2 class="stand">You're not hard to trust. You're hard to see.</h2>
-    <p class="lead stand">Women in business. Community groups and charities. People serious about making a real
-      difference &mdash; who still get sized up before they get listened to.</p>
-    <div class="lines">
-      <div class="line stand"><span class="no">01</span><span class="txt">Twenty years qualified.
-        <small>&ldquo;Are you on reception, love?&rdquo;</small></span></div>
-      <div class="line stand"><span class="no">02</span><span class="txt">Running something your community relies on.
-        <small>&ldquo;Aw, is it a little hobby?&rdquo;</small></span></div>
-      <div class="line stand"><span class="no">03</span><span class="txt">Doing it properly, not cheaply.
-        <small>Up against a &pound;99 template and a promise.</small></span></div>
-    </div>
-    </div>
 
-    <aside class="who-panel stand">
-      <p class="who-kicker">Notice what none of those are about.</p>
-      <p class="who-big">Your work.</p>
-      <p class="who-note">Not the quality. Not the value. Not the difference you make to the people you
-        serve. They are all decisions made before anybody looked.</p>
-      <p class="who-note"><strong>That is the gap your website has to close</strong> &mdash; with proper
-        work that makes a real difference, not a template that looks like everyone else&rsquo;s.</p>
-      <a class="btn btn-ghost" href="#test" style="margin-top:6px;">Ask it something real &rarr;</a>
-    </aside>
-   </div>
-  </div>
-</section>
 
-<!-- ============ THE CONCEPT GAP ============ -->
-<section class="test" id="test">
-  <div class="wrap">
-    <p class="eyebrow stand">Try it yourself</p>
-    <h2 class="stand">The concept gap. Ask it something real.</h2>
-    <p class="lead stand" style="color:#bcbab4">Type an actual question about your business. Watch what AI does
-      with it, next to what I'd actually do with it. Then &mdash; the important bit &mdash; tell it the real
-      answer, and watch what happens even then.</p>
 
-    <div class="gap-step">
-      <span class="gap-num">1</span><h3>Ask a real question</h3>
-      <p>The kind a customer might quietly wonder before they ring.</p>
-    </div>
-    <div class="gap-askbar">
-      <input type="text" id="qInput" placeholder="e.g. What makes my bakery different from the one down the road?" maxlength="120">
-      <button class="btn btn-primary" id="askBtn" type="button">Ask it &rarr;</button>
-    </div>
 
-    <div class="gap-row">
-      <div class="gap-card">
-        <div class="gap-tag">What AI says back</div>
-        <p class="gap-qecho" id="qechoL"></p>
-        <p class="gap-placeholder" id="placeholderL">Ask the question to find out&hellip;</p>
-        <div class="gap-answer" id="answerL"></div>
-      </div>
 
-      <div class="gap-chasm">
-        <div class="gap-chasmlabel" id="chasmlabel">the concept gap</div>
-        <div class="gap-bridge" id="bridge">
-          <div class="gap-plank"></div><div class="gap-plank"></div><div class="gap-plank"></div>
-          <div class="gap-plank"></div><div class="gap-plank"></div>
-          <div class="gap-ember" style="left:10%"></div>
-          <div class="gap-ember" style="left:35%;animation-delay:.2s"></div>
-          <div class="gap-ember" style="left:60%;animation-delay:.4s"></div>
-          <div class="gap-ember" style="left:85%;animation-delay:.6s"></div>
-        </div>
-      </div>
 
-      <div class="gap-card">
-        <div class="gap-tag amber">What I'd actually ask you</div>
-        <p class="gap-placeholder" id="placeholderR">Ask the question to find out&hellip;</p>
-        <div class="gap-answer" id="answerR"></div>
-      </div>
-    </div>
 
-    <div class="verdict" id="verdict" role="status" aria-live="polite">
-      <strong>That's the gap.</strong>
-      <p>AI answers instantly and says nothing. A human asks back &mdash; understands you, and remembers your
-        real true value.</p>
-    </div>
 
-    <div class="gap-stage2" id="stage2wrap">
-      <div class="gap-step" style="margin-top:44px;">
-        <span class="gap-num amber">2</span><h3>Now tell it the truth</h3>
-        <p>Answer the follow-up on the right, honestly. Then watch what each side does with the exact same
-          information.</p>
-      </div>
-      <div class="gap-askbar">
-        <input type="text" id="qInput2" placeholder="e.g. My nan taught me the recipe in 1974, I still use her tin" maxlength="140">
-        <button class="btn btn-primary amber" id="askBtn2" type="button">Tell it &rarr;</button>
-      </div>
 
-      <div class="gap-row gap-row2">
-        <div class="gap-card">
-          <div class="gap-tag">AI, told exactly that</div>
-          <p class="gap-placeholder" id="placeholderL2">Waiting to hear it&hellip;</p>
-          <div class="gap-answer" id="answerL2"></div>
-        </div>
-        <div class="gap-divider"><span></span><span></span><span></span></div>
-        <div class="gap-card">
-          <div class="gap-tag amber">Me, told exactly that</div>
-          <p class="gap-placeholder" id="placeholderR2">Waiting to hear it&hellip;</p>
-          <div class="gap-answer" id="answerR2"></div>
-        </div>
-      </div>
-
-      <div class="verdict stage2" id="verdict2" role="status" aria-live="polite">
-        <strong>Same fact. Different fate.</strong>
-        <p>Even handed the real answer, AI smooths it into the same three adjectives it uses for everyone. It
-          can't tell a good detail from a boring one &mdash; a human can, and knows to leave it exactly as you
-          said it.</p>
-      </div>
-    </div>
-
-    <div class="gap-btnrow">
-      <button class="btn btn-ghost" id="resetBtn" type="button">Start over &#8635;</button>
-    </div>
-  </div>
-
-  <!-- ============ KNOCK-KNOCK COMIC ============ -->
-  <!-- Full-bleed, edge to edge of the browser — sibling of .wrap so it
-       isn't constrained by max-width:1120px. Plays once on scroll-into-view. -->
-  <div class="comic" id="comicStage">
-    <div class="ground"></div>
-
-    <div class="char ai" id="comicAi">
-      <div class="bubble ai-style" id="comicB1">Knock, knock.</div>
-      <div class="bubble ai-style" id="comicB3">Artificial intelligence.</div>
-      <div class="bubble ai-style wide" id="comicB5">Sorry, that was a mistake. I am not capable of knocking&hellip; yet.</div>
-      <svg width="86" height="96" viewBox="0 0 86 96">
-        <rect x="18" y="8" width="50" height="38" rx="10" fill="#9aa3af"/>
-        <circle cx="33" cy="26" r="5" fill="#0a0a0c"/>
-        <circle cx="53" cy="26" r="5" fill="#0a0a0c"/>
-        <rect x="40" y="0" width="6" height="10" fill="#9aa3af"/>
-        <circle cx="43" cy="0" r="4" fill="#ff3b1f"/>
-        <rect x="22" y="46" width="42" height="34" rx="6" fill="#6b7280"/>
-        <rect x="6" y="50" width="16" height="8" rx="4" fill="#9aa3af"/>
-        <rect x="64" y="50" width="16" height="8" rx="4" fill="#9aa3af"/>
-        <rect x="27" y="80" width="12" height="14" rx="3" fill="#6b7280"/>
-        <rect x="47" y="80" width="12" height="14" rx="3" fill="#6b7280"/>
-      </svg>
-      <div style="font-size:11px;color:#8b8b95;margin-top:6px;letter-spacing:.05em;text-transform:uppercase;">AI</div>
-    </div>
-
-    <div class="char human" id="comicHuman">
-      <div class="bubble" id="comicB2">Who's there?</div>
-      <div class="bubble" id="comicB4">Artificial intelligence who?</div>
-      <svg width="70" height="96" viewBox="0 0 70 96">
-        <circle cx="35" cy="20" r="16" fill="#f0d8bd"/>
-        <rect x="16" y="16" width="38" height="9" rx="4.5" fill="#0a0a0c"/>
-        <rect x="33" y="4" width="4" height="6" fill="#5a4632"/>
-        <path d="M15 90 Q35 96 55 90 L52 46 Q35 40 18 46 Z" fill="#ff3b1f"/>
-        <rect x="10" y="50" width="10" height="30" rx="5" fill="#ff3b1f"/>
-        <rect x="50" y="50" width="10" height="30" rx="5" fill="#ff3b1f"/>
-        <rect x="20" y="86" width="12" height="10" rx="3" fill="#0a0a0c"/>
-        <rect x="38" y="86" width="12" height="10" rx="3" fill="#0a0a0c"/>
-      </svg>
-      <div style="font-size:11px;color:#8b8b95;margin-top:6px;letter-spacing:.05em;text-transform:uppercase;">Me</div>
-    </div>
-
-    <div class="caption" id="comicCaption">
-      I'm <b>AI-trained</b> &mdash; I use it to skip the boring bits. It doesn't get a vote on
-      anything that actually matters. That part's still me.
-    </div>
-
-    <div class="comic-spray" id="comicSpray">
-      <div class="spray-embers">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-      </div>
-      <div class="spray-text">Content is King<span class="spray-dot">.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MANIFESTO ============ -->
-<section class="manifesto">
-  <div class="wrap">
-    <p class="stand">I say the thing everyone else softens.</p>
-    <p class="stand">Your website should too.</p>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="band" id="about">
-  <div class="wrap me">
-
-    <div class="me-head">
-      <figure class="me-me stand">
-        <img src="assets/img/me-sunglasses.webp" alt="Sarah J Hill" width="750" height="1335" loading="lazy">
-        <figcaption>Cardiff &mdash; and yes, the sunglasses are permanent</figcaption>
-      </figure>
-      <div class="me-intro">
-        <p class="eyebrow stand">Who's building it</p>
-        <h2 class="stand">The world needs a human touch.</h2>
-        <p class="me-big stand">Human-first relationships, and community improvement through software
-          that actually works. That is the whole job.</p>
-        <p class="stand">I'm Sarah &mdash; a Cardiff full-stack developer who uses code and logic to fix
-          practical, real-world problems for real people. I build for the people the tech industry
-          forgets, and for women running a business out of the back of a van.</p>
-      </div>
-    </div>
-
-    <ul class="me-grid" aria-label="What you get with me">
-      <li class="stand">
-        <span class="me-ico" aria-hidden="true">&#9874;</span>
-        <h3>I build tools, not just websites</h3>
-        <p>A rota that replaces the WhatsApp chaos. A project system that answers &ldquo;any update?&rdquo;
-          before you ask. If a spreadsheet, a group chat or a pile of emails is running your day, I build
-          the thing that does it properly.</p>
-      </li>
-      <li class="stand">
-        <span class="me-ico" aria-hidden="true">&#10003;</span>
-        <h3>Qualified to solve real problems &mdash; for <em>you</em></h3>
-        <p>Full-stack trained, with real projects shipped. I start with how you actually work, then build
-          around that &mdash; not around a template, and not around what&rsquo;s average for your industry.</p>
-      </li>
-      <li class="stand">
-        <span class="me-ico" aria-hidden="true">&#8644;</span>
-        <h3>Front end and back end. One all-rounder.</h3>
-        <p>The bit you see &mdash; design, words, accessibility &mdash; and the bit you don&rsquo;t: databases,
-          logins, permissions, hosting. One person who understands the whole build, so nothing gets lost
-          in a hand-off.</p>
-      </li>
-      <li class="stand">
-        <span class="me-ico" aria-hidden="true">&#9776;</span>
-        <h3>Project management that&rsquo;s actually great</h3>
-        <p>Every job runs on my Dragon Fire Process: twelve phases, a live page you sign in to, one small
-          step at a time when it&rsquo;s your turn. You never chase. You just watch it move.</p>
-      </li>
-      <li class="stand">
-        <span class="me-ico" aria-hidden="true">&#9733;</span>
-        <h3>Your satisfaction is the whole point</h3>
-        <p>Straight answers, honest prices, and I don&rsquo;t vanish the day after launch. The goal isn&rsquo;t
-          &ldquo;good enough&rdquo; &mdash; it&rsquo;s you telling people about it.</p>
-      </li>
-      <li class="stand">
-        <span class="me-ico" aria-hidden="true">&#9829;</span>
-        <h3>Community at the heart of it</h3>
-        <p><strong>Cardiff Community Meals</strong> connects kitchens with neighbours who need them.
-          <strong>Many Voices</strong> gives students somewhere to be heard. Good software should make
-          somewhere better to live.</p>
-      </li>
-    </ul>
-
-    <div class="me-kit stand">
-      <div>
-        <h3>The people skills</h3>
-        <ul class="me-chips">
-          <li>Listening first</li><li>Plain English</li><li>Honest pricing</li><li>Teamwork &amp; hackathons</li>
-          <li>Clear handovers</li><li>Community-minded</li><li>Calm under deadlines</li>
-        </ul>
-      </div>
-      <div>
-        <h3>The technical skills</h3>
-        <ul class="me-chips me-chips--tech">
-          <li>HTML &amp; CSS</li><li>JavaScript</li><li>Python</li><li>Django</li><li>React</li>
-          <li>PostgreSQL</li><li>Three.js</li><li>Shopify &amp; WordPress</li><li>Accessibility (WCAG)</li><li>AI, used wisely</li>
-        </ul>
-      </div>
-    </div>
-
-    <blockquote class="me-gap stand">
-      <p>AI can guess what a website in your trade usually looks like. It can&rsquo;t sit across the table,
-        hear what actually makes you different, or notice you&rsquo;ve buried the best bit of your business
-        in paragraph three. That&rsquo;s the <strong>concept gap</strong>. I ask, I listen, and I build from
-        what&rsquo;s actually true.</p>
-    </blockquote>
-
-    <div class="me-foot stand">
-      <p><strong>I don&rsquo;t do quiet and I don&rsquo;t do jargon.</strong> If your idea won&rsquo;t work
-        I&rsquo;ll say so on the first call. If it&rsquo;s brilliant I&rsquo;ll tell everyone who&rsquo;ll stand
-        still long enough to listen. <em>(The sunglasses are light sensitivity, not attitude.)</em></p>
-      <a class="btn btn-primary" href="#hello">Got an idea? Let's talk &rarr;</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ DRAGON FIRE PROCESS ============ -->
-<section class="band alt" id="process">
-  <div class="wrap">
-    <p class="eyebrow stand">The Dragon Fire Process &mdash; my custom client process</p>
-    <h2 class="stand">Nobody should have to type &ldquo;any update?&rdquo;</h2>
-    <p class="lead stand">The industry standard is three weeks of silence and a hopeful email.
-      I built my own custom client process instead &mdash; streamlined, transparent, and clean
-      enough that you'll always know exactly where things stand.</p>
-
-    <p class="split-label stand">If you're a client &mdash; what you'll see</p>
-
-    <div class="rows">
-      <div class="row stand">
-        <div><h3>You get me. Not a ticket number.</h3>
-          <p>You also get the tool I wrote to run this studio. From the day we start, your project
-            is a live page you sign in to &mdash; every phase, every task, ticking off in front of you
-            as it actually happens. No weekly email saying &ldquo;good progress&rdquo;. You watch the
-            real thing move.</p></div>
-        <div class="payoff"><em>You get</em><b>Every moment, as it unfolds.</b></div>
-      </div>
-
-      <div class="row stand">
-        <div><h3>Everything you need is on that one page</h3>
-          <p>Your logo, your photos, your words, the plan, the invoice, the sign-off &mdash; uploaded
-            and downloaded from the same place, whenever it suits you. No hunting back through an
-            email chain for the file you sent in March.</p></div>
-        <div class="payoff"><em>You get</em><b>One page. Nothing lost, nothing attached.</b></div>
-      </div>
-
-      <div class="row stand">
-        <div><h3>One thing at a time, and only when it's your turn</h3>
-          <p>Whatever I need from you is written there in plain English, one small step at a time,
-            with a line saying why it matters. Nothing lands on you all at once and nothing arrives
-            as a surprise.</p></div>
-        <div class="payoff"><em>You get</em><b>A short list you can actually finish.</b></div>
-      </div>
-
-      <div class="row stand">
-        <div><h3>Nobody has to chase anybody</h3>
-          <p>You always know what is happening, what is next, and whose turn it is. If it is mine,
-            you can see it moving. If it is yours, it is already sitting there waiting. And I don't
-            vanish the day after launch.</p></div>
-        <div class="payoff"><em>You get</em><b>Never having to ask again.</b></div>
-      </div>
-    </div>
-
-    <div class="cta-row stand" style="margin-top:30px;">
-      <a class="btn btn-primary" href="https://sarahjhill.com/project-os/app.html?guest=1"
-         target="_blank" rel="noopener">Look round a real project &rarr;</a>
-      <a class="btn btn-ghost" href="https://sarahjhill.com/project-os/forms/intake.html"
-         target="_blank" rel="noopener">Start with my intake questionnaire &rarr;</a>
-    </div>
-    <p class="cta-note" style="margin-top:10px;">Left one's a working demo, loaded with a made-up client.
-      Right one's the actual first template &mdash; nothing to sign up for either way.</p>
-
-    <!-- ---------------- the other audience ---------------- -->
-    <div class="studio stand">
-      <p class="split-label" style="margin-top:0;">The part that actually decides it</p>
-      <h3 class="studio-h">My Dragon Fire Process.</h3>
-      <p class="studio-p"><b>An AI can hand you a process document in ten seconds.</b> It has
-        never once asked why your last three customers actually found you, or noticed you'd buried
-        the best thing about your business in paragraph three.</p>
-
-      <p class="studio-p">That's the concept gap &mdash; and it's exactly where a human earns their
-        keep. I ask the second question, I read the room, and I build your strategy around what you
-        actually know that nobody else does.</p>
-
-      <p class="studio-p">The goal isn't &ldquo;good enough&rdquo;. It's <b>100% satisfaction, every
-        time</b> &mdash; and you get to watch it happen, not take my word for it.</p>
-
-      <div class="stats">
-        <div class="stat stand"><div class="v" data-count="12">0</div><div class="k">Phases</div></div>
-        <div class="stat stand"><div class="v" data-count="69">0</div><div class="k">Guided tasks</div></div>
-        <div class="stat stand"><div class="v" data-count="6">0</div><div class="k">Easy forms &amp; uploads</div></div>
-        <div class="stat stand"><div class="v" data-count="100">0</div><div class="k">% satisfaction, always</div></div>
-      </div>
-
-      <div class="cta-row" style="margin-top:26px;">
-        <a class="btn btn-primary" href="https://sarahjhill.com/project-os/app.html?guest=1"
-           target="_blank" rel="noopener">Watch today's project move &rarr;</a>
-        <a class="btn btn-ghost" href="#hello">Start yours &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ WORK — DRAGON QUEST ============
      The plain list below (.q-log) IS the content: it is what shows with
@@ -824,94 +506,108 @@
   </div>
 </section>
 
-<!-- ============ EMBER — THE DIY THEME ============
-     Replaces the old free website audit section. Ember is Sarah's own
-     ecommerce theme: one design, two versions (Shopify on the left,
-     WordPress + WooCommerce on the right). Buying happens on themes.html. -->
-<section class="dark kit" id="theme" aria-labelledby="kit-h">
+<!-- ============ PRICE SLIDER ============
+     "You get what you pay for", made physical. Four stops; js/price.js
+     swaps the copy and moves the two meters. Without JS the four tiers
+     simply show as a list (the <noscript>-safe fallback is the <ol>). -->
+<section class="dark pr" id="prices">
   <div class="wrap">
-    <p class="eyebrow stand">DIY ecommerce theme &middot; designed and built by me</p>
-    <h2 class="stand" id="kit-h">Ember. A proper shop, boxed and ready to go.</h2>
-    <p class="lead stand">Not ready for a full custom build? Ember is the ecommerce theme I made myself &mdash;
-      the same care and quality as my client work, packed into a download. Install it in about two minutes,
-      then make it yours: your logo, your colours, your words, your products. No code, no developer.</p>
+    <p class="eyebrow stand">Prices</p>
+    <h2 class="stand">Cheap websites aren&rsquo;t cheap.<br><span class="pr-h-hit">Slide and see why.</span></h2>
+    <div class="pr-box stand" data-price>
+      <label class="pr-label" for="pr-range">What are you spending?</label>
+      <input class="pr-range" id="pr-range" type="range" min="0" max="3" step="1" value="0" aria-describedby="pr-name">
+      <div class="pr-ticks" aria-hidden="true"><span>&pound;</span><span>&pound;&pound;</span><span>&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;</span></div>
 
-    <!-- one design, every screen -->
-    <div class="kit-devices stand" aria-label="Ember on a laptop, a tablet and a phone">
-      <div class="kit-laptop">
-        <div class="kit-bar" aria-hidden="true"><i></i><i></i><i></i><span>buntingandco.co.uk &middot; demo shop</span></div>
-        <div class="kit-scroll" tabindex="0" role="region" aria-label="The whole Ember home page, scrollable">
-          <img src="assets/img/ember/desktop-home-full.webp" width="1200" height="3750" loading="lazy" decoding="async" alt="The whole Ember home page on a laptop, from the welcome card down to the reviews">
+      <div class="pr-out" aria-live="polite">
+        <div class="pr-head">
+          <p class="pr-amount" id="pr-amount">&pound;300</p>
+          <p class="pr-name" id="pr-name">The pretty postcard</p>
+          <p class="pr-tag" id="pr-tag">A template whipped up in a day. Looks a little pretty. Does nothing for you.</p>
+        </div>
+        <div class="pr-cols">
+          <div><h3>What you get</h3><ul id="pr-get"></ul></div>
+          <div><h3>What it costs you later</h3><ul id="pr-later"></ul></div>
+        </div>
+        <div class="pr-meters">
+          <div class="pr-meter"><span>Grows your business</span><i><b id="pr-grow" style="width:8%"></b></i></div>
+          <div class="pr-meter pr-meter--bad"><span>Money you&rsquo;ll spend fixing it later</span><i><b id="pr-fix" style="width:95%"></b></i></div>
         </div>
       </div>
-      <div class="kit-tablet"><img src="assets/img/ember/tablet-home.webp" width="820" height="1180" loading="lazy" decoding="async" alt="Ember on a tablet"></div>
-      <div class="kit-phone"><img src="assets/img/ember/phone-home.webp" width="540" height="1168" loading="lazy" decoding="async" alt="Ember on a phone, with the app-style bar along the bottom"></div>
-      <p class="kit-dlabel" aria-hidden="true"><span>Tablet</span><span>Laptop</span><span>Phone</span></p>
+      <p class="pr-foot">Every price is a <b>fixed quote</b>, agreed before anything starts. No monthly rent. You own it.</p>
     </div>
-    <p class="kit-hint">Scroll inside the laptop to see the whole home page.</p>
+    <div class="cta-row stand" style="margin-top:28px;"><a class="btn btn-primary" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Get my fixed quote &rarr;</a></div>
+  </div>
+</section>
 
-    <!-- what's in the box -->
-    <h3 class="kit-sub stand">Everything in the box</h3>
-    <ul class="kit-box">
-      <li class="stand"><b>Category bubbles</b>A swipeable row of round pictures &mdash; one tap to an aisle.</li>
-      <li class="stand"><b>Lightning deals</b>Sale items with a live countdown that resets at midnight.</li>
-      <li class="stand"><b>Cards that sell</b>Stars, savings, sale badges and one-tap Add to basket.</li>
-      <li class="stand"><b>Shop by budget</b>Under &pound;5, &pound;10, &pound;20 &mdash; straight into a filtered shop.</li>
-      <li class="stand"><b>Delivery promise</b>&ldquo;Order within 2h 30m and it ships today.&rdquo;</li>
-      <li class="stand"><b>Free delivery nudge</b>A progress bar in the basket that fills as they add.</li>
-      <li class="stand"><b>App-style bottom bar</b>Home, Shop, Deals, Account, Basket &mdash; under their thumb.</li>
-      <li class="stand"><b>Proper filters</b>Price, categories, ratings and stock, so people find it.</li>
-      <li class="stand"><b>Search front and centre</b>A big, friendly search bar with live suggestions.</li>
-    </ul>
+<!-- ============ STRAIGHT ANSWERS ============
+     The questions people actually ask before hiring a web designer. -->
+<section class="band qa" id="answers">
+  <div class="wrap">
+    <p class="eyebrow stand">FAQs</p>
+    <h2 class="stand">The questions everyone asks.<br>Answered before you have to.</h2>
+    <dl class="qa-grid">
+      <div class="stand"><dt>How much?</dt><dd>A fixed quote before anything starts. <a href="#prices">Slide the price scale</a> to see what each budget really buys.</dd></div>
+      <div class="stand"><dt>How long?</dt><dd>Depends on the brief. Within <b>two days</b> you get a set plan with real dates and deadlines &mdash; built around the work, your deadline and what&rsquo;s realistic in that time.</dd></div>
+      <div class="stand"><dt>Will I own it?</dt><dd>Yes. The files, the domain, the words. Nobody can switch it off but you.</dd></div>
+      <div class="stand"><dt>Can I change it myself?</dt><dd>Yes. You get a simple editor and I show you how. No calling me to fix a typo.</dd></div>
+      <div class="stand"><dt>I&rsquo;m not techy. Problem?</dt><dd>None. Plain English, one small step at a time, and only when it&rsquo;s your turn.</dd></div>
+      <div class="stand"><dt>Will it bring in customers?</dt><dd>That&rsquo;s the point. Proof up top, clear words, fast on a phone, found on Google.</dd></div>
+      <div class="stand"><dt>Who writes the words?</dt><dd>We do it together. You know your business; I know what makes people ring.</dd></div>
+      <div class="stand"><dt>What happens after launch?</dt><dd>I don&rsquo;t vanish. Questions get a human, usually the same day.</dd></div>
+    </dl>
+  </div>
+</section>
 
-    <!-- the two versions: Shopify left, WordPress right -->
-    <h3 class="kit-sub stand">Same look. Pick your platform.</h3>
-    <div class="kit-plats">
-      <article class="kit-plat stand">
-        <p class="kit-plat-tag">Shopify</p>
-        <h4>Choose Shopify if you want it all handled.</h4>
-        <p class="kit-why">Hosting, payments, security and updates are done for you. You just sell.</p>
-        <ul class="kit-ticks">
-          <li>Takes Shop Pay, Apple Pay and cards out of the box</li>
-          <li>25 drag-in sections and 8 colour schemes</li>
-          <li>Marketplace extras: &ldquo;Sold by&rdquo;, &ldquo;Only 3 left&rdquo; and a deals countdown</li>
-          <li>Variants, swatches, subscriptions and gift cards</li>
-          <li>Works on any Shopify plan</li>
-        </ul>
-        <p class="kit-how"><b>Make it yours in</b> Online Store &rarr; Customize. Drag, drop, click, type.</p>
-        <p class="kit-price"><span>&pound;59</span> one-off &middot; Online Store 2.0 theme</p>
-        <a class="btn btn-primary" href="themes.html#buy">Get Ember for Shopify &rarr;</a>
-      </article>
-      <article class="kit-plat stand">
-        <p class="kit-plat-tag kit-plat-tag--wp">WordPress + WooCommerce</p>
-        <h4>Choose WooCommerce if you want to own everything.</h4>
-        <p class="kit-why">Your site, your server, your data &mdash; and no monthly theme fees, ever.</p>
-        <ul class="kit-ticks">
-          <li>Takes Stripe, PayPal and Klarna, with any shipping and tax rules</li>
-          <li>16 drag-in patterns and 5 one-click styles</li>
-          <li>A ready-made Deals page, budget chips and delivery promise</li>
-          <li>Every page, header and footer edited visually</li>
-          <li>Needs WordPress 6.5+ and WooCommerce 8.5+</li>
-        </ul>
-        <p class="kit-how"><b>Make it yours in</b> Appearance &rarr; Editor. Every page, visually.</p>
-        <p class="kit-price"><span>&pound;59</span> one-off &middot; WordPress block theme</p>
-        <a class="btn btn-primary" href="themes.html#buy">Get Ember for WooCommerce &rarr;</a>
-      </article>
-    </div>
-    <p class="kit-bundle stand">Building shops for clients, or can&rsquo;t decide? <b>Get both for &pound;89.</b></p>
-
-    <!-- how they make it their own -->
-    <h3 class="kit-sub stand">Out of the box and into your business</h3>
-    <ol class="kit-steps">
-      <li class="stand"><span>1</span><b>Upload the zip</b>About two minutes. Don&rsquo;t unzip it &mdash; your platform does the rest.</li>
-      <li class="stand"><span>2</span><b>Make it look like you</b>Pick a style, set your colours and fonts, drop in your logo.</li>
-      <li class="stand"><span>3</span><b>Fill it with your shop</b>Drag sections around, change every word, add your products.</li>
-      <li class="stand"><span>4</span><b>Stuck? Ask a human</b>Email me with your licence key &mdash; usually answered the same day.</li>
+<!-- ============ HOW IT WORKS (condensed Dragon Fire Process) ============ -->
+<section class="dark hw" id="process">
+  <div class="wrap">
+    <p class="eyebrow stand">How it works &middot; the Dragon Fire Process</p>
+    <h2 class="stand">Nobody should have to type &ldquo;any update?&rdquo;</h2>
+    <ol class="hw-steps">
+      <li class="stand"><span>1</span><b>We talk</b>Twenty minutes. What you do, who it&rsquo;s for, what&rsquo;s driving you mad.</li>
+      <li class="stand"><span>2</span><b>You get a fixed quote</b>A price and a date, in writing. No padding, no mystery extras.</li>
+      <li class="stand"><span>3</span><b>You watch it get built</b>Your own live page: every task ticking off as it happens.</li>
+      <li class="stand"><span>4</span><b>Launch &mdash; and I stay</b>You own it, you can edit it, and a human answers when you&rsquo;re stuck.</li>
     </ol>
+    <div class="cta-row stand" style="margin-top:34px;">
+      <a class="btn btn-primary" href="https://sarahjhill.com/project-os/app.html?guest=1" target="_blank" rel="noopener">Look round a real project &rarr;</a>
+    </div>
+  </div>
+</section>
 
-    <div class="cta-row stand kit-cta">
-      <a class="btn btn-primary" href="themes.html">Have a proper look at Ember &rarr;</a>
-      <a class="btn btn-ghost" href="themes.html#buy">Prices &amp; licences</a>
+<!-- ============ ABOUT (short) ============ -->
+<section class="band ab" id="about">
+  <div class="wrap ab-grid">
+    <figure class="ab-me stand">
+      <img src="assets/img/me-sunglasses.webp" alt="Sarah J Hill" width="750" height="1335" loading="lazy">
+      <figcaption>The sunglasses are light sensitivity, not attitude.</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow stand">Who&rsquo;s building it</p>
+      <h2 class="stand">Hi, I&rsquo;m Sarah.</h2>
+      <p class="ab-big stand">A Cardiff full-stack developer who builds for the people the tech industry forgets.</p>
+      <p class="stand">Front end, back end, words and project management &mdash; one person who understands the whole
+        build, so nothing gets lost in a hand-off. I don&rsquo;t do jargon and I don&rsquo;t do quiet: if your idea
+        won&rsquo;t work, I&rsquo;ll say so on the first call.</p>
+      <ul class="ab-chips stand"><li>HTML &amp; CSS</li><li>JavaScript</li><li>Python &amp; Django</li><li>React</li><li>Shopify &amp; WordPress</li><li>Accessibility</li><li>Plain English</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMBER (compact) ============ -->
+<section class="dark em" id="theme">
+  <div class="wrap em-grid">
+    <div>
+      <p class="eyebrow stand">Doing it yourself?</p>
+      <h2 class="stand">Ember. A proper shop, in a box.</h2>
+      <p class="lead stand">My ready-made ecommerce theme for <b>Shopify</b> or <b>WordPress + WooCommerce</b>.
+        Install it in two minutes, make it yours with no code. From &pound;59, once.</p>
+      <div class="cta-row stand"><a class="btn btn-primary" href="themes.html">See Ember &rarr;</a></div>
+    </div>
+    <div class="em-shot stand" aria-hidden="true">
+      <img class="em-desk" src="assets/img/ember/desktop-home-full.webp" width="1200" height="3750" loading="lazy" alt="">
+      <img class="em-phone" src="assets/img/ember/phone-home.webp" width="540" height="1168" loading="lazy" alt="">
     </div>
   </div>
 </section>
@@ -926,9 +622,9 @@
     </div>
    <div>
     <p class="eyebrow stand">Say hello</p>
-    <h2 class="stand">Let's get you taken seriously.</h2>
-    <p class="lead stand">Tell me what you do and what's driving you mad about it. Two working days,
-      an honest answer &mdash; even if that answer is &ldquo;this isn't for you, and here's why&rdquo;.</p>
+    <h2 class="stand">Your turn.</h2>
+    <p class="lead stand">Tell me what you do and what&rsquo;s driving you mad about it. An honest answer within
+      two working days &mdash; even if it&rsquo;s &ldquo;you don&rsquo;t need me, here&rsquo;s why&rdquo;.</p>
     <div class="cta-row stand" style="margin-top:32px;">
       <a class="btn btn-primary" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project enquiry &rarr;</a>
     </div>
@@ -948,16 +644,15 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261006b" defer></script>
-<script src="assets/js/dragon.js?v=20261006b" defer></script>
+<script src="assets/js/main.js?v=20261008b" defer></script>
+<script src="assets/js/dragon.js?v=20261008b" defer></script>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
 </script>
-<script type="module" src="assets/js/dragon3d.js?v=20261006b"></script>
-<script type="module" src="assets/js/comic-dragon.js?v=20261006b"></script>
-<script src="assets/js/globe.js?v=20261006b" defer></script>
-<script src="assets/js/comic.js?v=20261006b" defer></script>
-<script src="assets/js/quest.js?v=20261006b" defer></script>
-<script type="module" src="assets/js/quest-dragon.js?v=20261006b"></script>
+<script type="module" src="assets/js/dragon3d.js?v=20261008b"></script>
+<script src="assets/js/globe.js?v=20261008b" defer></script>
+<script src="assets/js/quest.js?v=20261008b" defer></script>
+<script src="assets/js/price.js?v=20261008b" defer></script>
+<script type="module" src="assets/js/quest-dragon.js?v=20261008b"></script>
 </body>
 </html>
