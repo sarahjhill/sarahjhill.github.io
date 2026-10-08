@@ -1,6 +1,6 @@
 /*----------------------------------------------
 [Price slider — "you get what you pay for"]
-Four stops on a range input. Each stop swaps the price, name, what you
+Five stops on a range input. Each stop swaps the price, name, what you
 get, what it costs you later, and moves two meters: how much it grows
 your business vs how much you'll spend fixing it later.
 Edit the TIERS list below to change prices or wording.
@@ -16,6 +16,11 @@ Edit the TIERS list below to change prices or wording.
 		  get: ['A template that looks like everyone else’s', 'A few pages of “welcome to our website”', 'Your logo, somewhere'],
 		  later: ['Rewriting the words so people actually ring', 'Paying again to be found on Google', 'Needs fixing — or a full rebrand — soon to come'],
 		  grow: 8, fix: 95 },
+		{ amount: '£600', name: 'Done right first time',
+		  tag: '£300 now plus £300 to fix it later is £600 anyway. Spend it once, on a site that works, and fixing it later costs less than £300.',
+		  get: ['A simple site built around YOUR business', 'Clear words that tell people what you do', 'Works on any phone', 'A contact form that actually reaches you'],
+		  later: ['Small updates — under £300, not a rebuild', 'Extra pages or Google work when you’re ready'],
+		  grow: 22, fix: 70 },
 		{ amount: '£1,200', name: 'The shop window',
 		  tag: 'Your own design, words that sell, and found on Google. A solid start.',
 		  get: ['Design that fits YOU — not a template', 'Words that say what you do in the first line', 'Fast on any phone, set up for Google', 'Contact form straight to your inbox'],
