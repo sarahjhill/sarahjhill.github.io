@@ -196,6 +196,9 @@ footer{background:var(--ink);border-top:1px solid rgba(246,243,237,.12);padding:
   color:var(--mute);font-size:14px;}
 footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;}
 footer a{color:var(--mute);}
+footer .footlinks{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 20px;padding:4px 0 6px;}
+footer .footlinks a{text-decoration:none;font-weight:600;}
+footer .footlinks a:hover{color:var(--paper);text-decoration:underline;text-underline-offset:4px;}
 
 /* --- footer service line: useful to readers, useful to search --- */
 .footnote{

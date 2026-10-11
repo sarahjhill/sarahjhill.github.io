@@ -2,37 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sarahjhill.com/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-11</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sarahjhill.com/website-audit.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-11</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sarahjhill.com/project-os.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sarahjhill.com/cardiff-community-meals.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-11</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sarahjhill.com/emails-media.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sarahjhill.com/portfolio-project.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sarahjhill.com/themes.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarahjhill.com/web-design-cardiff.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sarahjhill.com/web-design-birmingham.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sarahjhill.com/blog/tradeswoman-in-midlife.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarahjhill.com/blog/women-in-business-uk-facts.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarahjhill.com/blog/present-yourself-online.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarahjhill.com/blog/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.9</priority>
   </url>
 </urlset>

@@ -116,3 +116,20 @@ Two markets: clients (reassurance) and other studios (licence it).
 - **Location.** The site currently says Cardiff & South Wales; the CV says
   Birmingham. Pick one or claim both deliberately.
 - **The directory** needs building before it can be sold.
+
+---
+
+## October 2026 — widening the door
+
+Same insight, wider room. The focus is now:
+
+- **Women in business** — founders, side-hustlers, women going self-employed
+- **Local community** — Cardiff and Birmingham, charities, CICs and community groups
+- **Entrepreneurs with that je ne sais quoi** — people a template would flatten
+- **Tradeswomen** — still here, now one part of the whole
+
+The line doesn't change: **taken seriously before you say a word.** It fits every one of them.
+
+SEO targets that follow from this live in the blog (`/blog/`) and the two location pages
+(`web-design-cardiff.html`, `web-design-birmingham.html`). Always say "Birmingham, West Midlands"
+or "Birmingham UK" somewhere near "Birmingham" — otherwise Google mixes you up with Birmingham, Alabama.

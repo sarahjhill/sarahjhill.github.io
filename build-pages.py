@@ -29,13 +29,13 @@ SHELL = """<!DOCTYPE html>
   <!-- ============ SEO ============ -->
   <title>{title}</title>
   <meta name="description" content="{desc}">
-  <link rel="canonical" href="{site}/{slug}">
+  <link rel="canonical" href="{site}/{url}">
   <meta name="author" content="Sarah J Hill">
   <meta name="robots" content="{robots}">
   <meta name="theme-color" content="#0a0a0c">
 
   <meta property="og:type" content="{ogtype}">
-  <meta property="og:url" content="{site}/{slug}">
+  <meta property="og:url" content="{site}/{url}">
   <meta property="og:site_name" content="Sarah J Hill">
   <meta property="og:title" content="{ogtitle}">
   <meta property="og:description" content="{desc}">
@@ -49,18 +49,19 @@ SHELL = """<!DOCTYPE html>
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="{site}/assets/img/og-card.jpg">
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="{root}favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="{root}favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="{root}favicon-48.png">
+  <link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="Sarah J Hill">
 
   <!-- ============ STYLES ============ -->
-  <link rel="stylesheet" href="assets/css/01-tokens.css">
-  <link rel="stylesheet" href="assets/css/02-layout.css">
-  <link rel="stylesheet" href="assets/css/03-components.css">
-  <link rel="stylesheet" href="assets/css/06-globe.css">
-  <link rel="stylesheet" href="assets/css/04-motion.css">
+  <link rel="stylesheet" href="{root}assets/css/01-tokens.css">
+  <link rel="stylesheet" href="{root}assets/css/02-layout.css">
+  <link rel="stylesheet" href="{root}assets/css/03-components.css">
+  <link rel="stylesheet" href="{root}assets/css/06-globe.css">
+  <link rel="stylesheet" href="{root}assets/css/04-motion.css">
+{extracss}
 
   <!-- ============ STRUCTURED DATA ============ -->
   <script type="application/ld+json">
@@ -74,16 +75,16 @@ SHELL = """<!DOCTYPE html>
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="index.html"><img class="brand-mark" src="assets/img/logo-mark-160.png" alt="" width="38" height="38"><b>Sarah J <span>Hill</span><em>Dragon Fire Design</em></b></a>
+    <a class="brand" href="{root}index.html"><img class="brand-mark" src="{root}assets/img/logo-mark-160.png" alt="" width="38" height="38"><b>Sarah J <span>Hill</span><em>Dragon Fire Design</em></b></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
       <span></span><span></span><span></span>
     </button>
     <div class="navlinks" id="navlinks">
-      <a href="index.html#you">Who it's for</a>
-      <a href="index.html#test">The 3-second test</a>
-      <a href="index.html#about">About me</a>
-      <a href="project-os.html">Dragon Fire Process</a>
-      <a href="{portfolio}">Portfolio</a>
+      <a href="{root}index.html#do">What I do</a>
+      <a href="{root}index.html#work">Work</a>
+      <a href="{root}index.html#prices">Prices</a>
+      <a href="{root}blog/">Blog</a>
+      <a href="{root}index.html#about">About</a>
       <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Brief me</a>
     </div>
   </div>
@@ -91,7 +92,7 @@ SHELL = """<!DOCTYPE html>
 
 <header class="page-hero" id="top">
   <div class="wrap">
-    <a class="backlink" href="{backhref}">&larr; {backtext}</a>
+    <a class="backlink" href="{root}{backhref}">&larr; {backtext}</a>
     <p class="eyebrow">{eyebrow}</p>
     <h1>{h1}</h1>
     <p class="lead">{lead}</p>
@@ -129,13 +130,23 @@ SHELL = """<!DOCTYPE html>
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:{email}">{email}</a></span>
-    <span class="footnote">Web design for electricians, plumbers, joiners, plasterers, mechanics and
-      small businesses &mdash; Cardiff, South Wales, Birmingham and remote across the UK.</span>
+    <div class="footlinks" role="navigation" aria-label="More pages">
+      <a href="{root}website-audit.html">Free website audit</a>
+      <a href="{root}blog/">Blog</a>
+      <a href="{root}web-design-cardiff.html">Web design Cardiff</a>
+      <a href="{root}web-design-birmingham.html">Web design Birmingham</a>
+      <a href="{root}cardiff-community-meals.html">Case study: Cardiff Community Meals</a>
+      <a href="{root}portfolio-project.html">Case study: Muslim Bookers</a>
+      <a href="{root}emails-media.html">Emails &amp; campaign media</a>
+      <a href="{root}project-os.html">The Dragon Fire Process</a>
+    </div>
+    <span class="footnote">Web design for women in business, female founders, charities, community groups
+      and tradeswomen &mdash; Cardiff, South Wales, Birmingham, the West Midlands and remote across the UK.</span>
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/globe.js" defer></script>
+<script src="{root}assets/js/main.js" defer></script>
+<script src="{root}assets/js/globe.js" defer></script>
 </body>
 </html>
 """
@@ -169,7 +180,7 @@ PAGES = {}
 
 # ---------------------------------------------------------------- audit
 PAGES["website-audit.html"] = dict(
-    title="The Doubt Audit — how many customers doubt you? | Sarah J Hill",
+    title="Free website audit, Cardiff &amp; Birmingham | Sarah J Hill",
     desc=("A free website review that answers one question: how many customers doubt you before "
           "they ever ring? Two working days, nothing to pay, and no catch."),
     ogtitle="How many customers doubt you before they ring?",
@@ -187,6 +198,7 @@ PAGES["website-audit.html"] = dict(
     </div>
     <div class="chips">
       <span class="chip">3 minutes to ask</span>
+      <span class="chip">Scored out of 100</span>
       <span class="chip">Report in 2 working days</span>
       <span class="chip">Nothing to pay</span>
     </div>""",
@@ -248,6 +260,8 @@ PAGES["website-audit.html"] = dict(
   <div class="wrap">
     <p class="eyebrow stand">What I actually check</p>
     <h2 class="stand">Some of it is a scan. The rest is me, on a phone, being your customer.</h2>
+    <p class="lead stand">The scan is my own tool, Dragonfire: 35+ checks across speed, Google, local search
+      and AI search, scored out of 100. Then I go through it by hand and tell you what actually matters.</p>
     <div class="rows">
 """
         + row("How fast it really is",
@@ -269,6 +283,11 @@ PAGES["website-audit.html"] = dict(
               "in the map results when somebody nearby searches for what you do. For a local business "
               "this is often worth more than the website itself.",
               "You find out", "Where you sit against the others near you.")
+        + row("Whether AI can find and quote you",
+              "More and more people ask ChatGPT, Gemini or Perplexity &ldquo;who&rsquo;s good near me?&rdquo; "
+              "instead of Googling. I check whether those tools can read your site, understand what you do, "
+              "and whether anything is quietly blocking them.",
+              "You find out", "Whether you&rsquo;re in the running for the new front page.")
         + row("Whether the proof is where the doubt is",
               "Qualifications, insurance, reviews and real photographs of you doing the work &mdash; "
               "are they at the top where somebody is already looking for a reason to say no, or three "
@@ -310,7 +329,7 @@ PAGES["website-audit.html"] = dict(
 
 # ------------------------------------------------------------- sjh process
 PAGES["project-os.html"] = dict(
-    title="The Dragon Fire Process — client portal and studio licence | Sarah J Hill",
+    title="The Dragon Fire Process — client portal | Sarah J Hill",
     desc=("Twelve phases, 69 guided tasks and 72 templates. Clients watch the build happen "
           "instead of chasing it, and other studios can licence the whole process for £39."),
     ogtitle="Nobody should have to type &ldquo;any update?&rdquo;",
@@ -444,7 +463,7 @@ PAGES["project-os.html"] = dict(
 
 # --------------------------------------------------------------- CCM
 PAGES["cardiff-community-meals.html"] = dict(
-    title="Cardiff Community Meals — case study | Sarah J Hill",
+    title="Cardiff Community Meals — charity case study | Sarah J Hill",
     desc=("Neighbours fund a meal, a Cardiff kitchen cooks it, and someone who needs it eats it "
           "— every step tracked to the penny. A community platform built by hand."),
     ogtitle="Cardiff Community Meals — a cwtch, delivered with dinner",
@@ -749,9 +768,9 @@ def page_btn(label, img, w, h, alt, pressed=False):
 
 
 PAGES["themes.html"] = dict(
-    title="Ember — a marketplace theme for Shopify &amp; WooCommerce | Sarah J Hill",
+    title="Ember — Shopify &amp; WooCommerce theme | Sarah J Hill",
     desc=("Ember is a soft, British marketplace theme for Shopify and WooCommerce. Category bubbles, "
-          "lightning deals, shop-by-budget and a mobile app bar. Edit everything visually. £59."),
+          "lightning deals, shop-by-budget. Edit it all visually. £59."),
     ogtitle="Ember: a marketplace theme with manners",
     ogtype="product",
     backhref="index.html", backtext="Back to the start",
@@ -992,19 +1011,85 @@ PAGES["themes-thanks.html"] = dict(
 
 
 # =====================================================================
+# Blog posts + Cardiff/Birmingham pages live in content_pages.py
+import sys
+sys.dont_write_bytecode = True   # no __pycache__ folder ending up on the live site
+from content_pages import add_pages
+add_pages(PAGES, SITE, EMAIL, PROJECT_OS)
+
+import json
+import os
+
+UPDATED = "2026-10-11"   # bump when you change a page; goes into dateModified
+
+
+def crumbs(slug, p):
+    """Home › (Blog ›) This page — as BreadcrumbList schema."""
+    items = [("Home", f"{SITE}/")]
+    if slug.startswith("blog/") and slug != "blog/index.html":
+        items.append(("Blog", f"{SITE}/blog/"))
+    items.append((p.get("crumb") or p["ogtitle"].split("—")[0].strip(), f"{SITE}/{public_url(slug)}"))
+    return {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": n.replace("&amp;", "&"), "item": u}
+        for i, (n, u) in enumerate(items)]}
+
+
+def public_url(slug):
+    return slug[: -len("index.html")] if slug.endswith("index.html") else slug
+
+
 def build():
     for slug, p in PAGES.items():
+        root = "../" * slug.count("/")
+        page_ld = json.loads(p["jsonld"]) if p.get("jsonld") else None
+        if page_ld is None:
+            graph = []
+        elif "@graph" in page_ld:
+            graph = page_ld["@graph"]
+        else:
+            graph = [page_ld]
+        for node in graph:
+            node.pop("@context", None)
+            node.setdefault("dateModified", p.get("updated", UPDATED))
+        graph.append(crumbs(slug, p))
+        jsonld = json.dumps({"@context": "https://schema.org", "@graph": graph},
+                            ensure_ascii=False, indent=2)
         html = SHELL.format(
-            site=SITE, slug=slug, email=EMAIL, demo=DEMO, portfolio=PORTFOLIO, project_os=PROJECT_OS,
+            site=SITE, slug=slug, url=public_url(slug), root=root,
+            email=EMAIL, demo=DEMO, portfolio=PORTFOLIO, project_os=PROJECT_OS,
             title=p["title"], desc=p["desc"], ogtitle=p["ogtitle"], ogtype=p["ogtype"],
             backhref=p["backhref"], backtext=p["backtext"],
             eyebrow=p["eyebrow"], h1=p["h1"], lead=p["lead"],
-            herocta=p["herocta"], jsonld=p["jsonld"], body=p["body"],
+            herocta=p["herocta"], jsonld=jsonld, body=p["body"],
+            extracss=p.get("extracss", "").format(root=root),
             robots=p.get("robots", "index, follow, max-image-preview:large"),
         )
+        os.makedirs(os.path.dirname(slug) or ".", exist_ok=True)
         with open(slug, "w") as f:
             f.write(html)
         print(f"  wrote {slug}  ({len(html):,} bytes)")
+    write_sitemap()
+
+
+def write_sitemap():
+    """sitemap.xml = the homepage + every page above that isn't noindex."""
+    urls = [("", "1.0")]
+    for slug, p in PAGES.items():
+        if "noindex" in p.get("robots", ""):
+            continue
+        prio = "0.9" if slug in ("website-audit.html", "web-design-cardiff.html", "web-design-birmingham.html",
+                                 "blog/index.html") else "0.7"
+        urls.append((public_url(slug), prio))
+    rows = "".join(f"""  <url>
+    <loc>{SITE}/{u}</loc>
+    <lastmod>{UPDATED}</lastmod>
+    <priority>{pr}</priority>
+  </url>
+""" for u, pr in urls)
+    with open("sitemap.xml", "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + "</urlset>\n")
+    print(f"  wrote sitemap.xml  ({len(urls)} URLs)")
 
 
 if __name__ == "__main__":

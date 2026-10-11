@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ============ SEO ============ -->
-  <title>The Dragon Fire Process — client portal and studio licence | Sarah J Hill</title>
+  <title>The Dragon Fire Process — client portal | Sarah J Hill</title>
   <meta name="description" content="Twelve phases, 69 guided tasks and 72 templates. Clients watch the build happen instead of chasing it, and other studios can licence the whole process for £39.">
   <link rel="canonical" href="https://sarahjhill.com/project-os.html">
   <meta name="author" content="Sarah J Hill">
@@ -40,19 +40,50 @@
   <link rel="stylesheet" href="assets/css/06-globe.css">
   <link rel="stylesheet" href="assets/css/04-motion.css">
 
+
   <!-- ============ STRUCTURED DATA ============ -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "The Dragon Fire Process",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Any modern browser",
-    "url": "https://sarahjhill.com/project-os/",
-    "author": { "@type": "Person", "name": "Sarah J Hill", "url": "https://sarahjhill.com/" },
-    "description": "A twelve-phase project delivery system with 69 guided tasks, 72 templates and a client sign-in.",
-    "offers": { "@type": "Offer", "price": "39", "priceCurrency": "GBP" }
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "The Dragon Fire Process",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any modern browser",
+      "url": "https://sarahjhill.com/project-os/",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah J Hill",
+        "url": "https://sarahjhill.com/"
+      },
+      "description": "A twelve-phase project delivery system with 69 guided tasks, 72 templates and a client sign-in.",
+      "offers": {
+        "@type": "Offer",
+        "price": "39",
+        "priceCurrency": "GBP"
+      },
+      "dateModified": "2026-10-11"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sarahjhill.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nobody should have to type &ldquo;any update?&rdquo;",
+          "item": "https://sarahjhill.com/project-os.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -67,11 +98,11 @@
       <span></span><span></span><span></span>
     </button>
     <div class="navlinks" id="navlinks">
-      <a href="index.html#you">Who it's for</a>
-      <a href="index.html#test">The 3-second test</a>
-      <a href="index.html#about">About me</a>
-      <a href="project-os.html">Dragon Fire Process</a>
-      <a href="https://sarahjhill.com/portfolio/">Portfolio</a>
+      <a href="index.html#do">What I do</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#prices">Prices</a>
+      <a href="blog/">Blog</a>
+      <a href="index.html#about">About</a>
       <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Brief me</a>
     </div>
   </div>
@@ -223,8 +254,18 @@
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:sarah@sarahjhill.com">sarah@sarahjhill.com</a></span>
-    <span class="footnote">Web design for electricians, plumbers, joiners, plasterers, mechanics and
-      small businesses &mdash; Cardiff, South Wales, Birmingham and remote across the UK.</span>
+    <div class="footlinks" role="navigation" aria-label="More pages">
+      <a href="website-audit.html">Free website audit</a>
+      <a href="blog/">Blog</a>
+      <a href="web-design-cardiff.html">Web design Cardiff</a>
+      <a href="web-design-birmingham.html">Web design Birmingham</a>
+      <a href="cardiff-community-meals.html">Case study: Cardiff Community Meals</a>
+      <a href="portfolio-project.html">Case study: Muslim Bookers</a>
+      <a href="emails-media.html">Emails &amp; campaign media</a>
+      <a href="project-os.html">The Dragon Fire Process</a>
+    </div>
+    <span class="footnote">Web design for women in business, female founders, charities, community groups
+      and tradeswomen &mdash; Cardiff, South Wales, Birmingham, the West Midlands and remote across the UK.</span>
   </div>
 </footer>
 

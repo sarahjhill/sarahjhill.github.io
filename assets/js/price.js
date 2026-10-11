@@ -1,8 +1,10 @@
 /*----------------------------------------------
 [Price slider — "you get what you pay for"]
 Five stops on a range input. Each stop swaps the price, name, what you
-get, what it costs you later, and moves two meters: how much it grows
-your business vs how much you'll spend fixing it later.
+get, what it opens up for you, and moves two meters that both climb:
+how much it grows your business and how much time it gives you back.
+Deliberately positive all the way up — every tier is a real step forward,
+the higher ones just do more of the work for you.
 Edit the TIERS list below to change prices or wording.
 ----------------------------------------------*/
 (function () {
@@ -12,30 +14,30 @@ Edit the TIERS list below to change prices or wording.
 
 	var TIERS = [
 		{ amount: '£300', name: 'The pretty postcard',
-		  tag: 'A template whipped up in a day. Looks a little pretty. Does nothing for you.',
-		  get: ['A template that looks like everyone else’s', 'A few pages of “welcome to our website”', 'Your logo, somewhere'],
-		  later: ['Rewriting the words so people actually ring', 'Paying again to be found on Google', 'Needs fixing — or a full rebrand — soon to come'],
-		  grow: 8, fix: 95 },
+		  tag: 'A neat little online card that says you’re open for business. A lovely first step.',
+		  get: ['A clean, simple page with your name up in lights', 'Who you are, what you do, how to reach you', 'Looks smart on a phone'],
+		  later: ['Somewhere to send people when they ask “have you got a website?”', 'A first foothold online you can build on'],
+		  grow: 15, time: 5 },
 		{ amount: '£600', name: 'Done right first time',
-		  tag: '£300 now plus £300 to fix it later is £600 anyway. Spend it once, on a site that works, and fixing it later costs less than £300.',
-		  get: ['A simple site built around YOUR business', 'Clear words that tell people what you do', 'Works on any phone', 'A contact form that actually reaches you'],
-		  later: ['Small updates — under £300, not a rebuild', 'Extra pages or Google work when you’re ready'],
-		  grow: 22, fix: 70 },
+		  tag: 'A proper little site built around your business, with words that make people pick up the phone.',
+		  get: ['A simple site built around YOUR business', 'Clear words that tell people what you do', 'Works beautifully on any phone', 'A contact form that lands in your inbox'],
+		  later: ['Enquiries from people who already “get” you', 'Easy to add pages as you grow'],
+		  grow: 30, time: 20 },
 		{ amount: '£1,200', name: 'The shop window',
-		  tag: 'Your own design, words that sell, and found on Google. A solid start.',
+		  tag: 'Your own design, words that sell, and set up to be found on Google.',
 		  get: ['Design that fits YOU — not a template', 'Words that say what you do in the first line', 'Fast on any phone, set up for Google', 'Contact form straight to your inbox'],
-		  later: ['Online bookings, payments or tools as you grow', 'More pages when you add services'],
-		  grow: 40, fix: 55 },
+		  later: ['New customers finding you on Google', 'Ready for bookings, payments or tools when you are'],
+		  grow: 50, time: 40 },
 		{ amount: '£2,500', name: 'The business builder',
 		  tag: 'Built to bring the work in, and easy for you to keep fresh.',
-		  get: ['Everything in the shop window', 'Proof up top: reviews, results, real photos', 'Online bookings or enquiries that sort themselves', 'An editor so you change it yourself', 'Know what’s working with simple stats'],
-		  later: ['Not much — it’s built to grow with you'],
-		  grow: 75, fix: 20 },
+		  get: ['Everything in the shop window', 'Proof up top: reviews, results, real photos', 'Online bookings or enquiries that sort themselves', 'An editor so you change it yourself', 'Simple stats so you know what’s working'],
+		  later: ['A steady stream of the right customers', 'Confidence to raise your prices'],
+		  grow: 75, time: 70 },
 		{ amount: '£4,500+', name: 'Breathes fire',
 		  tag: 'A fully working site plus the tools that run your business for you.',
 		  get: ['Everything in the business builder', 'Custom tools: rotas, bookings, payments, dashboards', 'The spreadsheet and group chat, replaced', 'Hours back every week', 'A site that grows your business while you sleep'],
-		  later: ['Nothing to fix — just more customers to look after'],
-		  grow: 100, fix: 4 }
+		  later: ['Evenings and weekends back', 'Room to grow without hiring yet'],
+		  grow: 100, time: 100 }
 	];
 
 	var range = box.querySelector('#pr-range');
@@ -52,7 +54,7 @@ Edit the TIERS list below to change prices or wording.
 		li(el('pr-get'), t.get);
 		li(el('pr-later'), t.later);
 		el('pr-grow').style.width = t.grow + '%';
-		el('pr-fix').style.width = t.fix + '%';
+		el('pr-time').style.width = t.time + '%';
 		range.setAttribute('aria-valuetext', t.amount + ', ' + t.name);
 		range.style.setProperty('--pct', (i / (TIERS.length - 1) * 100) + '%');
 		box.setAttribute('data-tier', i);
