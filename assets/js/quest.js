@@ -806,7 +806,9 @@ presses "Skip it", and (because it's just HTML) with no JavaScript.
 
 	/* ---- go -------------------------------------------------------------- */
 	var pref = storeGet();
-	if (reduce && pref !== 'fly') { setFlying(false); }
+	var small = window.matchMedia('(max-width: 760px)').matches;
+	if (small) { [].forEach.call(log.querySelectorAll('.qi-why[open]'), function (d) { d.removeAttribute('open'); }); }
+	if ((reduce || small) && pref !== 'fly') { setFlying(false); }
 	else if (pref === 'list') { setFlying(false); }
 	else { setFlying(true); }
 }());

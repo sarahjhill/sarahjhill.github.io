@@ -327,6 +327,7 @@
 .q-log-flight{margin-top:30px;}
 .quest:not(.can-fly) .q-log-flight,.quest:not(.can-fly) [data-quest="list"],.quest:not(.can-fly) [data-quest="start"]{display:none;}
 
+.q-swipe,.q-lead-mob{display:none;}
 /* ---------------- mobile ---------------- */
 @media (max-width:760px){
   .q-hud{top:66px;gap:8px;font-size:10px;letter-spacing:.08em;flex-wrap:wrap;}
@@ -358,9 +359,27 @@
   .q-sign .board{max-width:180px;padding:9px 12px;}
   .q-sign .post{height:40px;}
 
-  .q-log .qi{grid-template-columns:minmax(0,1fr);padding:14px;}
-  .q-log .qi-browser{height:58vh;}
-  .q-log .qi-phone{width:30%;right:-6px;}
+  /* phones: the list is a swipeable row of compact cards, not 11 tall panels */
+  .q-swipe{display:block;margin:6px auto 0;font:800 11px/1 var(--q-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--q-gold);}
+  .quest.is-flying .q-swipe{display:none;}
+  .q-log{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+    padding-top:14px;padding-bottom:40px;scrollbar-width:none;}
+  .q-log::-webkit-scrollbar{display:none;}
+  .quest.is-flying .q-log{display:none;}
+  .q-lvl{display:contents;}
+  .q-lvl-h{display:none;}
+  .q-log .qi{flex:0 0 84%;display:flex;flex-direction:column;align-items:stretch;gap:12px;margin:0;padding:14px;scroll-snap-align:center;}
+  .q-log .qi-browser{display:none;}
+  .q-log .qi-screens{display:flex;justify-content:center;}
+  .q-lead-desk{display:none;}
+  .q-lead-mob{display:inline;}
+  .q-log .qi-phone{display:block;position:relative;right:auto;bottom:auto;width:auto;min-width:0;height:300px;
+    aspect-ratio:480/1040;margin:0 auto;border-radius:18px;padding:5px;}
+  .q-log .qi-phone .qi-scroll{border-radius:13px;}
+  .q-log .qi-egg,.q-log .qi-castle{min-height:300px;}
+  .q-log .qi-loot{display:none;}
+  .q-log .qi-title{font-size:22px;margin-bottom:8px;}
+  .q-log .qi-quest{font-size:14.5px;}
 }
 @media (max-width:760px) and (max-height:640px){ .q-win{top:38%;} }
 @media (min-width:761px) and (max-height:700px){ .q-win{top:118px;bottom:24%;} .q-hud{top:68px;} }
