@@ -420,3 +420,36 @@ section.band .source{color:#78756f;}
 .platform dt{font-weight:800;}
 .platform dd{margin:0;color:var(--mute-dark);}
 .platform .btn{margin-top:22px;}
+
+/* ---- process page ---- */
+.step .foru{display:block;margin-top:10px;padding-left:12px;border-left:3px solid var(--flame);color:var(--ink);font-size:15.5px;}
+.step .foru b{color:var(--flame);}
+.pticks{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px;max-width:70ch;}
+.pticks li{position:relative;padding-left:30px;font-size:17px;line-height:1.5;color:var(--mute-dark);}
+.pticks li::before{content:"\2713";position:absolute;left:0;top:0;font-weight:800;color:var(--flame);}
+.pticks b{color:var(--ink);}
+.pticks--dark li{color:#c9c7c1;}
+.pticks--dark b{color:var(--paper);}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:36px;}
+.shot{margin:0;}
+.shot-frame{height:min(60vh,520px);overflow-y:auto;overscroll-behavior:contain;border-radius:10px;
+  border:1px solid rgba(246,243,237,.18);background:#fff;box-shadow:0 22px 50px rgba(0,0,0,.35);}
+.shot-frame img{display:block;width:100%;height:auto;}
+.shot figcaption{margin-top:12px;font-size:15px;line-height:1.45;color:#bcbab4;}
+.shot figcaption b{color:var(--paper);}
+section.band .shot figcaption{color:var(--mute-dark);}
+section.band .shot figcaption b{color:var(--ink);}
+section.band .shot-frame{border-color:rgba(10,10,12,.15);box-shadow:0 18px 40px rgba(10,10,12,.12);}
+.shot--phone{max-width:300px;margin-top:36px;}
+.shot--phone .shot-frame{height:560px;border-radius:26px;border:8px solid #0c0c0e;}
+.tiny-note{margin-top:14px;font-size:13px;color:#8f8c86;}
+.big-line{font-size:clamp(24px,3.2vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:26px 0 0;max-width:24ch;}
+@media(max-width:760px){
+  .shots{grid-template-columns:minmax(0,1fr);}
+  .shot-frame{height:420px;}
+  .shot--phone{margin-left:auto;margin-right:auto;}
+}
+.step .baked{display:inline-block;margin-top:10px;font-weight:800;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--flame);}
+.talk-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:start;}
+.talk-grid .shot--phone{margin-top:30px;}
+@media(max-width:860px){.talk-grid{grid-template-columns:minmax(0,1fr);gap:0;}}

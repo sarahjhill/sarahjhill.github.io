@@ -80,12 +80,12 @@ SHELL = """<!DOCTYPE html>
       <span></span><span></span><span></span>
     </button>
     <div class="navlinks" id="navlinks">
-      <a href="{root}index.html#do">What I do</a>
       <a href="{root}index.html#work">Work</a>
+      <a href="{root}process.html">How I work</a>
       <a href="{root}index.html#prices">Prices</a>
-      <a href="{root}blog/">Blog</a>
       <a href="{root}index.html#about">About</a>
-      <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Brief me</a>
+      <a href="{root}blog/">Blog</a>
+      <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Start a project</a>
     </div>
   </div>
 </nav>
@@ -118,8 +118,8 @@ SHELL = """<!DOCTYPE html>
     <p class="lead stand">Tell me what you do and what's driving you mad about it. Two working days,
       an honest answer &mdash; even if that answer is &ldquo;this isn't for you, and here's why&rdquo;.</p>
     <div class="cta-row stand" style="margin-top:32px;">
-      <a class="btn btn-primary" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Brief me &rarr;</a>
-      <a class="btn btn-ghost" href="{demo}" target="_blank" rel="noopener">See the process &rarr;</a>
+      <a class="btn btn-primary" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-ghost" href="{root}process.html">How I work &rarr;</a>
     </div>
    </div>
    </div>
@@ -132,6 +132,8 @@ SHELL = """<!DOCTYPE html>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:{email}">{email}</a></span>
     <div class="footlinks" role="navigation" aria-label="More pages">
       <a href="{root}website-audit.html">Free website audit</a>
+      <a href="{root}process.html">How I work</a>
+      <a href="{root}index.html#answers">FAQs</a>
       <a href="{root}blog/">Blog</a>
       <a href="{root}web-design-cardiff.html">Web design Cardiff</a>
       <a href="{root}web-design-birmingham.html">Web design Birmingham</a>
@@ -317,6 +319,167 @@ PAGES["website-audit.html"] = dict(
         + f"""    </div>
     <div class="cta-row stand" style="margin-top:32px;">
       <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Doubt%20Audit%20request">Get my free website review &rarr;</a>
+    </div>
+  </div>
+</section>
+"""
+    ),
+)
+
+
+# --------------------------------------------------------------- process
+def foru(text):
+    return f'<span class="foru"><b>What it means for you:</b> {text}</span>'
+
+
+PAGES["process.html"] = dict(
+    title="How I work: the Dragon Fire Process | Sarah J Hill, Cardiff",
+    desc=("The Dragon Fire Process: 12 phases and 69 checked tasks, with your own live project page. "
+          "What happens at each step, what it means for you, and why it gets a better job delivered."),
+    ogtitle="The Dragon Fire Process — a better job, delivered",
+    ogtype="website",
+    crumb="How I work",
+    backhref="index.html", backtext="Back to the start",
+    eyebrow="How I work &middot; the Dragon Fire Process",
+    h1="The Dragon Fire Process. <span class=\"hit\">A better job, delivered.</span>",
+    lead=("Most web designers send a proposal full of jargon, then go quiet until launch. My Dragon Fire "
+          "Process is built so that never happens to you: 12 phases and 69 checked tasks, every one visible "
+          "on your own live project page. Here&rsquo;s how it works, and what it means for you."),
+    herocta=f"""    <div class="cta-row">
+      <a class="btn btn-primary" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-ghost" href="#two-views">See it in action</a>
+    </div>
+    <div class="chips">
+      <span class="chip">12 phases</span>
+      <span class="chip">69 checked tasks</span>
+      <span class="chip">Your own live project page</span>
+      <span class="chip">Fixed price, real dates</span>
+    </div>""",
+    jsonld="""  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "The Dragon Fire Process: how a Sarah J Hill website gets built",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "The brief", "text": "Getting to know your business, your customers and your real value." },
+      { "@type": "HowToStep", "position": 2, "name": "The plan", "text": "Every page mapped, with a fixed quote and real dates." },
+      { "@type": "HowToStep", "position": 3, "name": "Built in the open", "text": "A working version you can click through, with every task visible on your own project page." },
+      { "@type": "HowToStep", "position": 4, "name": "The design", "text": "Your colours, photos and voice brought to the working version." },
+      { "@type": "HowToStep", "position": 5, "name": "Launch and connect", "text": "Tested, checked for Google and AI search, launched, and connected to other female-owned businesses." }
+    ]
+  }""",
+    body=(
+        """<!-- ============ THE STEPS ============ -->
+<section class="band" id="steps">
+  <div class="wrap">
+    <p class="eyebrow stand">From hello to launch</p>
+    <h2 class="stand">What happens, and what it means for you.</h2>
+    <p class="lead stand">Five stages, in plain English. You always know where we are and what&rsquo;s next.</p>
+    <div class="steps">
+"""
+        + step("01", "The brief: finding your real value",
+               "We talk about what you do, who it&rsquo;s for and why you really need a website. I&rsquo;ll ask "
+               "questions nobody else asks, and some might feel a bit uncomfortable. If it never gets a little "
+               "awkward, I haven&rsquo;t dug deep enough. "
+               + foru("a website that sells what&rsquo;s genuinely special about you, not a template with your name on it."))
+        + step("02", "The plan: every page mapped",
+               "Within two working days you get a fixed quote and a plan with real dates. I map every page: who "
+               "it&rsquo;s for, what they need to see, and what you want them to do next. "
+               + foru("you know the price and the dates before you commit. No padding, no surprise bills.") + ' ' + "<a class=\"baked\" href=\"" + PROJECT_OS + "app.html?guest=1\" target=\"_blank\" rel=\"noopener\">See a real plan I made earlier &rarr;</a>")
+        + step("03", "Built in the open",
+               "Instead of describing what I&rsquo;ll build and hoping you follow my jargon, I build a working "
+               "version you can click through on your own phone, while every task ticks off on your project page. "
+               + foru("you spot anything that&rsquo;s not right early, when it&rsquo;s quick to change, and you never have to chase me.") + ' ' + "<a class=\"baked\" href=\"#two-views\">Here&rsquo;s one I made earlier &rarr;</a>")
+        + step("04", "The design: the fun bit",
+               "The working version gets dressed in your brand: your colours, your photos, your voice. Hand-made, "
+               "so it&rsquo;s fast and easy to use, not the usual bloated template. "
+               + foru("a site that looks and sounds like you, loads fast, and you can edit yourself.") + ' ' + "<a class=\"baked\" href=\"index.html#work\">See finished sites &rarr;</a>")
+        + step("05", "Launch and connect",
+               "Tested on real phones and checked with Dragonfire, my own SEO tool. Then it goes live, I show you "
+               "how to edit it, and I connect you with other female-owned businesses who&rsquo;ll share your work. "
+               + foru("customers can find you on Google and in AI answers, and you&rsquo;re not doing it alone."))
+        + """    </div>
+  </div>
+</section>
+
+<!-- ============ TWO VIEWS ============ -->
+<section class="dark" id="two-views">
+  <div class="wrap">
+    <p class="eyebrow stand">See it in action</p>
+    <h2 class="stand">One project. Two views. Nothing hidden.</h2>
+    <p class="lead stand">I run every project through the Dragon Fire Process. You get your own private page that
+      shows the same project in plain English.</p>
+    <div class="shots">
+      <figure class="shot stand">
+        <div class="shot-frame"><img src="assets/img/work/projectos-desk.webp" width="1000" height="1479" loading="lazy"
+          alt="The Dragon Fire Process dashboard: overall progress, 12 phases with progress bars, and the next tasks"></div>
+        <figcaption><b>My side.</b> All 12 phases and every task, so nothing gets missed and nothing depends on memory.</figcaption>
+      </figure>
+      <figure class="shot stand">
+        <div class="shot-frame"><img src="assets/img/process/client-desk.webp" width="1000" height="1460" loading="lazy"
+          alt="A client&rsquo;s project page: where things are, progress, what is needed from the client, key dates and shared files"></div>
+        <figcaption><b>Your side.</b> Where things are, what I need from you, your key dates and your files. Private to you.</figcaption>
+      </figure>
+    </div>
+    <p class="tiny-note stand">Screens show a demo project. Scroll inside each one.</p>
+    <div class="cta-row stand" style="margin-top:22px;">
+      <a class="btn btn-primary" href=\"""" + PROJECT_OS + """app.html?guest=1" target="_blank" rel="noopener">Look round a real demo &rarr;</a>
+      <a class="btn btn-ghost" href="project-os.html">All 12 phases explained</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMUNICATION ============ -->
+<section class="band" id="talk">
+  <div class="wrap">
+    <p class="eyebrow stand">A better way to communicate</p>
+    <h2 class="stand">No chasing. No &ldquo;any update?&rdquo; No lost emails.</h2>
+    <p class="lead stand">Most projects go wrong in the gaps between messages. Your project page closes them.</p>
+    <div class="talk-grid">
+    <ul class="pticks stand">
+      <li><b>Where things are, in plain English.</b> A short note from me at the top, updated as we go. No jargon.</li>
+      <li><b>Exactly what I need from you, and by when.</b> Never a vague &ldquo;waiting on you&rdquo;. You tick it off and I see it.</li>
+      <li><b>Real dates you can plan around.</b> Every milestone, marked done or coming up, so launch day doesn&rsquo;t drift.</li>
+      <li><b>Every file in one place.</b> Logos, photos and words, not scattered across WhatsApp, email and texts.</li>
+      <li><b>A human when you need one.</b> Questions get an answer from me, usually the same day.</li>
+    </ul>
+    <figure class="shot shot--phone stand">
+      <div class="shot-frame"><img src="assets/img/process/client-phone.webp" width="480" height="2266"
+        alt="The client project page on a phone"></div>
+      <figcaption>Your project page on your phone. Check it in the queue at the shop.</figcaption>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section class="dark" id="trained">
+  <div class="wrap">
+    <p class="eyebrow stand">Expertise</p>
+    <h2 class="stand">Trained not to miss a single part.</h2>
+    <p class="lead stand">I&rsquo;m a full-stack developer trained at Code Institute, and I&rsquo;ve studied how the
+      best web agencies run their projects. The Dragon Fire Process turns that into a checklist I follow on
+      every single build.</p>
+    <ul class="pticks pticks--dark stand">
+      <li><b>The same 69 checks, every time.</b> Quality doesn&rsquo;t depend on whether I&rsquo;m having a good day.</li>
+      <li><b>Best practice built in.</b> Accessibility, speed on a cheap phone, security and clean code, checked before launch.</li>
+      <li><b>Found, not just finished.</b> Every site goes through Dragonfire, my own SEO tool, for Google and AI search.</li>
+      <li><b>One person who understands the whole build.</b> Words, design, front end and back end, so nothing gets lost in a hand-off.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ WHO I WORK WITH ============ -->
+<section class="band" id="who">
+  <div class="wrap">
+    <p class="eyebrow stand">Who I work with</p>
+    <h2 class="stand">Bold. Brave. <span style="color:var(--flame)">Ballsy.</span></h2>
+    <p class="lead stand">I work with women who want to make a real difference: founders, tradeswomen, charities and
+      community groups who do what they mean and mean what they say. If you&rsquo;re tired of being underestimated
+      and ready to claim your space, we&rsquo;ll get on.</p>
+    <p class="big-line stand">This is a woman&rsquo;s world. It&rsquo;s yours. Let&rsquo;s build it.</p>
+    <div class="cta-row stand" style="margin-top:28px;">
+      <a class="btn btn-primary" href=\"""" + PROJECT_OS + """forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-ghost" href="index.html#prices">See prices</a>
     </div>
   </div>
 </section>
@@ -750,7 +913,7 @@ add_pages(PAGES, SITE, EMAIL, PROJECT_OS)
 import json
 import os
 
-UPDATED = "2026-10-11"   # bump when you change a page; goes into dateModified
+UPDATED = "2026-10-12"   # bump when you change a page; goes into dateModified
 
 
 def crumbs(slug, p):
@@ -808,7 +971,7 @@ def write_sitemap():
         if "noindex" in p.get("robots", ""):
             continue
         prio = "0.9" if slug in ("website-audit.html", "web-design-cardiff.html", "web-design-birmingham.html",
-                                 "blog/index.html") else "0.7"
+                                 "blog/index.html", "process.html") else "0.7"
         urls.append((public_url(slug), prio))
     rows = "".join(f"""  <url>
     <loc>{SITE}/{u}</loc>
