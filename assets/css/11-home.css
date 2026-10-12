@@ -138,3 +138,21 @@
   .qa-grid dt{font-size:17px;margin-bottom:4px;}
   .qa-grid dd{font-size:15.5px;}
 }
+
+/* ---- hero v3: one-line headline, short and on one screen ---- */
+.hx .wrap{padding-top:120px;padding-bottom:56px;}
+.hx-h1{font-size:min(84px,calc((100vw - 64px) / 12.5));white-space:nowrap;max-width:none;margin:0 0 14px;}
+.hx-tag{font-size:clamp(19px,2.3vw,30px);line-height:1.2;font-weight:800;letter-spacing:-.02em;color:var(--paper);margin:0 0 18px;}
+.hx-tag .hit{color:var(--flame);}
+.hx-sub{max-width:52ch;margin:0 0 26px;}
+@media (max-width:760px){
+  .hero.hx{min-height:auto;}
+  .hx .wrap{padding-top:100px;padding-bottom:48px;}
+  .hx-eyebrow{margin-bottom:12px;}
+  .hx-sub{font-size:17px;margin-bottom:22px;}
+  .hx-proof{margin-top:22px;}
+}
+
+/* hero ticks: one column, so the longer lines read cleanly */
+.hx-ticks--stack{grid-template-columns:minmax(0,1fr);max-width:58ch;gap:10px;margin-bottom:28px;}
+.hx-ticks--stack li{font-size:clamp(16px,1.5vw,18px);line-height:1.45;}
