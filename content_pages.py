@@ -225,6 +225,34 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         mins = max(2, round(words / 220))
         src = "".join(f'<li><a href="{u}" target="_blank" rel="noopener">{t}</a></li>' for t, u in sources)
         srcblock = f'<div class="sources"><strong>Sources</strong><ol>{src}</ol></div>' if sources else ""
+        from urllib.parse import quote as _q
+        _u = _q(f"{SITE}/blog/{slug}.html", safe=""); _t = _q(_plain(h1), safe="")
+        share = f"""      <div class="share" aria-label="Share this post">
+        <p class="share-h">Found this useful? Pass it on.</p>
+        <div class="share-row">
+          <button type="button" class="share-native" hidden>Share&hellip;</button>
+          <a href="https://wa.me/?text={_t}%20{_u}" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={_u}" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url={_u}" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/intent/tweet?url={_u}&amp;text={_t}" target="_blank" rel="noopener">X</a>
+          <a href="mailto:?subject={_t}&amp;body={_u}">Email</a>
+          <button type="button" class="share-copy" data-url="{SITE}/blog/{slug}.html">Copy link</button>
+        </div>
+      </div>
+      <script>
+      (function(){{
+        var c=document.querySelector('.share-copy'), n=document.querySelector('.share-native');
+        if(c) c.addEventListener('click',function(){{
+          var u=c.getAttribute('data-url');
+          (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){{c.textContent='Link copied';}})
+            .catch(function(){{window.prompt('Copy this link:',u);}});
+        }});
+        if(n && navigator.share){{ n.hidden=false; n.addEventListener('click',function(){{
+          navigator.share({{title:document.title,url:c.getAttribute('data-url')}}).catch(function(){{}});
+        }}); }}
+      }})();
+      </script>
+"""
         PAGES[f"blog/{slug}.html"] = dict(
             title=title, desc=desc, ogtitle=_plain(h1), crumb=tag, ogtype="article",
             backhref="blog/", backtext="All posts",
@@ -245,7 +273,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
   <div class="wrap">
     <article class="post">
 {body}
-      <div class="callout">
+{share}      <div class="callout">
         <strong>Want to know how your website comes across?</strong> I&rsquo;ll go through it like a doubtful customer
         would and tell you straight. Free, two working days, no catch.<br>
         <a class="btn btn-primary" href="../website-audit.html">Get my free audit &rarr;</a>

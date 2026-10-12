@@ -79,3 +79,13 @@ section.read{background:var(--paper);color:var(--ink);padding:72px 0 90px;}
 .card-post[hidden]{display:none;}
 .card-img{display:block;width:calc(100% + 52px);max-width:none;height:auto;aspect-ratio:1200/630;object-fit:cover;
   margin:-26px -26px 6px;border-radius:20px 20px 0 0;}
+
+/* ---------- share ---------- */
+.share{margin:2.2em 0 1.6em;padding-top:1.4em;border-top:1px solid rgba(10,10,12,.14);}
+.share-h{font-weight:800;font-size:17px;margin:0 0 12px;}
+.share-row{display:flex;flex-wrap:wrap;gap:10px;}
+.share-row a,.share-row button{font:inherit;font-size:15px;font-weight:800;padding:10px 16px;border-radius:999px;cursor:pointer;
+  border:1.5px solid rgba(10,10,12,.22);background:#fff;color:var(--ink);text-decoration:none;line-height:1.2;}
+.share-row a:hover,.share-row button:hover{border-color:var(--flame);}
+.share-row .share-native{background:var(--flame);border-color:var(--flame);color:#fff;}
+.share-row a:focus-visible,.share-row button:focus-visible{outline:3px solid var(--flame);outline-offset:2px;}

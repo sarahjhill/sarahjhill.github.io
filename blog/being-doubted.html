@@ -195,6 +195,31 @@
       <hr>
       <p><strong>Be bold. Be brave. Be ballsy.</strong> This is a woman&rsquo;s world too. Make your website act like it.</p>
 
+      <div class="share" aria-label="Share this post">
+        <p class="share-h">Found this useful? Pass it on.</p>
+        <div class="share-row">
+          <button type="button" class="share-native" hidden>Share&hellip;</button>
+          <a href="https://wa.me/?text=Your%20website%20isn%E2%80%99t%20the%20problem.%20Being%20doubted%20is.%20https%3A%2F%2Fsarahjhill.com%2Fblog%2Fbeing-doubted.html" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fbeing-doubted.html" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fbeing-doubted.html" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fbeing-doubted.html&amp;text=Your%20website%20isn%E2%80%99t%20the%20problem.%20Being%20doubted%20is." target="_blank" rel="noopener">X</a>
+          <a href="mailto:?subject=Your%20website%20isn%E2%80%99t%20the%20problem.%20Being%20doubted%20is.&amp;body=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fbeing-doubted.html">Email</a>
+          <button type="button" class="share-copy" data-url="https://sarahjhill.com/blog/being-doubted.html">Copy link</button>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var c=document.querySelector('.share-copy'), n=document.querySelector('.share-native');
+        if(c) c.addEventListener('click',function(){
+          var u=c.getAttribute('data-url');
+          (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){c.textContent='Link copied';})
+            .catch(function(){window.prompt('Copy this link:',u);});
+        });
+        if(n && navigator.share){ n.hidden=false; n.addEventListener('click',function(){
+          navigator.share({title:document.title,url:c.getAttribute('data-url')}).catch(function(){});
+        }); }
+      })();
+      </script>
       <div class="callout">
         <strong>Want to know how your website comes across?</strong> I&rsquo;ll go through it like a doubtful customer
         would and tell you straight. Free, two working days, no catch.<br>

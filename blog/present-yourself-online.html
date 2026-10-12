@@ -179,6 +179,31 @@
       <p><strong>Got that something?</strong> Good. Don&rsquo;t sand it off to look like everyone else. The point of all this
         isn&rsquo;t to look corporate. It&rsquo;s to make sure the real you comes across before anyone has the chance to doubt it.</p>
 
+      <div class="share" aria-label="Share this post">
+        <p class="share-h">Found this useful? Pass it on.</p>
+        <div class="share-row">
+          <button type="button" class="share-native" hidden>Share&hellip;</button>
+          <a href="https://wa.me/?text=How%20to%20present%20yourself%20online%20so%20people%20take%20you%20seriously.%20https%3A%2F%2Fsarahjhill.com%2Fblog%2Fpresent-yourself-online.html" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fpresent-yourself-online.html" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fpresent-yourself-online.html" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fpresent-yourself-online.html&amp;text=How%20to%20present%20yourself%20online%20so%20people%20take%20you%20seriously." target="_blank" rel="noopener">X</a>
+          <a href="mailto:?subject=How%20to%20present%20yourself%20online%20so%20people%20take%20you%20seriously.&amp;body=https%3A%2F%2Fsarahjhill.com%2Fblog%2Fpresent-yourself-online.html">Email</a>
+          <button type="button" class="share-copy" data-url="https://sarahjhill.com/blog/present-yourself-online.html">Copy link</button>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var c=document.querySelector('.share-copy'), n=document.querySelector('.share-native');
+        if(c) c.addEventListener('click',function(){
+          var u=c.getAttribute('data-url');
+          (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){c.textContent='Link copied';})
+            .catch(function(){window.prompt('Copy this link:',u);});
+        });
+        if(n && navigator.share){ n.hidden=false; n.addEventListener('click',function(){
+          navigator.share({title:document.title,url:c.getAttribute('data-url')}).catch(function(){});
+        }); }
+      })();
+      </script>
       <div class="callout">
         <strong>Want to know how your website comes across?</strong> I&rsquo;ll go through it like a doubtful customer
         would and tell you straight. Free, two working days, no catch.<br>
