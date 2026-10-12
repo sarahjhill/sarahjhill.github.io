@@ -119,7 +119,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
       </ul>
 
       <h2>Can I see work you&rsquo;ve done in Cardiff?</h2>
-      <p><a href="cardiff-community-meals.html">Cardiff Community Meals</a>: neighbours fund a meal,
+      <p><b>Cardiff Community Meals</b>: neighbours fund a meal,
         a local kitchen cooks it, and someone having a hard time gets fed without being made to feel like a
         charity case. Bilingual, fast on a cheap phone, and every penny tracked.
         <a href="https://sarahjhill.com/cardiff-community-meals/" target="_blank" rel="noopener">See the live site</a>.</p>
