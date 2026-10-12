@@ -741,11 +741,15 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         crumb="Blog", ogtype="website",
         backhref="index.html", backtext="Back to the start",
         eyebrow="The blog &middot; Be bold. Be brave. Be ballsy.",
-        h1="Straight talk for women <span class=\"hit\">who are building something.</span>",
-        lead=("Facts, encouragement and practical fixes for founders, charities, community groups and tradeswomen &mdash; "
-              "from Cardiff, Birmingham and wherever you&rsquo;re reading."),
+        h1="Hot topics <span class=\"hit\">and making the changes for women.</span>",
+        lead=("Straight talk, practical fixes and the people worth knowing &mdash; for founders, charities, community "
+              "groups and tradeswomen in Cardiff, Birmingham and wherever you&rsquo;re reading."),
+        heroscene='  <div class="scene" aria-hidden="true"><canvas class="sjh-dragon-canvas"></canvas></div>\n',
+        extrajs=('<script src="{root}assets/js/dragon.js?v=20261012a" defer></script>\n'
+                 '<script type="importmap">{{ "imports": {{ "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" }} }}</script>\n'
+                 '<script type="module" src="{root}assets/js/dragon3d.js?v=20261012a"></script>\n'),
         herocta="",
-        extracss=BLOG_CSS,
+        extracss=BLOG_CSS + '  <link rel="stylesheet" href="{root}assets/css/05-scene.css?v=20261012a">\n',
         jsonld=json.dumps({"@context": "https://schema.org", "@type": "Blog", "name": "Sarah J Hill — Blog",
                            "url": f"{SITE}/blog/", "author": AUTHOR, "inLanguage": "en-GB"}),
         body=f"""<section class="read">

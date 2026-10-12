@@ -57,7 +57,7 @@ import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples
 	   bounding box is roughly ±1), applied through the model's own
 	   world matrix — so it scales correctly with the model at any
 	   viewport size instead of needing to be re-tuned per size. */
-	var MODEL_URL      = 'assets/models/dragon.glb'; /* Draco-compressed — 2MB, was 68MB */
+	var MODEL_URL      = new URL('../models/dragon.glb', import.meta.url).href; /* Draco-compressed — 2MB, was 68MB */
 	/* rotate.y so local +Z (the body's own forward axis) maps to world -X —
 	   i.e. head-first into the direction of travel. The +π here fixed a
 	   real bug: without it, the head pointed toward +X (backwards, since

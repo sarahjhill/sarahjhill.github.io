@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="../assets/css/06-globe.css">
   <link rel="stylesheet" href="../assets/css/04-motion.css">
   <link rel="stylesheet" href="../assets/css/12-blog.css">
+  <link rel="stylesheet" href="../assets/css/05-scene.css?v=20261012a">
 
 
   <!-- ============ STRUCTURED DATA ============ -->
@@ -108,11 +109,12 @@
 </nav>
 
 <header class="page-hero" id="top">
+  <div class="scene" aria-hidden="true"><canvas class="sjh-dragon-canvas"></canvas></div>
   <div class="wrap">
     <a class="backlink" href="../index.html">&larr; Back to the start</a>
     <p class="eyebrow">The blog &middot; Be bold. Be brave. Be ballsy.</p>
-    <h1>Straight talk for women <span class="hit">who are building something.</span></h1>
-    <p class="lead">Facts, encouragement and practical fixes for founders, charities, community groups and tradeswomen &mdash; from Cardiff, Birmingham and wherever you&rsquo;re reading.</p>
+    <h1>Hot topics <span class="hit">and making the changes for women.</span></h1>
+    <p class="lead">Straight talk, practical fixes and the people worth knowing &mdash; for founders, charities, community groups and tradeswomen in Cardiff, Birmingham and wherever you&rsquo;re reading.</p>
 
   </div>
 </header>
@@ -235,6 +237,9 @@
 
 <script src="../assets/js/main.js" defer></script>
 <script src="../assets/js/globe.js" defer></script>
+<script src="../assets/js/dragon.js?v=20261012a" defer></script>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module" src="../assets/js/dragon3d.js?v=20261012a"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8f936632609c48e5bc300dd47e8645ed"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

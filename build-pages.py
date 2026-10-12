@@ -92,7 +92,7 @@ SHELL = """<!DOCTYPE html>
 </nav>
 
 <header class="page-hero" id="top">
-  <div class="wrap">
+{heroscene}  <div class="wrap">
     <a class="backlink" href="{root}{backhref}">&larr; {backtext}</a>
     <p class="eyebrow">{eyebrow}</p>
     <h1>{h1}</h1>
@@ -147,7 +147,7 @@ SHELL = """<!DOCTYPE html>
 
 <script src="{root}assets/js/main.js" defer></script>
 <script src="{root}assets/js/globe.js" defer></script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "8f936632609c48e5bc300dd47e8645ed"}}'></script><!-- End Cloudflare Web Analytics -->
+{extrajs}<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "8f936632609c48e5bc300dd47e8645ed"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
@@ -1073,6 +1073,8 @@ def build():
             extracss=p.get("extracss", "").format(root=root),
             robots=p.get("robots", "index, follow, max-image-preview:large"),
             ogimage=p.get("ogimage", f"{SITE}/assets/img/og-card.jpg"),
+            heroscene=p.get("heroscene", ""),
+            extrajs=p.get("extrajs", "").format(root=root),
             ogalt=p.get("ogalt", "The Sarah J Hill homepage: &ldquo;That&rsquo;s how long they take to write you off.&rdquo;"),
         )
         os.makedirs(os.path.dirname(slug) or ".", exist_ok=True)
