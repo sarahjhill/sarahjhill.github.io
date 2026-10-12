@@ -224,6 +224,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         words = _words(body)
         mins = max(2, round(words / 220))
         src = "".join(f'<li><a href="{u}" target="_blank" rel="noopener">{t}</a></li>' for t, u in sources)
+        srcblock = f'<div class="sources"><strong>Sources</strong><ol>{src}</ol></div>' if sources else ""
         PAGES[f"blog/{slug}.html"] = dict(
             title=title, desc=desc, ogtitle=_plain(h1), crumb=tag, ogtype="article",
             backhref="blog/", backtext="All posts",
@@ -231,13 +232,14 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
             herocta=f'    <p class="post-meta"><span>By <b>Sarah J Hill</b></span><span><time datetime="{date}">'
                     f'{_date(date)}</time></span><span>{mins} min read</span></p>',
             extracss=BLOG_CSS, updated=date,
+            ogimage=f"{SITE}/assets/img/blog/{slug}.jpg", ogalt=_plain(h1).replace('"', "&quot;"),
             jsonld=json.dumps({"@context": "https://schema.org", "@type": "BlogPosting",
                                "headline": _plain(h1), "description": _plain(desc),
                                "datePublished": date, "dateModified": date,
                                "author": AUTHOR, "publisher": {"@type": "Organization", "name": "Sarah J Hill",
                                                                "logo": f"{SITE}/assets/img/logo-mark-512.png"},
                                "mainEntityOfPage": f"{SITE}/blog/{slug}.html",
-                               "image": f"{SITE}/assets/img/og-card.jpg", "wordCount": words,
+                               "image": f"{SITE}/assets/img/blog/{slug}.jpg", "articleSection": _plain(tag), "wordCount": words,
                                "inLanguage": "en-GB"}),
             body=f"""<section class="read">
   <div class="wrap">
@@ -248,7 +250,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         would and tell you straight. Free, two working days, no catch.<br>
         <a class="btn btn-primary" href="../website-audit.html">Get my free audit &rarr;</a>
       </div>
-      <div class="sources"><strong>Sources</strong><ol>{src}</ol></div>
+      {srcblock}
     </article>
   </div>
 </section>
@@ -264,7 +266,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
               "and how to get started without being written off."),
         h1="Becoming a tradeswoman in midlife: <span class=\"hit\">is it too late?</span>",
         lead="Short answer: no. Longer answer: you might be better placed than the 18-year-olds.",
-        tag="Women in the trades",
+        tag="Women in business",
         date="2026-10-11",
         sources=[
             ("Stylist — 8 women on the realities of working in skilled trades",
@@ -413,7 +415,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
               "site, how to be found on Google, and how to look as good as you are."),
         h1="How to present yourself online so people <span class=\"hit\">take you seriously.</span>",
         lead="Seven fixes. Most cost nothing but an afternoon.",
-        tag="Online presence",
+        tag="Your online presence",
         date="2026-10-11",
         sources=[
             ("Google Business Profile — create or claim your profile",
@@ -465,9 +467,238 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
 """,
     )
 
+    # ---------------------------------------------------------------- 4
+    post(
+        slug="website-in-a-day",
+        title="Why I won&rsquo;t build you a website in a day | Sarah J Hill",
+        desc=("One-day websites look quick and cheap. Here&rsquo;s what you actually get, the mistakes they bake in, "
+              "and seven questions to ask before you pay anyone for a website."),
+        h1="Why I won&rsquo;t build you a website <span class=\"hit\">in a day.</span>",
+        lead="Because a website knocked up in a day says exactly that about your business.",
+        tag="Your online presence",
+        date="2026-10-12",
+        sources=[
+            ("W3C — How to meet WCAG (quick reference)", "https://www.w3.org/WAI/WCAG22/quickref/"),
+            ("web.dev — Web Vitals: what Google measures about speed and stability", "https://web.dev/articles/vitals"),
+            ("GOV.UK — Accessibility requirements for public sector websites and apps",
+             "https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps"),
+        ],
+        body="""      <p class="answer">A website built in a day is a template with your logo dropped in. It skips the bits that actually
+        win you customers: knowing who it&rsquo;s for, what they need to hear, and what proves you&rsquo;re worth it.
+        That isn&rsquo;t a website. It&rsquo;s a placeholder with a price tag.</p>
+
+      <h2>What do you actually get from a one-day website?</h2>
+      <p>Usually a theme someone bought once and sells fifty times, stock photos of people who&rsquo;ve never heard of you,
+        and words written in a rush by someone who&rsquo;s known your business for an hour. &ldquo;Welcome to my
+        website.&rdquo; &ldquo;Quality service at affordable prices.&rdquo; Sound familiar? It should. It&rsquo;s on
+        thousands of other sites.</p>
+      <p>None of that is a crime. None of it sells you, either.</p>
+
+      <h2>What does generic design cost women in business?</h2>
+      <p>More than it costs anyone else. If you&rsquo;re a woman running a business, you already get second-guessed: by
+        suppliers, by customers, by the bloke who asks to &ldquo;speak to the owner&rdquo;. A generic site doesn&rsquo;t
+        challenge that doubt. It confirms it. It looks like everyone else, says nothing specific and proves nothing, so
+        people fill the gaps with their own assumptions. Those are rarely generous.</p>
+      <p>Your website is the one place you control the first impression completely. Wasting it on a template is like
+        turning up to a pitch in someone else&rsquo;s clothes.</p>
+
+      <h2>What actually works?</h2>
+      <ul>
+        <li><strong>Words first, design second.</strong> Decide what the site needs to say before anyone picks a colour.
+          Design built around real words looks better and sells harder.</li>
+        <li><strong>Say who it&rsquo;s for in the first line.</strong> &ldquo;Electrician in Cardiff for homeowners who want
+          it done right&rdquo; beats &ldquo;Welcome&rdquo; every single time.</li>
+        <li><strong>Proof near the top.</strong> Reviews with real first names, qualifications, and photos of you and your
+          actual work. Not stock.</li>
+        <li><strong>One clear next step per page.</strong> Call, book or enquire. Pick one. Three competing buttons is how
+          you get none.</li>
+        <li><strong>Built for a phone first.</strong> That&rsquo;s where most people meet you, usually in a hurry. If it&rsquo;s
+          slow or fiddly there, nothing else matters.</li>
+        <li><strong>Accessible by default.</strong> Readable text, proper contrast, works with a keyboard and a screen reader.
+          For public sector sites it&rsquo;s the law. For everyone else it&rsquo;s good manners and good business.</li>
+      </ul>
+
+      <h2>What are the mistakes I fix most often?</h2>
+      <ul>
+        <li>Stock photos where the owner should be. People buy from people.</li>
+        <li>A lovely homepage, and a contact form that&rsquo;s been emailing nobody for months.</li>
+        <li>Huge images that make the site crawl on mobile data.</li>
+        <li>A sliding carousel of messages nobody waits around to read.</li>
+        <li>No prices, not even a &ldquo;from&rdquo;. So people assume you&rsquo;re too expensive and don&rsquo;t ask.</li>
+        <li>Apologetic words: &ldquo;just a small business&rdquo;, &ldquo;we&rsquo;ll try our best&rdquo;. Be proud, or be quiet.</li>
+      </ul>
+
+      <h2>What should I ask before I pay anyone for a website?</h2>
+      <ol>
+        <li>Who writes the words, and when?</li>
+        <li>Is it built for my customers, or from a template?</li>
+        <li>How fast will it load on a phone, on mobile data?</li>
+        <li>Will I own it outright: the site, the domain and the words?</li>
+        <li>Can I change it myself without ringing you?</li>
+        <li>How will people find it on Google and in AI answers?</li>
+        <li>What happens after launch if something breaks?</li>
+      </ol>
+      <p>If the answers are vague, so is the website.</p>
+
+      <h2>So how long should a website take?</h2>
+      <p>Long enough to do it properly. With my Dragon Fire Process you get a plan with real dates within two working days,
+        and you watch every task tick off on your own project page. Not quick and nasty. Not slow and mysterious. Properly
+        planned, researched and tested. <a href="../process.html">See how I work</a>.</p>
+
+      <hr>
+      <p><strong>Be bold. Be brave. Be ballsy.</strong> Your business isn&rsquo;t generic. Your website shouldn&rsquo;t be either.</p>
+""",
+    )
+
+    # ---------------------------------------------------------------- 5
+    post(
+        slug="being-doubted",
+        title="Your website isn&rsquo;t the problem. Being doubted is. | Sarah J Hill",
+        desc=("Women in business get second-guessed before they say a word. How to make your website answer the doubt "
+              "first: what to show, what to cut, and the five-second stranger test."),
+        h1="Your website isn&rsquo;t the problem. <span class=\"hit\">Being doubted is.</span>",
+        lead="Nobody tells you they doubted you. They just don&rsquo;t ring.",
+        tag="Women in business",
+        date="2026-10-12",
+        sources=[],
+        body="""      <p class="answer">Most small business websites don&rsquo;t fail because they&rsquo;re ugly. They fail because a stranger
+        lands on them already half-doubting, and the site gives them nothing to change their mind. Your job is to answer the
+        doubt before it&rsquo;s spoken: who you are, what you do, proof you&rsquo;re good at it, and how to get hold of you.</p>
+
+      <h2>Why are women in business doubted more?</h2>
+      <p>You know the moments. The customer who asks when your husband will be back. The supplier who explains your own trade
+        to you. The networking do where someone assumes you&rsquo;re the assistant. That doubt doesn&rsquo;t switch off when
+        people go online. It just goes quiet: a tab closed, a call never made.</p>
+      <p>You can&rsquo;t control what people assume. You can control what they find.</p>
+
+      <h2>What does a doubtful visitor look for first?</h2>
+      <p>Four things, fast, usually on a phone:</p>
+      <ol>
+        <li>Who is this, and is it a real person?</li>
+        <li>Do they do the thing I need, where I need it?</li>
+        <li>Are they any good? Who says so?</li>
+        <li>How do I get hold of them, right now?</li>
+      </ol>
+      <p>If any of those takes more than a scroll to find, you&rsquo;re relying on their patience. Doubtful people
+        don&rsquo;t have much.</p>
+
+      <h2>What actually works?</h2>
+      <ul>
+        <li><strong>Your face.</strong> A real photo of you, not a stock smile. It&rsquo;s the fastest trust signal there is.</li>
+        <li><strong>Specifics, not adjectives.</strong> Your actual qualifications, the number of reviews you have, the
+          towns you cover. &ldquo;Professional, friendly, reliable&rdquo; is what everyone types. Facts are what people believe.</li>
+        <li><strong>Prices, or at least &ldquo;from&rdquo;.</strong> Hide your prices and people assume the worst, then leave
+          without asking.</li>
+        <li><strong>Reviews with names, near the top.</strong> Not on a separate page nobody clicks.</li>
+        <li><strong>A way to contact you on every screen.</strong> Tap to call, a short form, or both.</li>
+      </ul>
+
+      <h2>What should I cut?</h2>
+      <ul>
+        <li>&ldquo;Welcome to my website.&rdquo; They know. They&rsquo;re on it.</li>
+        <li>Apology words: <em>just</em>, <em>only</em>, <em>small</em>, <em>try</em>. You wouldn&rsquo;t say them to a
+          customer&rsquo;s face. Don&rsquo;t write them on your homepage.</li>
+        <li>Mission statements nobody asked for.</li>
+        <li>Anything you&rsquo;d be embarrassed to read out loud across a counter.</li>
+      </ul>
+      <blockquote>&ldquo;If you wouldn&rsquo;t say it to a customer&rsquo;s face, don&rsquo;t put it on your homepage.&rdquo;
+        <cite>My rule for every site I build</cite></blockquote>
+
+      <h2>How do I test my own website?</h2>
+      <p>The stranger test. Hand your phone to someone who&rsquo;s never heard of you. Give them five seconds on your
+        homepage, take it back, and ask: What do I do? Who is it for? What would you do next? If they can&rsquo;t answer,
+        the site isn&rsquo;t doing its job. No offence to the site.</p>
+
+      <h2>Isn&rsquo;t this just about looking professional?</h2>
+      <p>No. Professional is the minimum. This is about your worth showing up before you do. You&rsquo;ve done the training,
+        the hours and the hard graft. Your website should make that obvious to a stranger in a hurry, so you never have to
+        prove it from scratch on the phone again.</p>
+      <p>Want a second pair of eyes? My <a href="../website-audit.html">free website audit</a> runs your site through exactly
+        this, the way a doubtful customer would.</p>
+
+      <hr>
+      <p><strong>Be bold. Be brave. Be ballsy.</strong> This is a woman&rsquo;s world too. Make your website act like it.</p>
+""",
+    )
+
+    # ---------------------------------------------------------------- 6
+    post(
+        slug="charity-website-mistakes",
+        title="Charities: your donate button is in the wrong place | Sarah J Hill",
+        desc=("What actually works on small charity and community group websites: where donate goes, how to show impact, "
+              "Gift Aid, volunteers, and the mistakes that quietly cost you support."),
+        h1="Charities: your donate button is <span class=\"hit\">in the wrong place.</span>",
+        lead="And it&rsquo;s probably not the only thing quietly costing you support.",
+        tag="Local &amp; community",
+        date="2026-10-12",
+        sources=[
+            ("GOV.UK — Gift Aid: how it works for donors", "https://www.gov.uk/donating-to-charity/gift-aid"),
+            ("W3C — Understanding contrast (minimum)", "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"),
+        ],
+        body="""      <p class="answer">If someone has to hunt for how to give, they won&rsquo;t. On most small charity websites the donate
+        button is tucked in a menu, missing on phones, or fighting five other buttons. Put one clear &ldquo;Donate&rdquo;
+        in the top bar of every page, visible on a phone without opening a menu, and tell people exactly what their money does.</p>
+
+      <h2>Where should the donate button go?</h2>
+      <ul>
+        <li><strong>In the header, on every page,</strong> and still visible on a phone. Not hidden inside the burger menu.</li>
+        <li><strong>At the end of every story or update,</strong> when people are most moved to help.</li>
+        <li><strong>Straight to a short, simple form.</strong> Every extra page between &ldquo;I want to give&rdquo; and
+          &ldquo;done&rdquo; loses people.</li>
+      </ul>
+
+      <h2>How do I show what a donation actually does?</h2>
+      <p>Turn money into something people can picture. &ldquo;&pound;5 pays for a hot meal&rdquo; (use your real numbers)
+        works far harder than &ldquo;support our work&rdquo;. Show the people you help, with their consent. Tell one real
+        story at a time, and keep it current. A news page last touched three years ago tells donors nobody&rsquo;s home.</p>
+      <p>If you&rsquo;re a registered charity, remind UK taxpayers about
+        <a href="https://www.gov.uk/donating-to-charity/gift-aid" target="_blank" rel="noopener">Gift Aid</a>: it adds
+        25p to every &pound;1 they give, at no extra cost to them. Put the tick box where they can&rsquo;t miss it.</p>
+
+      <h2>What do volunteers need from your website?</h2>
+      <ul>
+        <li>What the roles actually are, how much time they take, and where.</li>
+        <li>A short sign-up form: name, how to reach them, what interests them. Ask the rest later.</li>
+        <li>A named person who&rsquo;ll reply, and roughly when.</li>
+      </ul>
+
+      <h2>What are the most common mistakes?</h2>
+      <ul>
+        <li>The annual report as a PDF is the main content. Nobody reads PDFs on a phone.</li>
+        <li>Three different donation platforms linked from different pages. Pick one.</li>
+        <li>Sliding carousels. Nobody waits for slide four.</li>
+        <li>Pale grey text on white. If people can&rsquo;t read it, they can&rsquo;t support it. The accessibility standard
+          asks for a contrast ratio of at least 4.5:1 for normal text.</li>
+        <li>English only, in a Welsh-speaking community. In Wales, offering Cymraeg says you belong.</li>
+        <li>A free template that looks exactly like every other cause asking for the same money.</li>
+      </ul>
+
+      <h2>What does a generic charity template get wrong?</h2>
+      <p>It treats your cause like a product category. The same photo of hands, the same &ldquo;Make a difference
+        today&rdquo;, the same three icons. Donors scroll past dozens of those a week. What they don&rsquo;t see enough of is
+        <em>you</em>: the specific people, the specific place, the specific difference. That&rsquo;s your edge, and generic
+        design sands it right off.</p>
+
+      <h2>Where do I start if money is tight?</h2>
+      <ol>
+        <li>Move donate into the header and test it on your own phone.</li>
+        <li>Write one sentence on what &pound;10 does, with your real numbers.</li>
+        <li>Swap one stock photo for a real one, with permission.</li>
+        <li>Delete anything out of date.</li>
+        <li>Ask a stranger to find how to volunteer. Time them.</li>
+      </ol>
+      <p>None of that needs a developer. When you&rsquo;re ready for more, <a href="../process.html">here&rsquo;s how I
+        work</a>. Charity and community projects are the first world in my portfolio for a reason.</p>
+
+      <hr>
+      <p><strong>Be bold. Be brave. Be ballsy.</strong> Your cause deserves to be seen properly.</p>
+""",
+    )
+
     # ---------------------------------------------------------------- index
     cards = sorted((p["_card"] for p in PAGES.values() if "_card" in p), key=lambda c: c["date"], reverse=True)
-    grid = "".join(f"""      <a class="card-post" href="{c['slug']}.html">
+    grid = "".join(f"""      <a class="card-post" href="{c['slug']}.html" data-cat="{_plain(c['tag'])}">
+        <img class="card-img" src="../assets/img/blog/{c['slug']}.jpg" width="1200" height="630" loading="lazy" alt="">
         <span class="tag">{c['tag']}</span>
         <h2>{c['h1']}</h2>
         <p>{c['desc']}</p>
@@ -481,7 +712,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         ogtitle="The blog — women in business, online presence and community",
         crumb="Blog", ogtype="website",
         backhref="index.html", backtext="Back to the start",
-        eyebrow="The blog",
+        eyebrow="The blog &middot; Be bold. Be brave. Be ballsy.",
         h1="Straight talk for women <span class=\"hit\">who are building something.</span>",
         lead=("Facts, encouragement and practical fixes for founders, charities, community groups and tradeswomen &mdash; "
               "from Cardiff, Birmingham and wherever you&rsquo;re reading."),
@@ -491,14 +722,29 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
                            "url": f"{SITE}/blog/", "author": AUTHOR, "inLanguage": "en-GB"}),
         body=f"""<section class="read">
   <div class="wrap">
+    <div class="cat-filter" role="group" aria-label="Show posts about">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="Women in business" aria-pressed="false">Women in business</button>
+      <button type="button" data-f="Your online presence" aria-pressed="false">Your online presence</button>
+      <button type="button" data-f="Local &amp; community" aria-pressed="false">Local &amp; community</button>
+    </div>
     <div class="posts">
 {grid}    </div>
+    <script>
+    (function(){{
+      var btns=document.querySelectorAll('.cat-filter button'), cards=document.querySelectorAll('.card-post');
+      btns.forEach(function(b){{ b.addEventListener('click', function(){{
+        var f=b.getAttribute('data-f');
+        btns.forEach(function(x){{ x.setAttribute('aria-pressed', String(x===b)); }});
+        cards.forEach(function(c){{ c.hidden = !(f==='all' || c.getAttribute('data-cat')===f); }});
+      }}); }});
+    }})();
+    </script>
     <div class="topics-next">
       <p class="eyebrow">Coming next</p>
       <ul>
         <li>Starting out: what nobody tells new entrepreneurs</li>
         <li>Backing local: why community businesses matter in Cardiff &amp; Birmingham</li>
-        <li>What every small charity website needs</li>
         <li>Bilingual websites: doing Welsh properly</li>
       </ul>
     </div>

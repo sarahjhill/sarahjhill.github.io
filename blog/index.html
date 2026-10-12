@@ -99,6 +99,7 @@
       <a href="../index.html#work">Work</a>
       <a href="../process.html">How I work</a>
       <a href="../index.html#prices">Prices</a>
+      <a href="../faq.html">FAQs</a>
       <a href="../index.html#about">About</a>
       <a href="../blog/">Blog</a>
       <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project</a>
@@ -109,7 +110,7 @@
 <header class="page-hero" id="top">
   <div class="wrap">
     <a class="backlink" href="../index.html">&larr; Back to the start</a>
-    <p class="eyebrow">The blog</p>
+    <p class="eyebrow">The blog &middot; Be bold. Be brave. Be ballsy.</p>
     <h1>Straight talk for women <span class="hit">who are building something.</span></h1>
     <p class="lead">Facts, encouragement and practical fixes for founders, charities, community groups and tradeswomen &mdash; from Cardiff, Birmingham and wherever you&rsquo;re reading.</p>
 
@@ -119,32 +120,71 @@
 <main id="main">
 <section class="read">
   <div class="wrap">
+    <div class="cat-filter" role="group" aria-label="Show posts about">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="Women in business" aria-pressed="false">Women in business</button>
+      <button type="button" data-f="Your online presence" aria-pressed="false">Your online presence</button>
+      <button type="button" data-f="Local &amp; community" aria-pressed="false">Local &amp; community</button>
+    </div>
     <div class="posts">
-      <a class="card-post" href="tradeswoman-in-midlife.html">
-        <span class="tag">Women in the trades</span>
+      <a class="card-post" href="website-in-a-day.html" data-cat="Your online presence">
+        <img class="card-img" src="../assets/img/blog/website-in-a-day.jpg" width="1200" height="630" loading="lazy" alt="">
+        <span class="tag">Your online presence</span>
+        <h2>Why I won’t build you a website in a day.</h2>
+        <p>One-day websites look quick and cheap. Here&rsquo;s what you actually get, the mistakes they bake in, and seven questions to ask before you pay anyone for a website.</p>
+        <span class="more">Read &middot; 3 min &rarr;</span>
+      </a>
+      <a class="card-post" href="being-doubted.html" data-cat="Women in business">
+        <img class="card-img" src="../assets/img/blog/being-doubted.jpg" width="1200" height="630" loading="lazy" alt="">
+        <span class="tag">Women in business</span>
+        <h2>Your website isn’t the problem. Being doubted is.</h2>
+        <p>Women in business get second-guessed before they say a word. How to make your website answer the doubt first: what to show, what to cut, and the five-second stranger test.</p>
+        <span class="more">Read &middot; 2 min &rarr;</span>
+      </a>
+      <a class="card-post" href="charity-website-mistakes.html" data-cat="Local & community">
+        <img class="card-img" src="../assets/img/blog/charity-website-mistakes.jpg" width="1200" height="630" loading="lazy" alt="">
+        <span class="tag">Local &amp; community</span>
+        <h2>Charities: your donate button is in the wrong place.</h2>
+        <p>What actually works on small charity and community group websites: where donate goes, how to show impact, Gift Aid, volunteers, and the mistakes that quietly cost you support.</p>
+        <span class="more">Read &middot; 2 min &rarr;</span>
+      </a>
+      <a class="card-post" href="tradeswoman-in-midlife.html" data-cat="Women in business">
+        <img class="card-img" src="../assets/img/blog/tradeswoman-in-midlife.jpg" width="1200" height="630" loading="lazy" alt="">
+        <span class="tag">Women in business</span>
         <h2>Becoming a tradeswoman in midlife: is it too late?</h2>
         <p>Retraining as an electrician, plumber or gas engineer at 40 or 50? Real stories, the real numbers, and how to get started without being written off.</p>
         <span class="more">Read &middot; 3 min &rarr;</span>
       </a>
-      <a class="card-post" href="women-in-business-uk-facts.html">
+      <a class="card-post" href="women-in-business-uk-facts.html" data-cat="Women in business">
+        <img class="card-img" src="../assets/img/blog/women-in-business-uk-facts.jpg" width="1200" height="630" loading="lazy" alt="">
         <span class="tag">Women in business</span>
         <h2>Women in business in the UK: the facts.</h2>
         <p>How many women run businesses in the UK, how much funding they get, how Wales and the West Midlands compare, and what it means for your website.</p>
         <span class="more">Read &middot; 2 min &rarr;</span>
       </a>
-      <a class="card-post" href="present-yourself-online.html">
-        <span class="tag">Online presence</span>
+      <a class="card-post" href="present-yourself-online.html" data-cat="Your online presence">
+        <img class="card-img" src="../assets/img/blog/present-yourself-online.jpg" width="1200" height="630" loading="lazy" alt="">
+        <span class="tag">Your online presence</span>
         <h2>How to present yourself online so people take you seriously.</h2>
         <p>Seven practical fixes for women in business, charities and tradeswomen: what to put at the top of your site, how to be found on Google, and how to look as good as you are.</p>
         <span class="more">Read &middot; 2 min &rarr;</span>
       </a>
     </div>
+    <script>
+    (function(){
+      var btns=document.querySelectorAll('.cat-filter button'), cards=document.querySelectorAll('.card-post');
+      btns.forEach(function(b){ b.addEventListener('click', function(){
+        var f=b.getAttribute('data-f');
+        btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); });
+        cards.forEach(function(c){ c.hidden = !(f==='all' || c.getAttribute('data-cat')===f); });
+      }); });
+    })();
+    </script>
     <div class="topics-next">
       <p class="eyebrow">Coming next</p>
       <ul>
         <li>Starting out: what nobody tells new entrepreneurs</li>
         <li>Backing local: why community businesses matter in Cardiff &amp; Birmingham</li>
-        <li>What every small charity website needs</li>
         <li>Bilingual websites: doing Welsh properly</li>
       </ul>
     </div>
@@ -182,7 +222,7 @@
     <div class="footlinks" role="navigation" aria-label="More pages">
       <a href="../website-audit.html">Free website audit</a>
       <a href="../process.html">How I work</a>
-      <a href="../index.html#answers">FAQs</a>
+      <a href="../faq.html">FAQs</a>
       <a href="../blog/">Blog</a>
       <a href="../web-design-cardiff.html">Web design Cardiff</a>
       <a href="../web-design-birmingham.html">Web design Birmingham</a>

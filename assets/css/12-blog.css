@@ -69,3 +69,13 @@ section.read{background:var(--paper);color:var(--ink);padding:72px 0 90px;}
   .post{font-size:18px;}
   .answer{font-size:18px;padding:20px;}
 }
+
+/* ---------- categories ---------- */
+.cat-filter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px;}
+.cat-filter button{font:inherit;font-size:15px;font-weight:800;padding:10px 16px;border-radius:999px;cursor:pointer;
+  border:1.5px solid rgba(10,10,12,.22);background:transparent;color:var(--ink);}
+.cat-filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+.cat-filter button:focus-visible{outline:3px solid var(--flame);outline-offset:2px;}
+.card-post[hidden]{display:none;}
+.card-img{display:block;width:calc(100% + 52px);max-width:none;height:auto;aspect-ratio:1200/630;object-fit:cover;
+  margin:-26px -26px 6px;border-radius:20px 20px 0 0;}

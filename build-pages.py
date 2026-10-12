@@ -39,15 +39,15 @@ SHELL = """<!DOCTYPE html>
   <meta property="og:site_name" content="Sarah J Hill">
   <meta property="og:title" content="{ogtitle}">
   <meta property="og:description" content="{desc}">
-  <meta property="og:image" content="{site}/assets/img/og-card.jpg">
+  <meta property="og:image" content="{ogimage}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The Sarah J Hill homepage: &ldquo;That&rsquo;s how long they take to write you off.&rdquo;">
+  <meta property="og:image:alt" content="{ogalt}">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{ogtitle}">
   <meta name="twitter:description" content="{desc}">
-  <meta name="twitter:image" content="{site}/assets/img/og-card.jpg">
+  <meta name="twitter:image" content="{ogimage}">
 
   <link rel="icon" href="{root}favicon.svg" type="image/svg+xml">
   <link rel="icon" type="image/png" sizes="32x32" href="{root}favicon-32.png">
@@ -83,6 +83,7 @@ SHELL = """<!DOCTYPE html>
       <a href="{root}index.html#work">Work</a>
       <a href="{root}process.html">How I work</a>
       <a href="{root}index.html#prices">Prices</a>
+      <a href="{root}faq.html">FAQs</a>
       <a href="{root}index.html#about">About</a>
       <a href="{root}blog/">Blog</a>
       <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Start a project</a>
@@ -133,7 +134,7 @@ SHELL = """<!DOCTYPE html>
     <div class="footlinks" role="navigation" aria-label="More pages">
       <a href="{root}website-audit.html">Free website audit</a>
       <a href="{root}process.html">How I work</a>
-      <a href="{root}index.html#answers">FAQs</a>
+      <a href="{root}faq.html">FAQs</a>
       <a href="{root}blog/">Blog</a>
       <a href="{root}web-design-cardiff.html">Web design Cardiff</a>
       <a href="{root}web-design-birmingham.html">Web design Birmingham</a>
@@ -320,6 +321,120 @@ PAGES["website-audit.html"] = dict(
         + f"""    </div>
     <div class="cta-row stand" style="margin-top:32px;">
       <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Doubt%20Audit%20request">Get my free website review &rarr;</a>
+    </div>
+  </div>
+</section>
+"""
+    ),
+)
+
+
+# ------------------------------------------------------------------- faq
+PAGES["faq.html"] = dict(
+    title="FAQs: web design for women in business | Sarah J Hill, Cardiff",
+    desc=("Straight answers before you have to ask: what a website costs, how long it takes, "
+          "whether you own it, and whether you can change it yourself."),
+    ogtitle="The questions everyone asks — answered",
+    ogtype="website",
+    crumb="FAQs",
+    backhref="index.html", backtext="Back to the start",
+    eyebrow="FAQs",
+    h1="The questions everyone asks. <span class=\"hit\">Answered before you have to.</span>",
+    lead=("Straight answers, no jargon. If your question isn&rsquo;t here, ask me and it&rsquo;ll be "
+          "on this page next week."),
+    herocta=f"""    <div class="cta-row">
+      <a class="btn btn-primary" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-ghost" href="mailto:{EMAIL}?subject=A%20question">Ask me a question</a>
+    </div>""",
+    jsonld="""  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A fixed quote before anything starts. See the price slider to see what each budget really buys."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depends on the brief. Within two days you get a set plan with real dates and deadlines — built around the work, your deadline and what’s realistic in that time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I own it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The files, the domain, the words. Nobody can switch it off but you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change it myself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You get a simple editor and I show you how. No calling me to fix a typo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I’m not techy. Problem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "None. Plain English, one small step at a time, and only when it’s your turn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will it bring in customers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That’s the point. Proof up top, clear words, fast on a phone, found on Google."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who writes the words?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We do it together. You know your business; I know what makes people ring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I don’t vanish. Questions get a human, usually the same day."
+        }
+      }
+    ]
+  }""",
+    body=(
+        """<!-- ============ ANSWERS ============ -->
+<section class="band qa" id="answers">
+  <div class="wrap">
+    <p class="eyebrow stand">Straight answers</p>
+    <h2 class="stand">Before you ask.</h2>
+    <dl class="qa-grid">
+      <div class="stand"><dt>How much?</dt><dd>A fixed quote before anything starts. <a href="index.html#prices">Slide the price scale</a> to see what each budget really buys.</dd></div>
+      <div class="stand"><dt>How long?</dt><dd>Depends on the brief. Within <b>two days</b> you get a set plan with real dates and deadlines &mdash; built around the work, your deadline and what&rsquo;s realistic in that time.</dd></div>
+      <div class="stand"><dt>Will I own it?</dt><dd>Yes. The files, the domain, the words. Nobody can switch it off but you.</dd></div>
+      <div class="stand"><dt>Can I change it myself?</dt><dd>Yes. You get a simple editor and I show you how. No calling me to fix a typo.</dd></div>
+      <div class="stand"><dt>I&rsquo;m not techy. Problem?</dt><dd>None. Plain English, one small step at a time, and only when it&rsquo;s your turn.</dd></div>
+      <div class="stand"><dt>Will it bring in customers?</dt><dd>That&rsquo;s the point. Proof up top, clear words, fast on a phone, found on Google.</dd></div>
+      <div class="stand"><dt>Who writes the words?</dt><dd>We do it together. You know your business; I know what makes people ring.</dd></div>
+      <div class="stand"><dt>What happens after launch?</dt><dd>I don&rsquo;t vanish. Questions get a human, usually the same day.</dd></div>
+    </dl>
+    <div class="cta-row stand" style="margin-top:34px;">
+      <a class="btn btn-primary" href="process.html">See how I work &rarr;</a>
+      <a class="btn btn-ghost" href="index.html#prices">See prices</a>
     </div>
   </div>
 </section>
@@ -957,6 +1072,8 @@ def build():
             herocta=p["herocta"], jsonld=jsonld, body=p["body"],
             extracss=p.get("extracss", "").format(root=root),
             robots=p.get("robots", "index, follow, max-image-preview:large"),
+            ogimage=p.get("ogimage", f"{SITE}/assets/img/og-card.jpg"),
+            ogalt=p.get("ogalt", "The Sarah J Hill homepage: &ldquo;That&rsquo;s how long they take to write you off.&rdquo;"),
         )
         os.makedirs(os.path.dirname(slug) or ".", exist_ok=True)
         with open(slug, "w") as f:
@@ -972,7 +1089,7 @@ def write_sitemap():
         if "noindex" in p.get("robots", ""):
             continue
         prio = "0.9" if slug in ("website-audit.html", "web-design-cardiff.html", "web-design-birmingham.html",
-                                 "blog/index.html", "process.html") else "0.7"
+                                 "blog/index.html", "process.html", "faq.html") else "0.7"
         urls.append((public_url(slug), prio))
     rows = "".join(f"""  <url>
     <loc>{SITE}/{u}</loc>
