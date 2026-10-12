@@ -20,7 +20,8 @@ import html as _html
 import json
 import re
 
-BLOG_CSS = '  <link rel="stylesheet" href="{root}assets/css/12-blog.css">\n'
+FREE_CHECK_URL = "https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/"  # build-pages.py sets this
+BLOG_CSS = '  <link rel="stylesheet" href="{root}assets/css/12-blog.css?v=20261013a">\n'
 AUTHOR = {"@type": "Person", "name": "Sarah J Hill", "url": "https://sarahjhill.com/",
           "sameAs": ["https://github.com/sarahjhill",
                      "https://www.linkedin.com/in/sarah-hill-software-developer/"]}
@@ -83,7 +84,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
               "that does the believing for you, built by a woman who knows exactly what being underestimated feels like."),
         herocta=f"""    <div class="cta-row">
       <a class="btn btn-primary" href="{intake}" target="_blank" rel="noopener">Start a project enquiry &rarr;</a>
-      <a class="btn btn-ghost" href="website-audit.html">Free website audit</a>
+      <a class="btn btn-ghost" href="website-audit.html">Take the Doubt Test</a>
     </div>""",
         extracss=BLOG_CSS,
         jsonld=json.dumps({"@context": "https://schema.org", "@graph": [
@@ -127,7 +128,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
       <div class="callout">
         <strong>Already got a website?</strong> I&rsquo;ll go through it the way your customers do &mdash; on a phone,
         in a hurry &mdash; and tell you what&rsquo;s working and what isn&rsquo;t. Free, two working days.<br>
-        <a class="btn btn-primary" href="website-audit.html">Get my free audit &rarr;</a>
+        <a class="btn btn-primary" href="website-audit.html">Take the Doubt Test &rarr;</a>
       </div>
 
       <h2>Questions people in Cardiff ask</h2>
@@ -148,7 +149,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         ("Do you work with charities and community groups?",
          "Yes. Charity and community websites are a big part of what I do, with honest advice about what your budget will stretch to."),
         ("What if I already have a website?",
-         "Start with the free audit. I&rsquo;ll tell you what&rsquo;s worth keeping, and if your site is fine "
+         "Start with the Doubt Test. I&rsquo;ll tell you what&rsquo;s worth keeping, and if your site is fine "
          "I&rsquo;ll say so."),
     ]
     PAGES["web-design-birmingham.html"] = dict(
@@ -165,7 +166,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
               "A website with your personality in it, at a fixed price, that you own outright."),
         herocta=f"""    <div class="cta-row">
       <a class="btn btn-primary" href="{intake}" target="_blank" rel="noopener">Start a project enquiry &rarr;</a>
-      <a class="btn btn-ghost" href="website-audit.html">Free website audit</a>
+      <a class="btn btn-ghost" href="website-audit.html">Take the Doubt Test</a>
     </div>""",
         extracss=BLOG_CSS,
         jsonld=json.dumps({"@context": "https://schema.org", "@graph": [
@@ -206,7 +207,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
       <div class="callout">
         <strong>Not sure where to start?</strong> Send me your current site, or your Instagram if that&rsquo;s all you&rsquo;ve
         got, and I&rsquo;ll tell you honestly what I&rsquo;d do first.<br>
-        <a class="btn btn-primary" href="website-audit.html">Get my free audit &rarr;</a>
+        <a class="btn btn-primary" href="website-audit.html">Take the Doubt Test &rarr;</a>
       </div>
 
       <h2>Questions people in Birmingham ask</h2>
@@ -276,10 +277,37 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
 {share}      <div class="callout">
         <strong>Does your website make people doubt you?</strong> Get your free score out of 100. I&rsquo;ll check it the
         way a doubtful customer would and tell you straight. Free, no catch.<br>
-        <a class="btn btn-primary" href="../website-audit.html">Get my free score &rarr;</a>
+        <a class="btn btn-primary" href="{FREE_CHECK_URL}">Take the Doubt Test &rarr;</a>
       </div>
       {srcblock}
     </article>
+      <aside class="fs-box" id="fs-box" hidden aria-labelledby="fs-box-h">
+        <button type="button" class="fs-x" aria-label="Close">&times;</button>
+        <h2 id="fs-box-h">Does your website make people doubt you?</h2>
+        <p>Take the Doubt Test. Free score out of 100 in 30 seconds, plus the three things to fix first.</p>
+        <a class="btn btn-primary" href="{FREE_CHECK_URL}">Take the Doubt Test &rarr;</a>
+      </aside>
+      <script>
+      (function(){{
+        var box=document.getElementById('fs-box'), art=document.querySelector('article.post');
+        if(!box||!art) return;
+        var KEY='fsBoxHidden', DAYS=14;
+        try{{ var t=+localStorage.getItem(KEY); if(t && Date.now()-t < DAYS*864e5) return; }}catch(e){{}}
+        var shown=false;
+        function close(){{ box.classList.remove('is-in'); setTimeout(function(){{box.hidden=true;}},350);
+          try{{ localStorage.setItem(KEY, String(Date.now())); }}catch(e){{}}
+          window.removeEventListener('scroll', check); }}
+        function check(){{
+          if(shown) return;
+          var r=art.getBoundingClientRect(), read=(window.innerHeight - r.top)/r.height;
+          if(read > .5){{ shown=true; box.hidden=false; requestAnimationFrame(function(){{box.classList.add('is-in');}}); }}
+        }}
+        box.querySelector('.fs-x').addEventListener('click', close);
+        box.querySelector('.btn').addEventListener('click', function(){{ try{{ localStorage.setItem(KEY, String(Date.now())); }}catch(e){{}} }});
+        document.addEventListener('keydown', function(e){{ if(e.key==='Escape' && shown && !box.hidden) close(); }});
+        window.addEventListener('scroll', check, {{passive:true}});
+      }})();
+      </script>
   </div>
 </section>
 """,
@@ -641,7 +669,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
       <p>No. Professional is the minimum. This is about your worth showing up before you do. You&rsquo;ve done the training,
         the hours and the hard graft. Your website should make that obvious to a stranger in a hurry, so you never have to
         prove it from scratch on the phone again.</p>
-      <p>Want a second pair of eyes? My <a href="../website-audit.html">free website audit</a> runs your site through exactly
+      <p>Want a second pair of eyes? My <a href="../website-audit.html">Doubt Test</a> runs your site through exactly
         this, the way a doubtful customer would.</p>
 
       <hr>

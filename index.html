@@ -36,7 +36,7 @@
 
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="assets/css/01-tokens.css?v=20261008b">
-  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261013a">
   <link rel="stylesheet" href="assets/css/03-components.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/05-scene.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/06-globe.css?v=20261008b">
@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="assets/css/08-quest.css?v=20261012a">
   <link rel="stylesheet" href="assets/css/09-about.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/10-theme.css?v=20261008b">
-  <link rel="stylesheet" href="assets/css/11-home.css?v=20261012e">
+  <link rel="stylesheet" href="assets/css/11-home.css?v=20261013a">
   <link rel="stylesheet" href="assets/css/04-motion.css?v=20261008b">
 
   <!-- ============ STRUCTURED DATA ============ -->
@@ -92,7 +92,7 @@
     "makesOffer": [
       {
         "@type": "Offer",
-        "name": "Free Doubt Audit",
+        "name": "The Doubt Test",
         "description": "A free review of your existing website, judged the way a doubtful customer judges it.",
         "price": "0",
         "priceCurrency": "GBP"
@@ -124,10 +124,10 @@
     <div class="navlinks" id="navlinks">
       <a href="#work">Work</a>
       <a href="process.html">How I work</a>
-      <a href="#prices">Prices</a>
-      <a href="faq.html">FAQs</a>
+      <a href="faq.html">Prices &amp; FAQs</a>
       <a href="#about">About</a>
       <a href="blog/">Blog</a>
+      <a class="navfree" href="https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/">The Doubt Test</a>
       <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project</a>
     </div>
   </div>
@@ -506,37 +506,33 @@
 </section>
 
 
-<!-- ============ PRICE SLIDER ============
-     "You get what you pay for", made physical. Five stops; js/price.js
-     swaps the copy and moves the two meters. Without JS the four tiers
-     simply show as a list (the <noscript>-safe fallback is the <ol>). -->
-<section class="dark pr" id="prices">
+<!-- ============ THE DOUBT TEST ============
+     The free score from Dragonfire. Prices + slider now live on faq.html#prices. -->
+<section class="dark fs" id="doubt-test">
   <div class="wrap">
-    <p class="eyebrow stand">Prices</p>
-    <h2 class="stand">Cheap websites aren&rsquo;t cheap.<br><span class="pr-h-hit">Slide and see why.</span></h2>
-    <div class="pr-box stand" data-price>
-      <label class="pr-label" for="pr-range">What are you spending?</label>
-      <input class="pr-range" id="pr-range" type="range" min="0" max="4" step="1" value="0" aria-describedby="pr-name">
-      <div class="pr-ticks" aria-hidden="true"><span>&pound;</span><span>&pound;&pound;</span><span>&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;&pound;</span></div>
-
-      <div class="pr-out" aria-live="polite">
-        <div class="pr-head">
-          <p class="pr-amount" id="pr-amount">&pound;300</p>
-          <p class="pr-name" id="pr-name">The pretty postcard</p>
-          <p class="pr-tag" id="pr-tag">A neat little online card that says you&rsquo;re open for business. A lovely first step.</p>
-        </div>
-        <div class="pr-cols">
-          <div><h3>What you get</h3><ul id="pr-get"></ul></div>
-          <div><h3>What it opens up</h3><ul id="pr-later"></ul></div>
-        </div>
-        <div class="pr-meters">
-          <div class="pr-meter"><span>Grows your business</span><i><b id="pr-grow" style="width:15%"></b></i></div>
-          <div class="pr-meter pr-meter--fire"><span>Time it gives you back</span><i><b id="pr-time" style="width:5%"></b></i></div>
+    <div class="fs-grid">
+      <div>
+        <p class="eyebrow stand">The Doubt Test &middot; free, in 30 seconds</p>
+        <h2 class="stand">Does your website make people <span class="fs-h-hit">doubt you?</span></h2>
+        <p class="fs-lead stand">Put your web address in. My Dragonfire tool checks your site the way a <b>doubtful customer</b>
+          and <b>Google</b> do, gives you a score out of 100, and tells you the three things to fix first.</p>
+        <div class="cta-row stand" style="margin-top:28px;">
+          <a class="btn btn-primary" href="https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/">Take the Doubt Test &rarr;</a>
+          <a class="btn btn-ghost" href="faq.html#prices">See prices</a>
         </div>
       </div>
-      <p class="pr-foot">Every price is a <b>fixed quote</b>, agreed before anything starts. No monthly rent. You own it.</p>
+      <div class="fs-card stand">
+        <p class="fs-score" aria-hidden="true"><b>?</b><span>/ 100</span></p>
+        <ul>
+          <li>Speed &amp; mobile</li>
+          <li>Google basics</li>
+          <li>Local search</li>
+          <li>Ready for AI search</li>
+          <li>Trust signals Google reads</li>
+        </ul>
+        <p class="fs-note">No cost, no catch. You only get emails if you ask for them.</p>
+      </div>
     </div>
-    <div class="cta-row stand" style="margin-top:28px;"><a class="btn btn-primary" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Get my fixed quote &rarr;</a></div>
   </div>
 </section>
 
@@ -605,7 +601,8 @@
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:sarah@sarahjhill.com">sarah@sarahjhill.com</a></span>
     <div class="footlinks" role="navigation" aria-label="More pages">
-      <a href="website-audit.html">Free website audit</a>
+      <a href="website-audit.html">The Doubt Test</a>
+      <a href="faq.html#prices">Prices</a>
       <a href="process.html">How I work</a>
       <a href="faq.html">FAQs</a>
       <a href="blog/">Blog</a>
@@ -626,7 +623,6 @@
 <script type="module" src="assets/js/dragon3d.js?v=20261012a"></script>
 <script src="assets/js/globe.js?v=20261008b" defer></script>
 <script src="assets/js/quest.js?v=20261012a" defer></script>
-<script src="assets/js/price.js?v=20261011a" defer></script>
 <script type="module" src="assets/js/quest-dragon.js?v=20261008b"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8f936632609c48e5bc300dd47e8645ed"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

@@ -89,3 +89,20 @@ section.read{background:var(--paper);color:var(--ink);padding:72px 0 90px;}
 .share-row a:hover,.share-row button:hover{border-color:var(--flame);}
 .share-row .share-native{background:var(--flame);border-color:var(--flame);color:#fff;}
 .share-row a:focus-visible,.share-row button:focus-visible{outline:3px solid var(--flame);outline-offset:2px;}
+
+/* ---------- The Doubt Test scroll box (blog posts) ---------- */
+.fs-box{position:fixed;right:20px;bottom:20px;z-index:60;width:min(360px,calc(100vw - 32px));
+  background:var(--ink-2);color:var(--paper);border-radius:8px;padding:22px 22px 20px;
+  box-shadow:0 18px 50px rgba(0,0,0,.35);border-top:4px solid var(--flame);
+  transform:translateY(24px);opacity:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s;}
+.fs-box.is-in{transform:none;opacity:1;}
+.fs-box[hidden]{display:none;}
+.fs-box h2{font-size:21px;line-height:1.2;margin:0 34px 8px 0;color:var(--paper);letter-spacing:-.01em;}
+.fs-box p{font-size:15px;line-height:1.5;margin:0 0 14px;color:#cfccc5;}
+.fs-box .btn{width:100%;justify-content:center;text-align:center;}
+.fs-x{position:absolute;top:10px;right:10px;width:36px;height:36px;border:0;border-radius:50%;cursor:pointer;
+  background:rgba(246,243,237,.1);color:var(--paper);font-size:22px;line-height:1;}
+.fs-x:hover{background:rgba(246,243,237,.2);}
+.fs-x:focus-visible{outline:3px solid var(--amber);outline-offset:2px;}
+@media (max-width:600px){ .fs-box{left:16px;right:16px;bottom:16px;width:auto;padding:18px 18px 16px;} .fs-box h2{font-size:19px;} }
+@media (prefers-reduced-motion:reduce){ .fs-box{transition:none;} }

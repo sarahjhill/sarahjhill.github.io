@@ -1,0 +1,33 @@
+<!-- ============ PRICE SLIDER ============
+     "You get what you pay for", made physical. Five stops; js/price.js
+     swaps the copy and moves the two meters. Without JS the four tiers
+     simply show as a list (the <noscript>-safe fallback is the <ol>). -->
+<section class="dark pr" id="prices">
+  <div class="wrap">
+    <p class="eyebrow stand">Prices &middot; fixed quotes</p>
+    <h2 class="stand">Cheap websites aren&rsquo;t cheap.<br><span class="pr-h-hit">Slide and see why.</span></h2>
+    <div class="pr-box stand" data-price>
+      <label class="pr-label" for="pr-range">What are you spending?</label>
+      <input class="pr-range" id="pr-range" type="range" min="0" max="4" step="1" value="0" aria-describedby="pr-name">
+      <div class="pr-ticks" aria-hidden="true"><span>&pound;</span><span>&pound;&pound;</span><span>&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;&pound;</span></div>
+
+      <div class="pr-out" aria-live="polite">
+        <div class="pr-head">
+          <p class="pr-amount" id="pr-amount">&pound;300</p>
+          <p class="pr-name" id="pr-name">The pretty postcard</p>
+          <p class="pr-tag" id="pr-tag">A neat little online card that says you&rsquo;re open for business. A lovely first step.</p>
+        </div>
+        <div class="pr-cols">
+          <div><h3>What you get</h3><ul id="pr-get"></ul></div>
+          <div><h3>What it opens up</h3><ul id="pr-later"></ul></div>
+        </div>
+        <div class="pr-meters">
+          <div class="pr-meter"><span>Grows your business</span><i><b id="pr-grow" style="width:15%"></b></i></div>
+          <div class="pr-meter pr-meter--fire"><span>Time it gives you back</span><i><b id="pr-time" style="width:5%"></b></i></div>
+        </div>
+      </div>
+      <p class="pr-foot">Every price is a <b>fixed quote</b>, agreed before anything starts. No monthly rent. You own it.</p>
+    </div>
+    <div class="cta-row stand" style="margin-top:28px;"><a class="btn btn-primary" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Get my fixed quote &rarr;</a></div>
+  </div>
+</section>

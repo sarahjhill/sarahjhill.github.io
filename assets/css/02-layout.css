@@ -127,3 +127,9 @@ section.dark .lead,.close .lead{color:#bcbab4;}
 .backlink:hover{color:var(--paper);}
 .page-hero .cta-row{margin-top:32px;}
 .page-hero .chips{margin-top:20px;}
+
+/* nav: The Doubt Test link */
+.navlinks a.navfree{opacity:1;color:var(--amber);font-weight:800;}
+.navlinks a.navfree:hover{color:var(--flame);}
+.navlinks a{white-space:nowrap;}
+@media (min-width:901px) and (max-width:1100px){ .navlinks{gap:16px;font-size:14px;} .brand em{display:none;} }

@@ -35,11 +35,11 @@
 
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="../assets/css/01-tokens.css">
-  <link rel="stylesheet" href="../assets/css/02-layout.css">
+  <link rel="stylesheet" href="../assets/css/02-layout.css?v=20261013a">
   <link rel="stylesheet" href="../assets/css/03-components.css">
   <link rel="stylesheet" href="../assets/css/06-globe.css">
   <link rel="stylesheet" href="../assets/css/04-motion.css">
-  <link rel="stylesheet" href="../assets/css/12-blog.css">
+  <link rel="stylesheet" href="../assets/css/12-blog.css?v=20261013a">
 
 
   <!-- ============ STRUCTURED DATA ============ -->
@@ -114,10 +114,10 @@
     <div class="navlinks" id="navlinks">
       <a href="../index.html#work">Work</a>
       <a href="../process.html">How I work</a>
-      <a href="../index.html#prices">Prices</a>
-      <a href="../faq.html">FAQs</a>
+      <a href="../faq.html">Prices &amp; FAQs</a>
       <a href="../index.html#about">About</a>
       <a href="../blog/">Blog</a>
+      <a class="navfree" href="https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/">The Doubt Test</a>
       <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project</a>
     </div>
   </div>
@@ -207,10 +207,37 @@
       <div class="callout">
         <strong>Does your website make people doubt you?</strong> Get your free score out of 100. I&rsquo;ll check it the
         way a doubtful customer would and tell you straight. Free, no catch.<br>
-        <a class="btn btn-primary" href="../website-audit.html">Get my free score &rarr;</a>
+        <a class="btn btn-primary" href="https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/">Take the Doubt Test &rarr;</a>
       </div>
       <div class="sources"><strong>Sources</strong><ol><li><a href="https://www.google.com/business/" target="_blank" rel="noopener">Google Business Profile — create or claim your profile</a></li><li><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener">Google Search Central — creating helpful, reliable, people-first content</a></li></ol></div>
     </article>
+      <aside class="fs-box" id="fs-box" hidden aria-labelledby="fs-box-h">
+        <button type="button" class="fs-x" aria-label="Close">&times;</button>
+        <h2 id="fs-box-h">Does your website make people doubt you?</h2>
+        <p>Take the Doubt Test. Free score out of 100 in 30 seconds, plus the three things to fix first.</p>
+        <a class="btn btn-primary" href="https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/">Take the Doubt Test &rarr;</a>
+      </aside>
+      <script>
+      (function(){
+        var box=document.getElementById('fs-box'), art=document.querySelector('article.post');
+        if(!box||!art) return;
+        var KEY='fsBoxHidden', DAYS=14;
+        try{ var t=+localStorage.getItem(KEY); if(t && Date.now()-t < DAYS*864e5) return; }catch(e){}
+        var shown=false;
+        function close(){ box.classList.remove('is-in'); setTimeout(function(){box.hidden=true;},350);
+          try{ localStorage.setItem(KEY, String(Date.now())); }catch(e){}
+          window.removeEventListener('scroll', check); }
+        function check(){
+          if(shown) return;
+          var r=art.getBoundingClientRect(), read=(window.innerHeight - r.top)/r.height;
+          if(read > .5){ shown=true; box.hidden=false; requestAnimationFrame(function(){box.classList.add('is-in');}); }
+        }
+        box.querySelector('.fs-x').addEventListener('click', close);
+        box.querySelector('.btn').addEventListener('click', function(){ try{ localStorage.setItem(KEY, String(Date.now())); }catch(e){} });
+        document.addEventListener('keydown', function(e){ if(e.key==='Escape' && shown && !box.hidden) close(); });
+        window.addEventListener('scroll', check, {passive:true});
+      })();
+      </script>
   </div>
 </section>
 
@@ -243,7 +270,8 @@
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:sarah@sarahjhill.com">sarah@sarahjhill.com</a></span>
     <div class="footlinks" role="navigation" aria-label="More pages">
-      <a href="../website-audit.html">Free website audit</a>
+      <a href="../website-audit.html">The Doubt Test</a>
+      <a href="../faq.html#prices">Prices</a>
       <a href="../process.html">How I work</a>
       <a href="../faq.html">FAQs</a>
       <a href="../blog/">Blog</a>

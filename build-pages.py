@@ -16,7 +16,7 @@ EMAIL = "sarah@sarahjhill.com"
 # Where every "free score" button goes. For now it opens an email to you.
 # Once Dragonfire is live on Heroku, change this ONE line to your free-check address, e.g.
 # FREE_CHECK_URL = "https://YOUR-APP-NAME.herokuapp.com/free-check/"
-FREE_CHECK_URL = f"mailto:{EMAIL}?subject=Free%20website%20score%20request"
+FREE_CHECK_URL = "https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/"
 DEMO = "https://sarahjhill.com/project-os/app.html?guest=1"
 PROJECT_OS = "https://sarahjhill.com/project-os/"
 PORTFOLIO = "https://sarahjhill.com/portfolio/"
@@ -61,7 +61,7 @@ SHELL = """<!DOCTYPE html>
 
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="{root}assets/css/01-tokens.css">
-  <link rel="stylesheet" href="{root}assets/css/02-layout.css">
+  <link rel="stylesheet" href="{root}assets/css/02-layout.css?v=20261013a">
   <link rel="stylesheet" href="{root}assets/css/03-components.css">
   <link rel="stylesheet" href="{root}assets/css/06-globe.css">
   <link rel="stylesheet" href="{root}assets/css/04-motion.css">
@@ -86,10 +86,10 @@ SHELL = """<!DOCTYPE html>
     <div class="navlinks" id="navlinks">
       <a href="{root}index.html#work">Work</a>
       <a href="{root}process.html">How I work</a>
-      <a href="{root}index.html#prices">Prices</a>
-      <a href="{root}faq.html">FAQs</a>
+      <a href="{root}faq.html">Prices &amp; FAQs</a>
       <a href="{root}index.html#about">About</a>
       <a href="{root}blog/">Blog</a>
+      <a class="navfree" href="{freecheck}">The Doubt Test</a>
       <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Start a project</a>
     </div>
   </div>
@@ -136,7 +136,8 @@ SHELL = """<!DOCTYPE html>
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:{email}">{email}</a></span>
     <div class="footlinks" role="navigation" aria-label="More pages">
-      <a href="{root}website-audit.html">Free website audit</a>
+      <a href="{root}website-audit.html">The Doubt Test</a>
+      <a href="{root}faq.html#prices">Prices</a>
       <a href="{root}process.html">How I work</a>
       <a href="{root}faq.html">FAQs</a>
       <a href="{root}blog/">Blog</a>
@@ -191,7 +192,7 @@ PAGES["website-audit.html"] = dict(
     ogtitle="How many customers doubt you before they ring?",
     ogtype="website",
     backhref="index.html", backtext="Back to the start",
-    eyebrow="Does your website make people doubt you? &mdash; free, no catch",
+    eyebrow="The Doubt Test &middot; does your website make people doubt you?",
     h1="You have a website <span class=\"hit\">but it does nothing for you.</span>",
     lead=("You'll never know how many people quietly left. There's no missed-call list for "
           "&ldquo;looked a bit unconvincing&rdquo;. So I'll go through your site the way your "
@@ -210,7 +211,7 @@ PAGES["website-audit.html"] = dict(
     jsonld="""  {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "The Doubt Audit",
+    "name": "The Doubt Test",
     "serviceType": "Website review",
     "provider": { "@type": "Person", "name": "Sarah J Hill", "url": "https://sarahjhill.com/" },
     "areaServed": { "@type": "Country", "name": "United Kingdom" },
@@ -334,6 +335,12 @@ PAGES["website-audit.html"] = dict(
 
 
 # ------------------------------------------------------------------- faq
+def _partial(name):
+    import os as _os
+    with open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "partials", name)) as fh:
+        return fh.read()
+
+
 PAGES["faq.html"] = dict(
     title="FAQs: web design for women in business | Sarah J Hill, Cardiff",
     desc=("Straight answers before you have to ask: what a website costs, how long it takes, "
@@ -427,7 +434,7 @@ PAGES["faq.html"] = dict(
     <p class="eyebrow stand">Straight answers</p>
     <h2 class="stand">Before you ask.</h2>
     <dl class="qa-grid">
-      <div class="stand"><dt>How much?</dt><dd>A fixed quote before anything starts. <a href="index.html#prices">Slide the price scale</a> to see what each budget really buys.</dd></div>
+      <div class="stand"><dt>How much?</dt><dd>A fixed quote before anything starts. <a href="#prices">Slide the price scale below</a> to see what each budget really buys.</dd></div>
       <div class="stand"><dt>How long?</dt><dd>Depends on the brief. Within <b>two days</b> you get a set plan with real dates and deadlines &mdash; built around the work, your deadline and what&rsquo;s realistic in that time.</dd></div>
       <div class="stand"><dt>Will I own it?</dt><dd>Yes. The files, the domain, the words. Nobody can switch it off but you.</dd></div>
       <div class="stand"><dt>Can I change it myself?</dt><dd>Yes. You get a simple editor and I show you how. No calling me to fix a typo.</dd></div>
@@ -438,12 +445,14 @@ PAGES["faq.html"] = dict(
     </dl>
     <div class="cta-row stand" style="margin-top:34px;">
       <a class="btn btn-primary" href="process.html">See how I work &rarr;</a>
-      <a class="btn btn-ghost" href="index.html#prices">See prices</a>
+      <a class="btn btn-ghost" href="#prices">See prices</a>
     </div>
   </div>
 </section>
-"""
+""" + _partial("price-slider.html")
     ),
+    extracss='  <link rel="stylesheet" href="{root}assets/css/13-price.css?v=20261013a">\n',
+    extrajs='<script src="{root}assets/js/price.js?v=20261011a" defer></script>\n',
 )
 
 
@@ -599,7 +608,7 @@ PAGES["process.html"] = dict(
     <p class="big-line stand">This is a woman&rsquo;s world. It&rsquo;s yours. Let&rsquo;s build it.</p>
     <div class="cta-row stand" style="margin-top:28px;">
       <a class="btn btn-primary" href=\"""" + PROJECT_OS + """forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
-      <a class="btn btn-ghost" href="index.html#prices">See prices</a>
+      <a class="btn btn-ghost" href="faq.html#prices">See prices</a>
     </div>
   </div>
 </section>
@@ -1027,6 +1036,8 @@ PAGES["themes-thanks.html"] = dict(
 # Blog posts + Cardiff/Birmingham pages live in content_pages.py
 import sys
 sys.dont_write_bytecode = True   # no __pycache__ folder ending up on the live site
+import content_pages
+content_pages.FREE_CHECK_URL = FREE_CHECK_URL
 from content_pages import add_pages
 add_pages(PAGES, SITE, EMAIL, PROJECT_OS)
 
@@ -1079,6 +1090,7 @@ def build():
             ogimage=p.get("ogimage", f"{SITE}/assets/img/og-card.jpg"),
             heroscene=p.get("heroscene", ""),
             extrajs=p.get("extrajs", "").format(root=root),
+            freecheck=FREE_CHECK_URL,
             ogalt=p.get("ogalt", "The Sarah J Hill homepage: &ldquo;That&rsquo;s how long they take to write you off.&rdquo;"),
         )
         os.makedirs(os.path.dirname(slug) or ".", exist_ok=True)

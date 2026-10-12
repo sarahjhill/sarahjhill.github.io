@@ -35,10 +35,11 @@
 
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="assets/css/01-tokens.css">
-  <link rel="stylesheet" href="assets/css/02-layout.css">
+  <link rel="stylesheet" href="assets/css/02-layout.css?v=20261013a">
   <link rel="stylesheet" href="assets/css/03-components.css">
   <link rel="stylesheet" href="assets/css/06-globe.css">
   <link rel="stylesheet" href="assets/css/04-motion.css">
+  <link rel="stylesheet" href="assets/css/13-price.css?v=20261013a">
 
 
   <!-- ============ STRUCTURED DATA ============ -->
@@ -151,10 +152,10 @@
     <div class="navlinks" id="navlinks">
       <a href="index.html#work">Work</a>
       <a href="process.html">How I work</a>
-      <a href="index.html#prices">Prices</a>
-      <a href="faq.html">FAQs</a>
+      <a href="faq.html">Prices &amp; FAQs</a>
       <a href="index.html#about">About</a>
       <a href="blog/">Blog</a>
+      <a class="navfree" href="https://dragonfire-seo-2d0179b090d6.herokuapp.com/free-check/">The Doubt Test</a>
       <a class="navcta" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Start a project</a>
     </div>
   </div>
@@ -180,7 +181,7 @@
     <p class="eyebrow stand">Straight answers</p>
     <h2 class="stand">Before you ask.</h2>
     <dl class="qa-grid">
-      <div class="stand"><dt>How much?</dt><dd>A fixed quote before anything starts. <a href="index.html#prices">Slide the price scale</a> to see what each budget really buys.</dd></div>
+      <div class="stand"><dt>How much?</dt><dd>A fixed quote before anything starts. <a href="#prices">Slide the price scale below</a> to see what each budget really buys.</dd></div>
       <div class="stand"><dt>How long?</dt><dd>Depends on the brief. Within <b>two days</b> you get a set plan with real dates and deadlines &mdash; built around the work, your deadline and what&rsquo;s realistic in that time.</dd></div>
       <div class="stand"><dt>Will I own it?</dt><dd>Yes. The files, the domain, the words. Nobody can switch it off but you.</dd></div>
       <div class="stand"><dt>Can I change it myself?</dt><dd>Yes. You get a simple editor and I show you how. No calling me to fix a typo.</dd></div>
@@ -191,8 +192,41 @@
     </dl>
     <div class="cta-row stand" style="margin-top:34px;">
       <a class="btn btn-primary" href="process.html">See how I work &rarr;</a>
-      <a class="btn btn-ghost" href="index.html#prices">See prices</a>
+      <a class="btn btn-ghost" href="#prices">See prices</a>
     </div>
+  </div>
+</section>
+<!-- ============ PRICE SLIDER ============
+     "You get what you pay for", made physical. Five stops; js/price.js
+     swaps the copy and moves the two meters. Without JS the four tiers
+     simply show as a list (the <noscript>-safe fallback is the <ol>). -->
+<section class="dark pr" id="prices">
+  <div class="wrap">
+    <p class="eyebrow stand">Prices &middot; fixed quotes</p>
+    <h2 class="stand">Cheap websites aren&rsquo;t cheap.<br><span class="pr-h-hit">Slide and see why.</span></h2>
+    <div class="pr-box stand" data-price>
+      <label class="pr-label" for="pr-range">What are you spending?</label>
+      <input class="pr-range" id="pr-range" type="range" min="0" max="4" step="1" value="0" aria-describedby="pr-name">
+      <div class="pr-ticks" aria-hidden="true"><span>&pound;</span><span>&pound;&pound;</span><span>&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;</span><span>&pound;&pound;&pound;&pound;&pound;</span></div>
+
+      <div class="pr-out" aria-live="polite">
+        <div class="pr-head">
+          <p class="pr-amount" id="pr-amount">&pound;300</p>
+          <p class="pr-name" id="pr-name">The pretty postcard</p>
+          <p class="pr-tag" id="pr-tag">A neat little online card that says you&rsquo;re open for business. A lovely first step.</p>
+        </div>
+        <div class="pr-cols">
+          <div><h3>What you get</h3><ul id="pr-get"></ul></div>
+          <div><h3>What it opens up</h3><ul id="pr-later"></ul></div>
+        </div>
+        <div class="pr-meters">
+          <div class="pr-meter"><span>Grows your business</span><i><b id="pr-grow" style="width:15%"></b></i></div>
+          <div class="pr-meter pr-meter--fire"><span>Time it gives you back</span><i><b id="pr-time" style="width:5%"></b></i></div>
+        </div>
+      </div>
+      <p class="pr-foot">Every price is a <b>fixed quote</b>, agreed before anything starts. No monthly rent. You own it.</p>
+    </div>
+    <div class="cta-row stand" style="margin-top:28px;"><a class="btn btn-primary" href="https://sarahjhill.com/project-os/forms/intake.html" target="_blank" rel="noopener">Get my fixed quote &rarr;</a></div>
   </div>
 </section>
 
@@ -225,7 +259,8 @@
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
     <span>Cardiff &amp; Birmingham &middot; <a href="mailto:sarah@sarahjhill.com">sarah@sarahjhill.com</a></span>
     <div class="footlinks" role="navigation" aria-label="More pages">
-      <a href="website-audit.html">Free website audit</a>
+      <a href="website-audit.html">The Doubt Test</a>
+      <a href="faq.html#prices">Prices</a>
       <a href="process.html">How I work</a>
       <a href="faq.html">FAQs</a>
       <a href="blog/">Blog</a>
@@ -240,6 +275,7 @@
 
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/globe.js" defer></script>
+<script src="assets/js/price.js?v=20261011a" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8f936632609c48e5bc300dd47e8645ed"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
