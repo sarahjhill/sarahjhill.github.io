@@ -13,6 +13,10 @@ site itself — these are plain files once written.
 
 SITE = "https://sarahjhill.com"
 EMAIL = "sarah@sarahjhill.com"
+# Where every "free score" button goes. For now it opens an email to you.
+# Once Dragonfire is live on Heroku, change this ONE line to your free-check address, e.g.
+# FREE_CHECK_URL = "https://YOUR-APP-NAME.herokuapp.com/free-check/"
+FREE_CHECK_URL = f"mailto:{EMAIL}?subject=Free%20website%20score%20request"
 DEMO = "https://sarahjhill.com/project-os/app.html?guest=1"
 PROJECT_OS = "https://sarahjhill.com/project-os/"
 PORTFOLIO = "https://sarahjhill.com/portfolio/"
@@ -187,14 +191,14 @@ PAGES["website-audit.html"] = dict(
     ogtitle="How many customers doubt you before they ring?",
     ogtype="website",
     backhref="index.html", backtext="Back to the start",
-    eyebrow="Already got a website? &mdash; free, no catch",
+    eyebrow="Does your website make people doubt you? &mdash; free, no catch",
     h1="You have a website <span class=\"hit\">but it does nothing for you.</span>",
     lead=("You'll never know how many people quietly left. There's no missed-call list for "
           "&ldquo;looked a bit unconvincing&rdquo;. So I'll go through your site the way your "
           "customers do &mdash; on a phone, in a hurry, hunting for a reason to say no &mdash; "
           "and tell you which bits have gone cold and which bits are still hot."),
     herocta=f"""    <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Doubt%20Audit%20request">Get my free website review &rarr;</a>
+      <a class="btn btn-primary" href="{FREE_CHECK_URL}">Get my free score out of 100 &rarr;</a>
       <a class="btn btn-ghost" href="#check">What I actually check</a>
     </div>
     <div class="chips">
@@ -320,7 +324,7 @@ PAGES["website-audit.html"] = dict(
               "You lose", "The time it took to send me the address.")
         + f"""    </div>
     <div class="cta-row stand" style="margin-top:32px;">
-      <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Doubt%20Audit%20request">Get my free website review &rarr;</a>
+      <a class="btn btn-primary" href="{FREE_CHECK_URL}">Get my free score out of 100 &rarr;</a>
     </div>
   </div>
 </section>
