@@ -62,7 +62,7 @@ SHELL = """<!DOCTYPE html>
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="{root}assets/css/01-tokens.css">
   <link rel="stylesheet" href="{root}assets/css/02-layout.css?v=20261013a">
-  <link rel="stylesheet" href="{root}assets/css/03-components.css">
+  <link rel="stylesheet" href="{root}assets/css/03-components.css?v=20261013a">
   <link rel="stylesheet" href="{root}assets/css/06-globe.css">
   <link rel="stylesheet" href="{root}assets/css/04-motion.css">
 {extracss}
@@ -144,6 +144,7 @@ SHELL = """<!DOCTYPE html>
       <a href="{root}web-design-cardiff.html">Web design Cardiff</a>
       <a href="{root}web-design-birmingham.html">Web design Birmingham</a>
       <a href="{root}project-os.html">The Dragon Fire Process</a>
+      <a href="{root}privacy.html">Privacy</a>
     </div>
     <span class="footnote">Web design for women in business, female founders, charities, community groups
       and tradeswomen &mdash; Cardiff, South Wales, Birmingham, the West Midlands and remote across the UK.</span>
@@ -601,19 +602,255 @@ PAGES["process.html"] = dict(
 <section class="band" id="who">
   <div class="wrap">
     <p class="eyebrow stand">Who I work with</p>
-    <h2 class="stand">Bold. Brave. <span style="color:var(--flame)">Ballsy.</span></h2>
-    <p class="lead stand">I work with women who want to make a real difference: founders, tradeswomen, charities and
-      community groups who do what they mean and mean what they say. If you&rsquo;re tired of being underestimated
-      and ready to claim your space, we&rsquo;ll get on.</p>
+    <h2 class="stand">Inspirational women <span style="color:var(--flame)">who mean business.</span></h2>
+    <p class="d3 stand"><span>Dedicated.</span> <span>Devoted.</span> <span>Determined.</span></p>
+    <p class="lead stand">Founders, tradeswomen, charities and community groups who know what they want and will
+      work hard until they get it. Women who do what they mean and mean what they say. Reliable, serious about
+      getting their website working to plan, and tired of being underestimated.</p>
+    <div class="mosaic stand">
+      <img src="assets/img/process/women-duo.webp" width="900" height="1000" loading="lazy"
+        alt="Two confident businesswomen standing side by side, arms folded, smiling">
+      <img src="assets/img/process/women-speaker.webp" width="900" height="1000" loading="lazy"
+        alt="A woman with a microphone speaking passionately to a room full of women">
+      <img src="assets/img/process/women-laptops.webp" width="900" height="1000" loading="lazy"
+        alt="Three women working side by side on their laptops">
+      <img src="assets/img/process/women-hug.webp" width="900" height="1000" loading="lazy"
+        alt="Three women in a warm, supportive group hug">
+    </div>
+    <p class="photo-credit">Photos on this page: Christina @ wocintechchat.com, Wonderlane, Jametlene Reskp and Hannah Busing, on Unsplash.</p>
     <p class="big-line stand">This is a woman&rsquo;s world. It&rsquo;s yours. Let&rsquo;s build it.</p>
+  </div>
+</section>
+
+<!-- ============ THE DEAL ============ -->
+<section class="dark" id="the-deal">
+  <div class="wrap">
+    <p class="eyebrow stand">The deal</p>
+    <h2 class="stand">What you can expect from me. <span style="color:var(--flame)">What I expect from you.</span></h2>
+    <p class="lead stand">Great websites aren&rsquo;t done <i>to</i> you. They&rsquo;re built <i>with</i> you. Here&rsquo;s
+      exactly what each of us brings.</p>
+    <div class="deal-grid">
+      <div class="deal-card stand">
+        <h3>From me</h3>
+        <ul class="pticks pticks--dark">
+          <li><b>I work to the plan and the dates.</b> You get real deadlines in two working days, and I hit them.</li>
+          <li><b>I put my all into it.</b> Your site gets the same 69 checks and the same care as if it were my own.</li>
+          <li><b>Straight talk.</b> I&rsquo;ll tell you what works and what doesn&rsquo;t, even when it&rsquo;s not what you want to hear.</li>
+          <li><b>You&rsquo;re never left guessing.</b> Your project page shows where we are, every day.</li>
+          <li><b>A fixed price.</b> No padding, no surprise bills.</li>
+          <li><b>I&rsquo;m in your corner.</b> Your success is the whole point.</li>
+        </ul>
+      </div>
+      <div class="deal-card deal-card--you stand">
+        <h3>From you</h3>
+        <ul class="pticks pticks--dark">
+          <li><b>You know what you want,</b> or you&rsquo;re ready to dig in and work it out with me.</li>
+          <li><b>You do what you say you&rsquo;ll do.</b> Words, photos, feedback and sign-offs, by the dates we agree.</li>
+          <li><b>You work with my deadlines,</b> because a launch date only works if we both keep to it.</li>
+          <li><b>You&rsquo;re reliable.</b> You reply, you turn up to calls, and you tell me early if something changes.</li>
+          <li><b>You&rsquo;re serious</b> about getting your website working to plan, not just &ldquo;getting one up&rdquo;.</li>
+          <li><b>You&rsquo;re honest with me,</b> so I can be honest with you.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="band" id="team">
+  <div class="wrap">
+    <div class="team-split">
+      <figure class="team-photo stand">
+        <img src="assets/img/process/women-team-hands.webp" width="1200" height="700" loading="lazy"
+          alt="A group of women stacking their hands together in the middle of a circle">
+      </figure>
+      <div>
+        <p class="eyebrow stand">Working together</p>
+        <h2 class="stand">Team work is <span style="color:var(--flame)">dream work.</span></h2>
+        <p class="lead stand">If we work together, we&rsquo;re a team. We help and back each other towards one goal:
+          your success. That takes work and effort from both of us, and it&rsquo;s worth every bit.</p>
+        <p class="team-note stand">Not bothered? Honestly, that&rsquo;s fine. Go and get a
+          <a href="blog/website-in-a-day.html">website in a day</a> from someone else. But if you want one that
+          actually works for you, let&rsquo;s get to work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARE YOU READY? ============ -->
+<section class="dark" id="ready">
+  <div class="wrap">
+    <p class="eyebrow stand">Be honest</p>
+    <h2 class="stand">Are you ready? <span style="color:var(--flame)">Got what it takes?</span></h2>
+    <p class="lead stand">Tick the ones that are true for you. No one sees your answers but you.</p>
+    <form class="ready stand" id="ready-check" onsubmit="return false">
+      <fieldset>
+        <legend class="sr-only">Tick each statement that is true for you</legend>
+        <label><input type="checkbox"> <span>I know what I want my website to do for my business, or I&rsquo;m ready to work it out.</span></label>
+        <label><input type="checkbox"> <span>I can make real time for this: words, photos, feedback and decisions when they&rsquo;re due.</span></label>
+        <label><input type="checkbox"> <span>I&rsquo;ll stick to the deadlines we agree.</span></label>
+        <label><input type="checkbox"> <span>I&rsquo;ll be honest with you, and I want honesty back.</span></label>
+        <label><input type="checkbox"> <span>I see my website as an investment in my business, not a cost to cut.</span></label>
+        <label><input type="checkbox"> <span>I want something that works properly, not a quick fix.</span></label>
+        <label><input type="checkbox"> <span>I&rsquo;m ready to be seen as a leader in my field.</span></label>
+        <label><input type="checkbox"> <span>When it gets hard, I keep going until I get there.</span></label>
+      </fieldset>
+      <div class="ready-out" aria-live="polite">
+        <p class="ready-score"><b id="ready-n">0</b> / 8</p>
+        <p class="ready-msg" id="ready-msg">Tick the ones that sound like you.</p>
+      </div>
+    </form>
     <div class="cta-row stand" style="margin-top:28px;">
-      <a class="btn btn-primary" href=\"""" + PROJECT_OS + """forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-primary" href=\"""" + PROJECT_OS + """forms/intake.html" target="_blank" rel="noopener">I&rsquo;m ready. Start a project &rarr;</a>
       <a class="btn btn-ghost" href="faq.html#prices">See prices</a>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var f=document.getElementById('ready-check'); if(!f) return;
+  var boxes=f.querySelectorAll('input[type=checkbox]'), n=document.getElementById('ready-n'), m=document.getElementById('ready-msg');
+  var msgs=[
+    [8,'You&rsquo;ve got what it takes. Let&rsquo;s build something brilliant together.'],
+    [6,'Nearly there. Let&rsquo;s talk about the ones you didn&rsquo;t tick. They&rsquo;re usually easier to sort than you think.'],
+    [3,'Maybe not quite yet, and that&rsquo;s OK. Take the free Doubt Test or read the blog, and come back when the time is right.'],
+    [1,'Honestly? A quick website in a day from someone else might suit you better right now. No hard feelings.'],
+    [0,'Tick the ones that sound like you.']
+  ];
+  function update(){
+    var c=0; boxes.forEach(function(b){ if(b.checked) c++; });
+    n.textContent=c;
+    for(var i=0;i<msgs.length;i++){ if(c>=msgs[i][0]){ m.innerHTML=msgs[i][1]; break; } }
+    f.setAttribute('data-level', c===8?'all':c>=6?'near':c>=1?'low':'none');
+  }
+  boxes.forEach(function(b){ b.addEventListener('change',update); });
+})();
+</script>
 """
     ),
+)
+
+# ---------------------------------------------------------------- privacy
+PAGES["privacy.html"] = dict(
+    title="Privacy policy | Sarah J Hill",
+    desc=("How Sarah J Hill collects, uses and protects your information: enquiries, the Doubt Test, "
+          "client projects and visitor statistics. Plain English, no cookies for tracking."),
+    ogtitle="Privacy policy — Sarah J Hill",
+    ogtype="website",
+    crumb="Privacy",
+    backhref="index.html", backtext="Back to the start",
+    eyebrow="Privacy policy &middot; last updated 13 October 2026",
+    h1="Your information. <span class=\"hit\">Treated with respect.</span>",
+    lead=("This explains what I collect, why, who helps me look after it, how long I keep it, and your rights. "
+          "Plain English, no small print games."),
+    herocta="",
+    jsonld="""  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy policy",
+    "about": { "@type": "Person", "name": "Sarah J Hill", "url": "https://sarahjhill.com/" }
+  }""",
+    body=f"""<section class="read">
+  <div class="wrap">
+    <article class="post">
+      <p class="answer">The short version: I only collect what I need to reply to you, run the Doubt Test, and
+        deliver your project. I don&rsquo;t sell your information, I don&rsquo;t use advertising trackers, and you
+        can ask me to see or delete what I hold at any time.</p>
+
+      <h2>Who I am</h2>
+      <p>I&rsquo;m Sarah J Hill, a web designer and developer working as a sole trader (Sarah J Hill, also trading as
+        Dragon Fire Design), based in Cardiff, Wales. I&rsquo;m the &ldquo;data controller&rdquo; for the information
+        described here. Questions or requests: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+
+      <h2>What I collect, and why</h2>
+      <h3>When you email me</h3>
+      <p>Your name, email address and whatever you choose to tell me. I use it to reply and, if you ask, to talk
+        about working together. <i>Lawful basis: legitimate interests, or steps you&rsquo;ve asked for before a contract.</i></p>
+
+      <h3>The project enquiry form</h3>
+      <p>Your name, role, email, phone (optional), organisation, current website, and your answers about your
+        project, budget and timings. I use them to decide whether I can help and to prepare a quote and plan.
+        The form is sent through <b>Formspree</b>, which delivers it to my inbox.
+        <i>Lawful basis: steps you&rsquo;ve asked for before entering a contract.</i></p>
+
+      <h3>The Doubt Test</h3>
+      <p>The website address you want checked, plus your name and email. I use them to run the check, show and send
+        your score and report, and get in touch about it, which you agree to when you submit the form. If you also
+        tick the separate box for tips, I&rsquo;ll occasionally email you advice on getting taken seriously online.
+        That box is never ticked for you, and every tips email lets you unsubscribe.
+        <i>Lawful basis: consent (you can withdraw it at any time by emailing me or unsubscribing).</i></p>
+
+      <h3>Working together</h3>
+      <p>If you become a client, I keep your contact details, our messages, the files and content you share, your
+        project page, and invoices and payment records. <i>Lawful basis: to perform our contract, and to meet my
+        legal obligations such as tax records.</i></p>
+
+      <h3>Buying a theme</h3>
+      <p>If you buy one of my Ember themes, payment is handled by <b>Stripe</b>. I never see your full card details.
+        I receive your name, email and what you bought, so I can send it and support you.
+        <i>Lawful basis: to perform our contract, and legal obligations (tax).</i></p>
+
+      <h3>Visitor statistics</h3>
+      <p>I use <b>Cloudflare Web Analytics</b> to count visits and see which pages are useful. It doesn&rsquo;t use
+        cookies, doesn&rsquo;t follow you around other websites and doesn&rsquo;t build a profile of you. I only see
+        totals, such as page views, rough country and type of device.
+        <i>Lawful basis: legitimate interests, to keep the site useful.</i></p>
+
+      <h2>Cookies and storage on your device</h2>
+      <p>This site doesn&rsquo;t set advertising or tracking cookies. It saves two tiny preferences in your
+        browser&rsquo;s own storage, which never leave your device:</p>
+      <ul>
+        <li>whether you prefer the portfolio as a list or a game on the homepage, and</li>
+        <li>that you closed the Doubt Test box on a blog post, so it stays closed for 14 days.</li>
+      </ul>
+      <p>You can clear them any time in your browser settings.</p>
+
+      <h2>Who helps me look after it</h2>
+      <p>I use a small number of trusted services to run my business. They only process your information on my
+        instructions:</p>
+      <ul>
+        <li><b>Google Workspace</b>: my email.</li>
+        <li><b>Formspree</b>: delivers the project enquiry form.</li>
+        <li><b>Heroku (Salesforce)</b>: hosts the Doubt Test and its database, in the EU.</li>
+        <li><b>Cloudflare</b>: visitor statistics and domain services.</li>
+        <li><b>GitHub Pages</b>: hosts this website. Like any web host, it sees your IP address when it sends you a page.</li>
+        <li><b>jsDelivr</b>: delivers the code for the 3D dragon, which also means it sees your IP address.</li>
+        <li><b>Stripe</b>: theme payments.</li>
+      </ul>
+      <p>Some of these companies are based in the USA. Where your information leaves the UK, they protect it with
+        safeguards approved under UK law, such as the UK&ndash;US data bridge or standard contract clauses.</p>
+      <p>I never sell your information or share it with anyone for their own marketing. I&rsquo;ll only pass it on
+        if the law requires it.</p>
+
+      <h2>How long I keep it</h2>
+      <ul>
+        <li><b>Enquiries and Doubt Test results</b> that don&rsquo;t turn into a project: up to 12 months, then deleted.</li>
+        <li><b>The tips list</b>: until you unsubscribe.</li>
+        <li><b>Client and purchase records</b>: 6 years after the project or sale ends, because HMRC requires it.</li>
+      </ul>
+
+      <h2>Your rights</h2>
+      <p>You can ask me to:</p>
+      <ul>
+        <li>give you a copy of the information I hold about you,</li>
+        <li>correct anything that&rsquo;s wrong,</li>
+        <li>delete it,</li>
+        <li>stop or limit how I use it, or object to it,</li>
+        <li>send it to you or someone else in a usable format, and</li>
+        <li>withdraw your consent, for example to tips emails.</li>
+      </ul>
+      <p>Just email <a href="mailto:{EMAIL}">{EMAIL}</a>. It&rsquo;s free and I&rsquo;ll reply within one month.
+        If you&rsquo;re not happy with how I&rsquo;ve handled your information, you can complain to the
+        Information Commissioner&rsquo;s Office at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ico.org.uk</a>
+        or on 0303 123 1113. I&rsquo;d appreciate the chance to put it right first.</p>
+
+      <h2>Changes</h2>
+      <p>If I change how I use your information, I&rsquo;ll update this page and the date at the top.</p>
+    </article>
+  </div>
+</section>
+""",
+    extracss='  <link rel="stylesheet" href="{root}assets/css/12-blog.css?v=20261013a">\n',
 )
 
 # ------------------------------------------------------------- sjh process
@@ -1044,7 +1281,7 @@ add_pages(PAGES, SITE, EMAIL, PROJECT_OS)
 import json
 import os
 
-UPDATED = "2026-10-12"   # bump when you change a page; goes into dateModified
+UPDATED = "2026-10-13"   # bump when you change a page; goes into dateModified
 
 
 def crumbs(slug, p):
