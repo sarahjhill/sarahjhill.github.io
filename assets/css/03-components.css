@@ -506,3 +506,10 @@ section.band .shot-frame{border-color:rgba(10,10,12,.15);box-shadow:0 18px 40px 
   .ready-out{position:static;order:-1;}
 }
 @media (prefers-reduced-motion:reduce){ .ready input::before{transition:none;} }
+
+/* ---- "Light the fire": what happens next ---- */
+.fire-steps{list-style:none;counter-reset:fs;padding:0;margin:26px 0 0;display:grid;gap:14px;max-width:52ch;}
+.fire-steps li{counter-increment:fs;position:relative;padding-left:46px;font-size:16.5px;line-height:1.5;color:#c9c7c1;}
+.fire-steps li::before{content:counter(fs);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;background:var(--flame);}
+.fire-steps b{color:var(--paper);display:block;}

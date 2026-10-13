@@ -63,7 +63,7 @@ SHELL = """<!DOCTYPE html>
   <!-- ============ STYLES ============ -->
   <link rel="stylesheet" href="{root}assets/css/01-tokens.css">
   <link rel="stylesheet" href="{root}assets/css/02-layout.css?v=20261013a">
-  <link rel="stylesheet" href="{root}assets/css/03-components.css?v=20261013a">
+  <link rel="stylesheet" href="{root}assets/css/03-components.css?v=20261013b">
   <link rel="stylesheet" href="{root}assets/css/06-globe.css">
   <link rel="stylesheet" href="{root}assets/css/04-motion.css">
 {extracss}
@@ -91,7 +91,7 @@ SHELL = """<!DOCTYPE html>
       <a href="{root}index.html#about">About</a>
       <a href="{root}blog/">Blog</a>
       <a class="navfree" href="{freecheck}">The Doubt Test</a>
-      <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Start a project</a>
+      <a class="navcta" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Light the fire</a>
     </div>
   </div>
 </nav>
@@ -119,12 +119,16 @@ SHELL = """<!DOCTYPE html>
       <p class="sjh-globe-note">Wherever you are, it lands in Cardiff</p>
     </div>
    <div>
-    <p class="eyebrow stand">Say hello</p>
+    <p class="eyebrow stand">Light the fire</p>
     <h2 class="stand">Let's get you taken seriously.</h2>
-    <p class="lead stand">Tell me what you do and what's driving you mad about it. Two working days,
-      an honest answer &mdash; even if that answer is &ldquo;this isn't for you, and here's why&rdquo;.</p>
-    <div class="cta-row stand" style="margin-top:32px;">
-      <a class="btn btn-primary" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+    <p class="lead stand">Ten minutes, a few honest answers, and we&rsquo;ll both know if we&rsquo;re the right fit.</p>
+    <ol class="fire-steps stand">
+      <li><b>Tell me about your project.</b> Ten minutes, a few honest questions. Who sent you my way? I like to say thank you.</li>
+      <li><b>I read it properly and sleep on it.</b> A considered answer, not a rushed one or a sales pitch.</li>
+      <li><b>Within two working days, you hear back.</b> A time to talk, an honest word about budget, or the name of someone who&rsquo;s a better fit.</li>
+    </ol>
+    <div class="cta-row stand" style="margin-top:28px;">
+      <a class="btn btn-primary" href="{project_os}forms/intake.html" target="_blank" rel="noopener">Light the fire &rarr;</a>
       <a class="btn btn-ghost" href="{root}process.html">How I work &rarr;</a>
     </div>
    </div>
@@ -356,7 +360,7 @@ PAGES["faq.html"] = dict(
     lead=("Straight answers, no jargon. If your question isn&rsquo;t here, ask me and it&rsquo;ll be "
           "on this page next week."),
     herocta=f"""    <div class="cta-row">
-      <a class="btn btn-primary" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-primary" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Light the fire &rarr;</a>
       <a class="btn btn-ghost" href="mailto:{EMAIL}?subject=A%20question">Ask me a question</a>
     </div>""",
     jsonld="""  {
@@ -477,7 +481,7 @@ PAGES["process.html"] = dict(
           "Process is built so that never happens to you: 12 phases and 69 checked tasks, every one visible "
           "on your own live project page. Here&rsquo;s how it works, and what it means for you."),
     herocta=f"""    <div class="cta-row">
-      <a class="btn btn-primary" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Start a project &rarr;</a>
+      <a class="btn btn-primary" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Light the fire &rarr;</a>
       <a class="btn btn-ghost" href="#two-views">See it in action</a>
     </div>
     <div class="chips">
@@ -687,10 +691,10 @@ PAGES["project-os.html"] = dict(
         + f"""    </div>
     <div class="cta-row stand" style="margin-top:30px;">
       <a class="btn btn-primary" href="{DEMO}" target="_blank" rel="noopener">Look round a real project &rarr;</a>
-      <a class="btn btn-ghost" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Start with my intake questionnaire &rarr;</a>
+      <a class="btn btn-ghost" href="{PROJECT_OS}forms/intake.html" target="_blank" rel="noopener">Light the fire: tell me about your project &rarr;</a>
     </div>
     <p class="cta-note" style="margin-top:10px;">Left one's a working demo, loaded with a made-up client.
-      Right one's the actual first template &mdash; nothing to sign up for either way.</p>
+      Right one's the real first step &mdash; nothing to sign up for either way.</p>
   </div>
 </section>
 

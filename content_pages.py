@@ -83,7 +83,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         lead=("Founders, charities, community groups and tradeswomen across Cardiff. A fixed-price website "
               "that does the believing for you, built by a woman who knows exactly what being underestimated feels like."),
         herocta=f"""    <div class="cta-row">
-      <a class="btn btn-primary" href="{intake}" target="_blank" rel="noopener">Start a project enquiry &rarr;</a>
+      <a class="btn btn-primary" href="{intake}" target="_blank" rel="noopener">Light the fire &rarr;</a>
       <a class="btn btn-ghost" href="website-audit.html">Take the Doubt Test</a>
     </div>""",
         extracss=BLOG_CSS,
@@ -165,7 +165,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         lead=("Founders, side-hustlers, charities and community groups across Birmingham and the West Midlands. "
               "A website with your personality in it, at a fixed price, that you own outright."),
         herocta=f"""    <div class="cta-row">
-      <a class="btn btn-primary" href="{intake}" target="_blank" rel="noopener">Start a project enquiry &rarr;</a>
+      <a class="btn btn-primary" href="{intake}" target="_blank" rel="noopener">Light the fire &rarr;</a>
       <a class="btn btn-ghost" href="website-audit.html">Take the Doubt Test</a>
     </div>""",
         extracss=BLOG_CSS,
