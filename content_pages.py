@@ -89,7 +89,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         extracss=BLOG_CSS,
         jsonld=json.dumps({"@context": "https://schema.org", "@graph": [
             {"@type": "Service", "name": "Web design in Cardiff", "serviceType": "Web design",
-             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/"},
+             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/", "telephone": "+44 29 2264 1423", "hasMap": "https://maps.google.com/?cid=16687317286380789236"},
              "areaServed": {"@type": "City", "name": "Cardiff",
                             "containedInPlace": {"@type": "AdministrativeArea", "name": "Wales"}},
              "audience": {"@type": "Audience", "audienceType": "Women in business, charities and community groups"},
@@ -171,7 +171,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         extracss=BLOG_CSS,
         jsonld=json.dumps({"@context": "https://schema.org", "@graph": [
             {"@type": "Service", "name": "Web design in Birmingham", "serviceType": "Web design",
-             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/"},
+             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/", "telephone": "+44 29 2264 1423", "hasMap": "https://maps.google.com/?cid=16687317286380789236"},
              "areaServed": {"@type": "City", "name": "Birmingham",
                             "containedInPlace": {"@type": "AdministrativeArea", "name": "West Midlands, England"}},
              "audience": {"@type": "Audience", "audienceType": "Women in business, charities and community groups"},

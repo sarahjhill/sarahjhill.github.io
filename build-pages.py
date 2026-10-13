@@ -139,7 +139,7 @@ SHELL = """<!DOCTYPE html>
 <footer>
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Sarah J Hill &middot; Dragon Fire Design &middot; Built by hand, yours to own.</span>
-    <span>Cardiff &amp; Birmingham &middot; <a href="mailto:{email}">{email}</a></span>
+    <span>Cardiff &amp; Birmingham &middot; <a href="tel:+442922641423">029 2264 1423</a> &middot; <a href="mailto:{email}">{email}</a> &middot; <a href="https://maps.google.com/?cid=16687317286380789236" target="_blank" rel="noopener">Find me on Google</a></span>
     <div class="footlinks" role="navigation" aria-label="More pages">
       <a href="{root}website-audit.html">The Doubt Test</a>
       <a href="{root}faq.html#prices">Prices</a>
