@@ -524,3 +524,5 @@ section.band .shot-frame{border-color:rgba(10,10,12,.15);box-shadow:0 18px 40px 
 .close .sjh-globe{height:280px;}
 @media (max-width:900px){ .close{padding:56px 0;} .close .sjh-globe{height:180px;} }
 @media (max-width:520px){ .close .sjh-globe{height:150px;} .close .sjh-globe-note{display:none;} }
+.fire-steps li{min-height:28px;display:flex;align-items:center;font-size:16px;}
+.fire-steps li::before{top:50%;transform:translateY(-50%);}
