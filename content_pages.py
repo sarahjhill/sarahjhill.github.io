@@ -89,7 +89,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         extracss=BLOG_CSS,
         jsonld=json.dumps({"@context": "https://schema.org", "@graph": [
             {"@type": "Service", "name": "Web design in Cardiff", "serviceType": "Web design",
-             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/", "telephone": "+44 29 2264 1423", "hasMap": "https://maps.google.com/?cid=16687317286380789236"},
+             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/", "telephone": "+44 29 2264 1423", "hasMap": "https://maps.google.com/?cid=16687317286380789236", "sameAs": ["https://www.facebook.com/sarahjhilldesign"]},
              "areaServed": {"@type": "City", "name": "Cardiff",
                             "containedInPlace": {"@type": "AdministrativeArea", "name": "Wales"}},
              "audience": {"@type": "Audience", "audienceType": "Women in business, charities and community groups"},
@@ -171,7 +171,7 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
         extracss=BLOG_CSS,
         jsonld=json.dumps({"@context": "https://schema.org", "@graph": [
             {"@type": "Service", "name": "Web design in Birmingham", "serviceType": "Web design",
-             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/", "telephone": "+44 29 2264 1423", "hasMap": "https://maps.google.com/?cid=16687317286380789236"},
+             "provider": {"@type": "ProfessionalService", "name": "Sarah J Hill", "url": f"{SITE}/", "telephone": "+44 29 2264 1423", "hasMap": "https://maps.google.com/?cid=16687317286380789236", "sameAs": ["https://www.facebook.com/sarahjhilldesign"]},
              "areaServed": {"@type": "City", "name": "Birmingham",
                             "containedInPlace": {"@type": "AdministrativeArea", "name": "West Midlands, England"}},
              "audience": {"@type": "Audience", "audienceType": "Women in business, charities and community groups"},
@@ -748,6 +748,136 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
 
       <hr>
       <p><strong>Be bold. Be brave. Be ballsy.</strong> Your cause deserves to be seen properly.</p>
+""",
+    )
+
+    # ---------------------------------------------------------------- 7
+    post(
+        slug="welcome-to-my-website",
+        title="Stop writing &ldquo;Welcome to my website&rdquo; | Sarah J Hill",
+        desc=("&ldquo;Welcome to my website&rdquo; is the laziest line on the internet and it&rsquo;s costing you customers. "
+              "Why it fails, what the research says, and exactly what to write instead."),
+        h1="Stop writing &ldquo;Welcome to my website.&rdquo; <span class=\"hit\">They know.</span>",
+        lead="Your first line is the most valuable thing on your site. Stop wasting it on a doormat.",
+        tag="Your online presence",
+        date="2026-11-05",
+        sources=[
+            ("Nielsen Norman Group — How long do users stay on web pages?",
+             "https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/"),
+            ("Nielsen Norman Group — First 2 words: a signal for the scanning eye",
+             "https://www.nngroup.com/articles/first-2-words-a-signal-for-scanning/"),
+            ("Google Search Central — Influencing your title links in search results",
+             "https://developers.google.com/search/docs/appearance/title-link"),
+            ("Monzo — Apply for an account", "https://monzo.com/sign-up"),
+            ("Who Gives A Crap — About us", "https://uk.wholesale.whogivesacrap.org/pages/about-us"),
+            ("The ChatShack — Donate", "https://chatshack.app/donate"),
+        ],
+        body="""      <p class="answer">&ldquo;Welcome to my website&rdquo; is a waste of your best words. People decide in seconds whether
+        to stay, and they read the first two words of a line before deciding whether to read the rest. Spend those words
+        saying what you do, who for, and why you. Not hello.</p>
+
+      <h2>Why is &ldquo;Welcome to my website&rdquo; a waste of time?</h2>
+      <p>Because they know. They clicked the link. They&rsquo;re here. Telling them where they are is like a shop owner
+        greeting you with &ldquo;This is a shop.&rdquo;</p>
+      <p>Nobody lands on your homepage wanting a welcome. They want one answer: <strong>can you sort my problem?</strong>
+        Everything that doesn&rsquo;t answer that is in the way.</p>
+
+      <h2>How long do I actually get?</h2>
+      <p>About ten seconds. The Nielsen Norman Group, the people who&rsquo;ve studied web behaviour longer than anyone, found
+        visitors often leave within <strong>10 to 20 seconds</strong>. The pages that keep them are the ones that prove
+        their value straight away.</p>
+      <p>Ten seconds. And you&rsquo;re spending the first one on &ldquo;Welcome&rdquo;.</p>
+
+      <h2>Does anyone even read my first line?</h2>
+      <p>The first two words of it. People don&rsquo;t read websites, they scan them, and Nielsen Norman Group found readers
+        often take in just the <strong>first two words</strong> of a heading before moving on. &ldquo;Welcome to&rdquo; burns
+        both.</p>
+      <p>&ldquo;Plumber, Cardiff.&rdquo; &ldquo;Free counselling.&rdquo; &ldquo;Vegan cakes.&rdquo; Two words. Job done.</p>
+
+      <h2>Is it hurting me on Google?</h2>
+      <p>Yes. Google builds the title it shows in search results from your page title and your main headings. Its own
+        guidance asks for titles that are <strong>descriptive and specific</strong>. &ldquo;Welcome&rdquo; is neither. Nobody
+        has ever typed &ldquo;welcome&rdquo; into Google looking for an electrician.</p>
+      <p>AI tools are the same. When someone asks &ldquo;who&rsquo;s a good web designer in Cardiff?&rdquo;, they recommend
+        businesses that clearly say what they do and where. They can&rsquo;t recommend words you never wrote.</p>
+
+      <h2>What does it say about my business?</h2>
+      <p>That nobody tried. It&rsquo;s the default line on every cheap template, so it reads as a cheap template.</p>
+      <p>And if you&rsquo;re a woman in business, a charity or a community group, you already get sized up before you&rsquo;ve
+        opened your mouth. A limp first line doesn&rsquo;t fight that. It agrees with it.</p>
+
+      <h2>So what do I write instead?</h2>
+      <p>Use this formula. I use it on every site I build:</p>
+      <p class="answer"><strong>What you do + who for + where + why you.</strong> One line. Then one button.</p>
+      <ul>
+        <li><strong>Not</strong> &ldquo;Welcome to Sam&rsquo;s Electrical.&rdquo;<br>
+          <strong>Instead:</strong> &ldquo;Qualified electrician in Cardiff. Rewires, fuse boards and EV chargers, done
+          right first time.&rdquo;</li>
+        <li><strong>Not</strong> &ldquo;Welcome to our charity.&rdquo;<br>
+          <strong>Instead:</strong> &ldquo;Free, confidential mental health support in Cardiff. Turn up. Talk. Be
+          heard.&rdquo;</li>
+        <li><strong>Not</strong> &ldquo;Welcome to my bakery.&rdquo;<br>
+          <strong>Instead:</strong> &ldquo;Vegan celebration cakes in Wisbech, made to order and delivered on the
+          day.&rdquo;</li>
+        <li><strong>Not</strong> &ldquo;Welcome! We&rsquo;re passionate about what we do.&rdquo;<br>
+          <strong>Instead:</strong> &ldquo;Bookkeeping for sole traders who&rsquo;d rather be working than doing
+          receipts.&rdquo;</li>
+      </ul>
+      <p>None of those say welcome. Every one of them is more welcoming, because the visitor knows in two seconds
+        they&rsquo;re in the right place.</p>
+
+      <h2>Who gets it right in real life?</h2>
+      <p>Plenty of brands you know. Not one of them opens with &ldquo;Welcome&rdquo;.</p>
+      <ul>
+        <li><strong>Monzo.</strong> Its sign-up page leads with &ldquo;Apply for an award-winning Monzo account in
+          minutes.&rdquo; A verb first, so you know what to do. Proof (&ldquo;award-winning&rdquo;). A promise
+          (&ldquo;in minutes&rdquo;). Ten words, zero waffle.</li>
+        <li><strong>Who Gives A Crap.</strong> The toilet paper company that funds sanitation projects. Its own line about
+          itself is &ldquo;Funny name. Serious business.&rdquo; Four words that make you smile and make you trust them.
+          That&rsquo;s ballsy, and it sells loo roll.</li>
+        <li><strong>The ChatShack, Cardiff.</strong> A peer-led mental health community I built a site for. The Donate
+          page opens with &ldquo;Every pound helps someone talk sooner.&rdquo; It says what your money does before
+          you&rsquo;ve even looked for the button.</li>
+        <li><strong>This site.</strong> &ldquo;Websites that breathe fire. Not another cookie-cutter site knocked up in a
+          day.&rdquo; What I do, and what I refuse to do, before you&rsquo;ve scrolled. I practise what I preach.</li>
+      </ul>
+      <p>Notice the pattern? <strong>Specific. Short. Confident.</strong> They tell you what you get, not where you are.</p>
+
+      <h2>What else should be above the fold?</h2>
+      <p>&ldquo;Above the fold&rdquo; means what shows on a phone before anyone scrolls. Get these five in and you&rsquo;re ahead
+        of most sites in your town:</p>
+      <ol>
+        <li><strong>The line.</strong> What you do, who for, where. See the formula above.</li>
+        <li><strong>One button.</strong> Call, book or enquire. Pick one. Three buttons means nobody presses any.</li>
+        <li><strong>One piece of proof.</strong> A star rating, &ldquo;fully insured&rdquo;, a qualification, or a short quote
+          from a real customer with their first name.</li>
+        <li><strong>A real photo.</strong> You, your team, your actual work. Not a stock model pretending to be you.</li>
+        <li><strong>Your area.</strong> &ldquo;Cardiff and the Vale&rdquo;, &ldquo;Across Fenland&rdquo;. Local people want
+          local help, and so does Google.</li>
+      </ol>
+
+      <h2>How do I check my own homepage in five minutes?</h2>
+      <ol>
+        <li>Open your site on your phone. Look only at what shows before you scroll.</li>
+        <li>Cover your logo with your thumb. Can a stranger still tell what you do and where?</li>
+        <li>Read the first two words of your main heading. Do they mean anything on their own?</li>
+        <li>Find the one obvious next step. If you have to hunt, so do your customers.</li>
+        <li>Google your business name. Does the title in the results say what you do?</li>
+      </ol>
+      <p>Any &ldquo;no&rdquo; is your first fix. It costs nothing but a rewrite.</p>
+
+      <h2>Can I still be friendly?</h2>
+      <p>Be friendly in <em>how</em> you say it, not in a line that says nothing. &ldquo;Come as you are&rdquo; is warmer than
+        any &ldquo;Welcome&rdquo; because it shows you get why they came. Want to say hello properly? Do it in your About
+        section, next to a real photo of you, where it actually means something.</p>
+
+      <h2>Want me to look at yours?</h2>
+      <p>Send me your homepage and I&rsquo;ll tell you, straight, what your first line is costing you and what I&rsquo;d write
+        instead. No jargon, no hard sell. <a href="../process.html">See how I work</a>.</p>
+
+      <hr>
+      <p><strong>Be bold. Be brave. Be ballsy.</strong> Your first line is the best real estate you own. Stop giving it to a
+        doormat.</p>
 """,
     )
 
