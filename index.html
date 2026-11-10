@@ -41,7 +41,8 @@
   <link rel="stylesheet" href="assets/css/05-scene.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/06-globe.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/07-comic.css?v=20261008b">
-  <link rel="stylesheet" href="assets/css/08-quest.css?v=20261012a">
+  <link rel="stylesheet" href="assets/css/08-quest.css?v=20261110a">
+  <link rel="stylesheet" href="assets/css/08b-quest-mobile.css?v=20261110a">
   <link rel="stylesheet" href="assets/css/09-about.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/10-theme.css?v=20261008b">
   <link rel="stylesheet" href="assets/css/11-home.css?v=20261013a">
@@ -209,7 +210,7 @@
     <p class="eyebrow stand">Built and live &middot; the work</p>
     <h2 class="stand" id="quest-h">Real people. Real deadlines. Still warm.</h2>
     <p class="lead stand"><span class="q-lead-desk">Scroll and my dragon flies you through the lot &mdash; four worlds, 11 quests.
-      Every stop opens a window on the real site, top to bottom. Scroll inside it.</span><span class="q-lead-mob">Eleven real projects. Swipe through them, and scroll inside each phone to see the whole live site.</span></p>
+      Every stop opens a window on the real site, top to bottom. Scroll inside it.</span><span class="q-lead-mob">Eleven real projects. Tap a world or swipe through them, and scroll inside each phone to see the whole live site.</span></p>
     <div class="cta-row stand quest-start">
       <a class="btn btn-primary" href="#q-flight" data-quest="start">Scroll to fly through my work &#9660;</a>
       <button class="btn btn-ghost" type="button" data-quest="list" aria-pressed="false">Skip it &mdash; show me the list</button>
@@ -314,17 +315,27 @@
           <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://community-cooking-rota-a0e405aa09f1.herokuapp.com/" target="_blank" rel="noopener">Visit the live site &rarr;</a><a class="qi-btn" href="https://github.com/sarahjhill/cooking-rota" target="_blank" rel="noopener">See the code</a></p>
         </div>
       </article>
-      <article class="qi qi--locked" id="q-chatshack" data-num="05">
-        <div class="qi-screens qi-egg" aria-hidden="true">
-          <div class="egg"><i></i><i></i><i></i></div>
-          <p class="egg-note">Hatching soon &middot; no screens yet</p>
+      <article class="qi" id="q-chatshack" data-num="05">
+        <div class="qi-screens">
+          <div class="qi-browser">
+            <div class="qi-bar" aria-hidden="true"><i></i><i></i><i></i><span>chatshack.app</span></div>
+            <div class="qi-scroll" tabindex="0" role="region" aria-label="The whole Chat Shack home page, scrollable">
+              <img src="assets/img/work/chatshack-desk.webp" width="1000" height="2746" loading="lazy" decoding="async" alt="Full-length screenshot of The Chat Shack website on a laptop">
+            </div>
+          </div>
+          <div class="qi-phone">
+            <div class="qi-scroll" tabindex="-1">
+              <img src="assets/img/work/chatshack-phone.webp" width="480" height="4200" loading="lazy" decoding="async" alt="The Chat Shack on a phone">
+            </div>
+          </div>
         </div>
         <div class="qi-body">
-          <p class="qi-kicker"><span class="qi-num">Quest 05/11</span> In the forge &middot; currently building</p>
-          <h4 class="qi-title">The Chat Shack C.I.C. <small class="qi-status">In the forge</small></h4>
-          <p class="qi-quest"><b>The quest</b> A safe, confidential and non-judgemental place to talk, for a peer-led mental health community in Cardiff.</p>
-          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>React, Vite and TypeScript for a fast static build, with Decap CMS added so the charity&rsquo;s own team can sign in and edit every page themselves &mdash; no developer on call, no monthly platform fee.</p></details>
-          <ul class="qi-loot" aria-label="Built with"><li>React</li><li>Vite</li><li>TypeScript</li><li>Decap CMS</li><li>GitHub Pages</li></ul>
+          <p class="qi-kicker"><span class="qi-num">Quest 05/11</span> Charity &amp; community &middot; live</p>
+          <h4 class="qi-title">The Chat Shack C.I.C.</h4>
+          <p class="qi-quest"><b>The quest</b> &ldquo;You are not alone.&rdquo; A peer-led mental health community in Cardiff needed a front door that feels safe the second you land &mdash; somewhere to talk, find support, sign up to help and give.</p>
+          <details class="qi-why" open><summary>Why it&rsquo;s built this way</summary><p>A React and TypeScript front end, built with Vite, so it&rsquo;s quick on any phone. Behind it, a Django REST back end on Heroku with PostgreSQL: the team edit the homepage themselves, every form lands safely, and volunteers book their own shifts. Donations and &lsquo;buy an item&rsquo; gifts &mdash; a sleeping bag, a hot meal &mdash; go through Stripe&rsquo;s secure checkout. Help-now and crisis links sit right at the top, because that&rsquo;s what matters most.</p></details>
+          <ul class="qi-loot" aria-label="Built with"><li>React</li><li>TypeScript</li><li>Django REST</li><li>Stripe</li><li>PostgreSQL</li><li>Vite</li><li>Heroku</li></ul>
+          <p class="qi-links"><a class="qi-btn qi-btn--go" href="https://chatshack.app/" target="_blank" rel="noopener">Visit the live site &rarr;</a></p>
         </div>
       </article>
     </section>
@@ -630,7 +641,8 @@
 </script>
 <script type="module" src="assets/js/dragon3d.js?v=20261012a"></script>
 <script src="assets/js/globe.js?v=20261008b" defer></script>
-<script src="assets/js/quest.js?v=20261012a" defer></script>
+<script src="assets/js/quest.js?v=20261110a" defer></script>
+<script src="assets/js/quest-swipe.js?v=20261110a" defer></script>
 <script type="module" src="assets/js/quest-dragon.js?v=20261008b"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8f936632609c48e5bc300dd47e8645ed"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

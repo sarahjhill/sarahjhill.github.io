@@ -1,0 +1,50 @@
+
+/* ---------------- phone view: chips, bar and bigger phones (quest-swipe.js) ---------------- */
+.qm-chips,.qm-bar,.qm-hint{display:none;}
+@media (max-width:760px){
+  /* the flight is the desktop treat; on a phone the cards are the way in */
+  .quest-start{display:none;}
+  .q-swipe{display:none;}
+
+  .qm-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 16px 2px;margin:4px 0 0;
+    position:sticky;top:62px;z-index:4;background:linear-gradient(var(--ink) 80%,transparent);padding-bottom:10px;}
+  .qm-chips::-webkit-scrollbar{display:none;}
+  .quest.is-flying .qm-chips,.quest.is-flying .qm-bar{display:none;}
+  .qm-chip{flex:0 0 auto;font:800 12px/1 var(--q-mono);letter-spacing:.08em;text-transform:uppercase;
+    padding:11px 14px;min-height:44px;color:var(--q-ink);background:transparent;border:2px solid rgba(255,176,32,.45);cursor:pointer;}
+  .qm-chip.is-on{background:var(--q-gold);color:#1a1000;border-color:#000;box-shadow:2px 2px 0 #000;}
+  .qm-chip:focus-visible,.qm-arrow:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+
+  .q-log{padding-bottom:14px;scroll-padding-inline:6%;}
+  .q-log .qi{flex:0 0 88%;}
+  .q-log:focus-visible{outline:3px solid var(--q-gold);outline-offset:-3px;}
+
+  /* bigger phone screenshot, so there's something to actually look at */
+  .q-log .qi-phone{height:min(58vh,440px);position:relative;}
+  .q-log .qi-egg,.q-log .qi-castle{min-height:min(58vh,440px);}
+  .q-log .qi-phone .qi-scroll{touch-action:pan-y;}
+
+  /* tech used: back, but only the first four so the card stays tidy */
+  .q-log .qi-loot{display:flex;flex-wrap:wrap;gap:6px;margin:0;}
+  .q-log .qi-loot li{font-size:10px;padding:5px 7px;}
+  .q-log .qi-loot li:nth-child(n+5){display:none;}
+  .q-log .qi-why summary{min-height:44px;display:flex;align-items:center;}
+  .q-log .qi-btn{padding:13px 14px;min-height:44px;}
+
+  .qm-hint{display:block;position:absolute;left:50%;bottom:18px;transform:translateX(-50%);pointer-events:none;
+    font:800 10px/1 var(--q-mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+    padding:8px 10px;background:rgba(0,0,0,.78);color:var(--q-gold);border:1px solid rgba(255,176,32,.6);
+    transition:opacity .4s;animation:qm-bob 1.6s ease-in-out infinite;}
+  .qm-hint.is-gone{opacity:0;}
+  @keyframes qm-bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-5px)}}
+
+  .qm-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 16px 40px;}
+  .qm-count{margin:0;flex:1;text-align:center;font:700 12px/1.3 var(--q-mono);letter-spacing:.06em;color:var(--q-ink);}
+  .qm-count b{color:var(--q-gold);font-size:15px;}
+  .qm-count span{display:block;color:rgba(246,243,237,.7);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .qm-arrow{flex:0 0 auto;width:52px;height:52px;font:800 22px/1 var(--q-mono);color:#1a1000;background:var(--q-gold);
+    border:2px solid #000;box-shadow:3px 3px 0 #000;cursor:pointer;}
+  .qm-arrow:disabled{opacity:.35;box-shadow:none;}
+  .q-log-flight{flex:0 0 auto;align-self:center;margin:0;}
+}
+@media (max-width:760px) and (prefers-reduced-motion:reduce){ .qm-hint{animation:none;} }
