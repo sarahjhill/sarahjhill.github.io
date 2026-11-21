@@ -881,6 +881,124 @@ def add_pages(PAGES, SITE, EMAIL, PROJECT_OS):
 """,
     )
 
+    # ---------------------------------------------------------------- 8
+    post(
+        slug="how-i-work-with-clients",
+        title="How I work with clients: people first, websites second | Sarah J Hill",
+        desc=("Before I design a thing, I find out what your business is really worth, spot the problems you don&rsquo;t "
+              "know you&rsquo;ve got, and tell you straight what will fix them. Here&rsquo;s exactly how."),
+        h1="I don&rsquo;t start with a website. <span class=\"hit\">I start with you.</span>",
+        lead="People first. Websites second. Here&rsquo;s exactly what happens when you work with me.",
+        tag="Working with me",
+        date="2026-11-21",
+        sources=[],
+        body="""      <p class="answer">I feel your pain, and I solve it. Most web designers ask what colour you want. I ask what you want to be celebrating a year from now.
+        Then I find out what your business is really worth, dig out the problems you didn&rsquo;t know were costing you,
+        and tell you straight what will fix them. The website comes after that. Not before.</p>
+
+      <h2>What does &ldquo;human-centric&rdquo; actually mean?</h2>
+      <p>It means I design around people, not pages. You, and the people you serve. Before I think about a single screen I
+        want to know who&rsquo;ll be using it, what kind of day they&rsquo;re having, and what they need to feel to trust
+        you.</p>
+      <p>A nervous first-time customer. A volunteer on their phone between shifts. Someone who&rsquo;s struggling and needs
+        help in two taps, not ten. Someone using a screen reader, or reading in their second language. If the site
+        doesn&rsquo;t work for them, it doesn&rsquo;t work. Full stop.</p>
+      <p>And it means treating <strong>you</strong> like a person, not a ticket number. I listen more than I talk, I explain
+        things in plain English, and you always know what&rsquo;s happening next.</p>
+
+      <h2>Why do I get it?</h2>
+      <p>Because I&rsquo;ve felt it. I know what it&rsquo;s like to be overlooked, talked over and underestimated before
+        you&rsquo;ve said a word. I&rsquo;m a woman who taught herself to code in an industry that doesn&rsquo;t look like
+        me. So when you tell me people don&rsquo;t take you seriously, I don&rsquo;t nod politely. <strong>I feel it.</strong></p>
+      <p>And then I do something about it. I feel your pain, and I solve it. That&rsquo;s the whole job.</p>
+
+      <h2>Why don&rsquo;t I just start building?</h2>
+      <p>Because a website built on guesses is a guess with a price tag. If I don&rsquo;t know who your customers are,
+        what they doubt about you and what you want them to do, I&rsquo;m decorating. Not solving.</p>
+      <p>So before anyone talks templates, fonts or plugins, we talk about <strong>you</strong>.</p>
+
+      <h2>How do I get to know your full potential?</h2>
+      <p>It starts with ten minutes of honest answers. My <a href="https://sarahjhill.com/project-os/forms/intake.html">Light
+        the fire</a> form asks what your business does, who it&rsquo;s for, what you want your site to do, and the big one:</p>
+      <p class="answer"><strong>&ldquo;Picture us celebrating a year after launch. What has your website done for you?&rdquo;</strong></p>
+      <p>That one question tells me more than any brief. It shows me what success actually means to you, in your words,
+        not mine.</p>
+      <p>Then I do something most people don&rsquo;t. <strong>I sleep on it.</strong> I read your answers, wait a day, and
+        read them again. You get a considered reply within two working days, not a rushed sales pitch the same afternoon.</p>
+
+      <h2>What happens on the call?</h2>
+      <p>About 45 minutes, on a video call or the phone. I&rsquo;ll have done my homework first: your business, your
+        competitors, and a proper check of your current site&rsquo;s speed, search visibility and gaps. So we don&rsquo;t
+        waste the call on the basics.</p>
+      <p>Then I ask questions. Lots of them. The most useful one is the simplest:</p>
+      <ul>
+        <li><strong>&ldquo;Why do you need a new website?&rdquo;</strong></li>
+        <li>Then: <strong>&ldquo;Why else?&rdquo;</strong> And again. Until you run out.</li>
+        <li>Then: <strong>&ldquo;If you could only pick one, which matters most? Why?&rdquo;</strong></li>
+      </ul>
+      <p>That&rsquo;s where the real brief lives. The first answer is usually &ldquo;it looks dated&rdquo;. The fourth or
+        fifth is the one that matters: &ldquo;people don&rsquo;t take us seriously&rdquo;, &ldquo;I&rsquo;m losing jobs to
+        bigger firms&rdquo;, &ldquo;I want to grow into a second city&rdquo;.</p>
+      <p>And I don&rsquo;t talk code. You&rsquo;ll never hear me bang on about plugins. It&rsquo;s your goals, your customers
+        and your money we&rsquo;re talking about.</p>
+
+      <h2>How do I find problems you don&rsquo;t know you&rsquo;ve got?</h2>
+      <p>By looking where nobody else looks. These are the ones I find again and again, and almost nobody knew they had
+        them:</p>
+      <ul>
+        <li><strong>A contact form emailing nobody.</strong> Sometimes for months. Every enquiry, gone.</li>
+        <li><strong>A site that crawls on a phone.</strong> It looks fine on your laptop at home. Your customers are on
+          mobile data at a bus stop.</li>
+        <li><strong>Invisible on Google for your own town.</strong> You rank for your business name, but not for
+          &ldquo;electrician in Cardiff&rdquo;, which is what people actually type.</li>
+        <li><strong>No proof up top.</strong> Your best reviews are buried three clicks deep, so new visitors never see
+          them.</li>
+        <li><strong>Words that undersell you.</strong> &ldquo;Just a small business&rdquo;, &ldquo;we&rsquo;ll try our
+          best&rdquo;. You&rsquo;re better than that, so your site should say so.</li>
+        <li><strong>Admin eating your evenings.</strong> Bookings by text, a rota on a spreadsheet, donations by bank
+          transfer. Often the biggest win isn&rsquo;t a prettier homepage at all. It&rsquo;s a simple tool that gives you
+          your hours back.</li>
+      </ul>
+      <p>That last one is why I&rsquo;m a developer as well as a designer. When the real problem is a process, I can build the
+        thing that fixes it: online bookings, volunteer sign-ups, donation pages, client portals.</p>
+
+      <h2>What does consultation with me actually look like?</h2>
+      <p>Honest. Within 24 hours of our call you get a <strong>written recap</strong> of everything I heard: what your
+        business needs, what your customers need, what success looks like, and the budget you&rsquo;ve set aside. You check
+        it, you correct anything I got wrong, and only then do I write a proposal.</p>
+      <p>The proposal is built from <strong>your own words</strong>. No surprises, no jargon, and a fixed price agreed before
+        anything starts.</p>
+      <p>And if what you need isn&rsquo;t what you asked for, I&rsquo;ll tell you. If a cheaper first step will get you
+        further, I&rsquo;ll say so. If I&rsquo;m not the right person for the job, I&rsquo;ll say that too and point you to
+        someone who is. That&rsquo;s what a consultant is for.</p>
+
+      <h2>What happens once we start?</h2>
+      <p>You get your own private project page. Within two working days of saying yes, you&rsquo;ll have a plan with real
+        dates on it, and you can watch every task tick off as I go. You will never have to type &ldquo;any update?&rdquo;
+        <a href="../process.html">See the whole process</a>.</p>
+
+      <h2>How do I make sure real people can use it?</h2>
+      <ul>
+        <li><strong>Phone first.</strong> That&rsquo;s where most people meet you, so that&rsquo;s where I start.</li>
+        <li><strong>Accessible by default.</strong> Readable text, strong contrast, big tap targets, works with a keyboard
+          and a screen reader. Not an extra. The baseline.</li>
+        <li><strong>Plain words.</strong> If your nan can&rsquo;t follow it, it gets rewritten.</li>
+        <li><strong>Tested on real people.</strong> I watch someone try to book, donate or get in touch, and fix whatever
+          trips them up.</li>
+        <li><strong>Built for you to run.</strong> You can change your own words and photos without ringing me.</li>
+      </ul>
+
+      <h2>Who is this for?</h2>
+      <p>Women in business, charities, community groups and anyone who&rsquo;s tired of being underestimated. People who know
+        what they want, mean what they say, and are ready to take their business seriously. If that&rsquo;s you, we&rsquo;ll
+        get on.</p>
+
+      <hr>
+      <p><strong>Be bold. Be brave. Be ballsy.</strong> Let&rsquo;s talk about what you&rsquo;re really capable of.
+        <a href="https://sarahjhill.com/project-os/forms/intake.html">Light the fire &rarr;</a></p>
+""",
+    )
+
     # ---------------------------------------------------------------- index
     cards = sorted((p["_card"] for p in PAGES.values() if "_card" in p), key=lambda c: c["date"], reverse=True)
     grid = "".join(f"""      <a class="card-post" href="{c['slug']}.html" data-cat="{_plain(c['tag'])}">
